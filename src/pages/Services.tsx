@@ -13,8 +13,6 @@ const Services = () => {
     <div className="bg-[#0d0d0d] min-h-screen text-white">
       <Header />
       <FloatingContactButton />
-      <div className="fixed inset-0 pointer-events-none z-0"
-        style={{ background: "radial-gradient(ellipse 80% 70% at 0% 40%, rgba(100,180,0,0.22) 0%, transparent 55%)" }} />
       <main className="relative z-10">
         <section className="min-h-screen flex flex-col justify-center pt-32 pb-16 px-6 max-w-5xl mx-auto relative">
           {/* Floating ROAS card */}

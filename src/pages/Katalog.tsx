@@ -5,21 +5,6 @@ import { FloatingContactButton } from "@/components/layout/FloatingContactButton
 import { useContactModal } from "@/contexts/ContactModalContext"
 import katalog from "@/data/katalog.json"
 
-const PriorityBadge = ({ priority }: { priority: string }) => (
-  priority === "oncelikli" ? (
-    <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-full font-plus-jakarta"
-      style={{ background: "rgba(163,230,53,0.15)", color: "#a3e635", border: "1px solid rgba(163,230,53,0.3)" }}>
-      <span className="w-1 h-1 rounded-full bg-[#a3e635]" />
-      Önceklikli
-    </span>
-  ) : (
-    <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-full font-plus-jakarta"
-      style={{ background: "rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.4)", border: "1px solid rgba(255,255,255,0.1)" }}>
-      Ek Hizmet
-    </span>
-  )
-)
-
 const ServiceCard = ({ service, onCta }: { service: typeof katalog.categories[0]["services"][0]; onCta: () => void }) => {
   const [expanded, setExpanded] = useState(false)
 
@@ -27,16 +12,13 @@ const ServiceCard = ({ service, onCta }: { service: typeof katalog.categories[0]
     <div
       className="border rounded-2xl p-5 transition-all duration-200 cursor-pointer group"
       style={{
-        background: service.priority === "oncelikli" ? "rgba(163,230,53,0.03)" : "rgba(255,255,255,0.02)",
-        border: service.priority === "oncelikli" ? "1px solid rgba(163,230,53,0.15)" : "1px solid rgba(255,255,255,0.07)",
+        background: "rgba(255,255,255,0.02)",
+        border: "1px solid rgba(255,255,255,0.07)",
       }}
       onClick={() => setExpanded(e => !e)}
     >
       <div className="flex items-start justify-between gap-3 mb-3">
         <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2 mb-2 flex-wrap">
-            <PriorityBadge priority={service.priority} />
-          </div>
           <h3 className="font-bold text-white font-plus-jakarta text-base leading-snug group-hover:text-[#a3e635] transition-colors">
             {service.name}
           </h3>
@@ -107,44 +89,21 @@ const Katalog = () => {
   const [activeCategory, setActiveCategory] = useState(katalog.categories[0].id)
 
   const currentCategory = katalog.categories.find(c => c.id === activeCategory)!
-  const oncelikli = currentCategory.services.filter(s => s.priority === "oncelikli")
-  const ek = currentCategory.services.filter(s => s.priority === "ek")
   const isEmpty = currentCategory.services.length === 0
 
   return (
     <div className="bg-[#0d0d0d] min-h-screen text-white">
       <Header />
       <FloatingContactButton />
-      <div className="fixed inset-0 pointer-events-none z-0"
-        style={{ background: "radial-gradient(ellipse 80% 70% at 0% 40%, rgba(100,180,0,0.16) 0%, transparent 55%)" }} />
-
       <main className="relative z-10">
         <section className="pt-32 pb-8 px-6 max-w-6xl mx-auto">
-          <div className="inline-flex items-center gap-2 border border-white/10 rounded-full px-4 py-1.5 mb-8 w-fit">
-            <span className="w-2 h-2 rounded-full bg-[#a3e635]" />
-            <span className="text-xs text-white/50 font-plus-jakarta tracking-widest uppercase">Hizmet Kataloğu</span>
-          </div>
           <h1 className="font-extrabold font-plus-jakarta leading-[1.05] tracking-tight text-5xl sm:text-6xl md:text-7xl mb-4">
             <span style={{ color: "#a3e635" }}>87 hizmet,</span><br />
             <span className="text-white">tek çatı.</span>
           </h1>
-          <p className="text-white/50 font-plus-jakarta text-lg max-w-xl leading-relaxed mb-4">
+          <p className="text-white/50 font-plus-jakarta text-lg max-w-xl leading-relaxed mb-12">
             10 kategoride ihtiyacınız olan her dijital hizmet. Her biri için net teslim süresi, ROI ve başarı hikayesi.
           </p>
-          <div className="flex items-center gap-3 flex-wrap mb-12">
-            <span className="text-xs font-medium font-plus-jakarta px-3 py-1.5 rounded-full"
-              style={{ background: "rgba(163,230,53,0.12)", color: "#a3e635", border: "1px solid rgba(163,230,53,0.25)" }}>
-              10 Kategori
-            </span>
-            <span className="text-xs font-medium font-plus-jakarta px-3 py-1.5 rounded-full"
-              style={{ background: "rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.5)" }}>
-              87 Hizmet
-            </span>
-            <span className="text-xs font-medium font-plus-jakarta px-3 py-1.5 rounded-full"
-              style={{ background: "rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.5)" }}>
-              Net ROI & Teslim Süresi
-            </span>
-          </div>
         </section>
 
         {/* Category tabs */}
@@ -187,42 +146,11 @@ const Katalog = () => {
               </p>
             </div>
           ) : (
-            <>
-              {oncelikli.length > 0 && (
-                <div className="mb-10">
-                  <div className="flex items-center gap-3 mb-6">
-                    <span className="text-xs font-bold font-plus-jakarta tracking-widest uppercase"
-                      style={{ color: "#a3e635" }}>
-                      Önceklikli Hizmetler
-                    </span>
-                    <div className="flex-1 h-px" style={{ background: "rgba(163,230,53,0.2)" }} />
-                    <span className="text-xs text-white/30 font-plus-jakarta">{oncelikli.length} hizmet</span>
-                  </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                    {oncelikli.map(s => (
-                      <ServiceCard key={s.name} service={s} onCta={openModal} />
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {ek.length > 0 && (
-                <div>
-                  <div className="flex items-center gap-3 mb-6">
-                    <span className="text-xs font-bold font-plus-jakarta tracking-widest uppercase text-white/30">
-                      Ek Hizmetler
-                    </span>
-                    <div className="flex-1 h-px border-dashed" style={{ borderColor: "rgba(255,255,255,0.1)" }} />
-                    <span className="text-xs text-white/30 font-plus-jakarta">{ek.length} hizmet</span>
-                  </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                    {ek.map(s => (
-                      <ServiceCard key={s.name} service={s} onCta={openModal} />
-                    ))}
-                  </div>
-                </div>
-              )}
-            </>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+              {currentCategory.services.map(s => (
+                <ServiceCard key={s.name} service={s} onCta={openModal} />
+              ))}
+            </div>
           )}
         </section>
 

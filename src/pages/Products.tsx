@@ -12,16 +12,8 @@ const Products = () => {
       <Header />
       <FloatingContactButton />
 
-      <div className="fixed inset-0 pointer-events-none z-0"
-        style={{ background: "radial-gradient(ellipse 80% 70% at 0% 40%, rgba(100,180,0,0.18) 0%, transparent 55%)" }} />
-
       <main className="relative z-10">
         <section className="pt-32 pb-16 px-6 max-w-5xl mx-auto">
-          <div className="inline-flex items-center gap-2 border border-white/10 rounded-full px-4 py-1.5 mb-8 w-fit">
-            <span className="w-2 h-2 rounded-full bg-[#a3e635]" />
-            <span className="text-xs text-white/50 font-plus-jakarta tracking-widest uppercase">{data.hero.badge}</span>
-          </div>
-
           <h1 className="font-extrabold font-plus-jakarta leading-[1.05] tracking-tight text-5xl sm:text-6xl md:text-7xl mb-4">
             <span style={{ color: "#a3e635" }}>{data.hero.heading1}</span>
             <br />

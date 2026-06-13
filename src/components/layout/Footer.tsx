@@ -1,7 +1,4 @@
 import { useContactModal } from "@/contexts/ContactModalContext"
-import footerData from "@/data/footer.json"
-
-const TEAM_AVATARS = footerData.avatars
 
 export const Footer = () => {
   const { openModal } = useContactModal()
@@ -18,13 +15,24 @@ export const Footer = () => {
           outline: "1px solid rgba(255,255,255,0.15)",
         }}
       >
-        {/* Lime-green radial gradient bg from top-left */}
+        {/* Background image */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: "url('/medias/footer-bg.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        />
+        {/* Lime-green radial gradient from top-left */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background: "radial-gradient(100% 100% at 0% 0%, rgb(194,247,0) 0%, rgb(0,0,0) 100%)",
             WebkitMask: "radial-gradient(125% 100% at 0% 0%, black 0%, rgba(0,0,0,0.22) 88%, transparent 100%)",
             mask: "radial-gradient(125% 100% at 0% 0%, black 0%, rgba(0,0,0,0.22) 88%, transparent 100%)",
+            opacity: 0.6,
           }}
         />
 
@@ -61,7 +69,7 @@ export const Footer = () => {
             <span style={{ color: "rgba(255,255,255,0.45)" }}>Planla</span>
           </h2>
 
-          <p className="text-white/60 text-base md:text-lg font-plus-jakarta text-center max-w-md leading-relaxed mb-8">
+          <p className="text-white text-base md:text-lg font-plus-jakarta text-center max-w-md leading-relaxed">
             Markanıza özel çözümler geliştirerek işletmenizi büyütmeye hazır mısınız?
           </p>
 
@@ -85,35 +93,6 @@ export const Footer = () => {
               </svg>
             </button>
           </div>
-
-          {/* Team avatars */}
-          <div className="flex mt-20">
-            {TEAM_AVATARS.map((url, i) => (
-              <div
-                key={i}
-                className="relative flex-shrink-0"
-                style={{
-                  width: 60,
-                  height: 60,
-                  marginLeft: i === 0 ? 0 : -20,
-                  zIndex: TEAM_AVATARS.length - i,
-                }}
-              >
-                <div
-                  className="w-full h-full rounded-full overflow-hidden"
-                  style={{ border: "3px solid white", boxShadow: "rgba(0,0,0,0.1) 0px 4px 12px" }}
-                >
-                  <img
-                    src={url}
-                    alt={`Ekip ${i + 1}`}
-                    className="w-full h-full object-cover"
-                    draggable={false}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-
           {/* Bottom bar: copyright + social icons */}
           <div
             className="w-full pt-5 flex items-center justify-between flex-wrap gap-2"

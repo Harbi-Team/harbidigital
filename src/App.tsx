@@ -3,8 +3,6 @@ import { Toaster as Sonner } from "@/components/ui/sonner"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom"
-import { CustomCursor } from "@/components/layout/CustomCursor"
-import { InteractiveBackground } from "@/components/layout/InteractiveBackground"
 import { ScrollToTop } from "@/components/layout/ScrollToTop"
 import { Loader } from "@/components/layout/Loader"
 import { ContactModal } from "@/components/layout/ContactModal"
@@ -19,7 +17,6 @@ import Services from "./pages/Services"
 import Team from "./pages/Team"
 import Contact from "./pages/Contact"
 import Products from "./pages/Products"
-import Katalog from "./pages/Katalog"
 import NotFound from "./pages/NotFound"
 
 const queryClient = new QueryClient()
@@ -32,8 +29,6 @@ const AppContent = () => {
   return (
     <>
       {/* <Loader /> */}
-      <InteractiveBackground />
-      <CustomCursor />
       <Toaster />
       <Sonner />
       {!isContactPage && <ContactModal isOpen={isOpen} onClose={closeModal} />}
@@ -45,7 +40,6 @@ const AppContent = () => {
         <Route path="/hizmetler" element={<Services />} />
         <Route path="/ekip" element={<Team />} />
         <Route path="/urunler" element={<Products />} />
-        <Route path="/katalog" element={<Katalog />} />
         <Route path="/iletisim" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

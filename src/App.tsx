@@ -18,6 +18,8 @@ import Work from "./pages/Work"
 import Services from "./pages/Services"
 import Team from "./pages/Team"
 import Contact from "./pages/Contact"
+import Products from "./pages/Products"
+import Katalog from "./pages/Katalog"
 import NotFound from "./pages/NotFound"
 
 const queryClient = new QueryClient()
@@ -25,11 +27,11 @@ const queryClient = new QueryClient()
 const AppContent = () => {
   const location = useLocation()
   const { isOpen, closeModal } = useContactModal()
-  const isContactPage = location.pathname === "/contact"
+  const isContactPage = location.pathname === "/iletisim"
 
   return (
     <>
-      <Loader />
+      {/* <Loader /> */}
       <InteractiveBackground />
       <CustomCursor />
       <Toaster />
@@ -38,11 +40,13 @@ const AppContent = () => {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Index />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/work" element={<Work />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/team" element={<Team />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/hakkimizda" element={<About />} />
+        <Route path="/isler" element={<Work />} />
+        <Route path="/hizmetler" element={<Services />} />
+        <Route path="/ekip" element={<Team />} />
+        <Route path="/urunler" element={<Products />} />
+        <Route path="/katalog" element={<Katalog />} />
+        <Route path="/iletisim" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

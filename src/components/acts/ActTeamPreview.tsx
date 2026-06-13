@@ -27,6 +27,12 @@ const TEAM = [
     image: "/team/baransel-inal.png",
     description: "CIO & Kurucu Ortak",
   },
+  {
+    name: "Rabia Töngel",
+    role: "Ürün Yöneticisi",
+    image: "/team/rabia-tongel.png",
+    description: "Ürün Yöneticisi",
+  },
 ]
 
 export const ActTeamPreview = () => {

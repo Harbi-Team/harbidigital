@@ -1,0 +1,26 @@
+{
+  "hero": {
+    "heading": "Başaranlar Arasına Katılın",
+    "subtitle": "Bir görüşme planlayın, dijital hayallerinizi nasıl hayata geçirebileceğimizi birlikte planlayalım.",
+    "social_proof": "250+ Başarılı İşletme"
+  },
+  "form": {
+    "fields": [
+      { "name": "name", "label": "İsim*", "type": "text", "required": true },
+      { "name": "email", "label": "Email*", "type": "email", "required": true },
+      { "name": "phone", "label": "XXX XXX XX XX", "type": "tel", "required": false },
+      { "name": "website", "label": "Web Sitesi*", "type": "url", "required": false },
+      { "name": "message", "label": "İşletmenizle İlgili Neleri Bilmeliyiz?", "type": "textarea", "required": false }
+    ],
+    "submit": "Gönder",
+    "success": "Mesajınız alındı! En kısa sürede dönüş yapacağız.",
+    "error": "Bir hata oluştu. Lütfen tekrar deneyin."
+  },
+  "avatars": [
+    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=faces",
+    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=faces",
+    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=faces",
+    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=faces",
+    "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=faces"
+  ]
+}

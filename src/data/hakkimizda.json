@@ -1,0 +1,27 @@
+{
+  "hero": {
+    "badge": "Hakkımızda",
+    "heading1": "Dijitalde",
+    "heading2": "iz bırakıyoruz.",
+    "subtitle": "Harbi Digital, veri odaklı stratejiler ve yaratıcı içeriklerle markaların dijital dünyada büyümesine öncülük eden bir performans ajansıdır."
+  },
+  "stats": [
+    { "value": "250+", "label": "Başarılı Proje" },
+    { "value": "5+", "label": "Yıl Deneyim" },
+    { "value": "%94", "label": "Müşteri Memnuniyeti" }
+  ],
+  "values": [
+    {
+      "title": "Şeffaflık",
+      "desc": "Her kampanyada anlık raporlama ile sizi sürecin tam ortasında tutuyoruz."
+    },
+    {
+      "title": "Sonuç Odaklılık",
+      "desc": "Beğeni değil, satış. Her stratejiyi ölçülebilir hedeflerle kuruyoruz."
+    },
+    {
+      "title": "Yenilikçilik",
+      "desc": "Algoritmalar değişir, biz de değişiriz. En güncel yaklaşımları her zaman uygularız."
+    }
+  ]
+}

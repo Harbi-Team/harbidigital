@@ -1,4 +1,3 @@
-import { Scene } from "@/components/three/Scene"
 import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
 import { FloatingContactButton } from "@/components/layout/FloatingContactButton"
@@ -11,14 +10,10 @@ import { Act6Plan } from "@/components/acts/Act6Plan"
 import { Act7Difference } from "@/components/acts/Act7Difference"
 import { Act8Impact } from "@/components/acts/Act8Impact"
 import { Act9Cost } from "@/components/acts/Act9Cost"
-import { Act10Final } from "@/components/acts/Act10Final"
 
 const Index = () => {
   return (
     <div className="relative">
-      {/* Global Three.js Background */}
-      <Scene />
-
       {/* Header */}
       <Header />
 
@@ -32,11 +27,10 @@ const Index = () => {
         <Act3Solution />
         <Act4Arsenal />
         <Act5Proof />
-        <Act6Plan />
         <Act7Difference />
+        <Act6Plan />
         <Act8Impact />
         <Act9Cost />
-        <Act10Final />
       </main>
 
       {/* Footer */}

@@ -9,30 +9,31 @@ export const SITE_CONFIG = {
     addressFull: "Sarıyer, İstanbul, Türkiye",
   },
   social: {
-    instagram: "https://instagram.com/harbiagency",
+    instagram: "https://www.instagram.com/harbidigitall/",
     linkedin: "",
     twitter: "",
     facebook: "",
     youtube: "",
   },
   business: {
-    companyName: "HARB! Dijital Dönüşüm Ajansı",
+    companyName: "HARB! Dijital",
     companyNameShort: "HARB!",
     taxOffice: "",
     taxNumber: "",
     mersis: "",
   },
   urls: {
-    website: "https://harbiagency.com",
+    website: "https://harbidigital.com",
     blog: "",
   },
 } as const
 export const NAV_LINKS = [
-  { href: "/about", label: "Hakkımızda" },
-  { href: "/work", label: "İşler" },
-  { href: "/services", label: "Hizmetler" },
-  { href: "/team", label: "Ekip" },
-  { href: "/contact", label: "İletişim" },
+  { href: "/hakkimizda", label: "Hakkımızda" },
+  { href: "/isler", label: "İşler" },
+  { href: "/urunler", label: "Ürünler" },
+  { href: "/hizmetler", label: "Hizmetler" },
+  { href: "/ekip", label: "Ekip" },
+  { href: "/iletisim", label: "İletişim" },
 ] as const
 
 export const SERVICES = [

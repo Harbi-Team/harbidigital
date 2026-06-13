@@ -1,92 +1,104 @@
 import { useEffect, useRef } from "react"
-import { gsap, ScrollTrigger } from "@/lib/gsap"
+import { gsap } from "@/lib/gsap"
+
+const LEFT_TAGS = [
+  { label: "İçerik Üretimi" },
+  { label: "İş Analizi" },
+  { label: "SEO Yönetimi" },
+]
+
+const RIGHT_TAGS = [
+  { label: "Reklam Yönetimi" },
+  { label: "Veri Analizi" },
+  { label: "E-Posta Pazarlama" },
+]
 
 export const Act2Problem = () => {
   const sectionRef = useRef<HTMLElement>(null)
-  const titleRef = useRef<HTMLDivElement>(null)
-  const leftTextRef = useRef<HTMLParagraphElement>(null)
-  const rightTextRef = useRef<HTMLParagraphElement>(null)
 
   useEffect(() => {
-    if (!sectionRef.current) return
-
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 85%",
-          end: "top 30%",
-          toggleActions: "play none none reverse",
-        },
-      })
-
-      tl.fromTo(
-        ".act2-label",
-        { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }
+      gsap.fromTo(
+        ".float-tag",
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        }
       )
-        .fromTo(
-          ".act2-title-line",
-          { opacity: 0, y: 60, rotateX: 45 },
-          {
-            opacity: 1,
-            y: 0,
-            rotateX: 0,
-            duration: 0.5,
-            stagger: 0.1,
-            ease: "power3.out",
+      gsap.fromTo(
+        ".act2-content",
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 75%",
+            toggleActions: "play none none reverse",
           },
-          "-=0.2"
-        )
-        .fromTo(
-          [leftTextRef.current, rightTextRef.current],
-          { opacity: 0, y: 30 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.4,
-            stagger: 0.15,
-            ease: "power3.out",
-          },
-          "-=0.3"
-        )
+        }
+      )
     }, sectionRef)
-
     return () => ctx.revert()
   }, [])
 
   return (
-    <section ref={sectionRef} className="act-section bg-transparent" id="act2">
-      <div className="container mx-auto px-6">
-        <div ref={titleRef} className="mb-16 perspective-1000">
-          <h2 className="act2-title-line text-display-large text-foreground block">
-            SESİNİZİ
-          </h2>
-          <h2 className="act2-title-line text-display-large text-foreground block">
-            DUYURAMIYORSANIZ,
-          </h2>
-          <h2 className="act2-title-line text-display-large text-primary block">
-            FISILDAMANIN
-          </h2>
-          <h2 className="act2-title-line text-display-large text-foreground block">
-            ANLAMI NE?
-          </h2>
-        </div>
+    <section
+      ref={sectionRef}
+      className="relative bg-white py-28 md:py-36 overflow-hidden"
+      id="act2"
+    >
+      {/* Left floating tags */}
+      <div className="absolute left-[3%] xl:left-[6%] top-0 bottom-0 hidden lg:flex flex-col justify-around py-20 pointer-events-none">
+        {LEFT_TAGS.map((tag, i) => (
+          <div
+            key={i}
+            className="float-tag flex items-center gap-2.5 bg-white border border-neutral-200 shadow-md rounded-full px-4 py-2.5"
+          >
+            <span className="w-2 h-2 rounded-full bg-[#a3e635] flex-shrink-0" />
+            <span className="text-sm font-semibold text-neutral-700 font-plus-jakarta whitespace-nowrap">
+              {tag.label}
+            </span>
+          </div>
+        ))}
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl">
-          <p
-            ref={leftTextRef}
-            className="text-muted-foreground text-lg leading-relaxed"
+      {/* Right floating tags */}
+      <div className="absolute right-[3%] xl:right-[6%] top-0 bottom-0 hidden lg:flex flex-col justify-around py-20 pointer-events-none">
+        {RIGHT_TAGS.map((tag, i) => (
+          <div
+            key={i}
+            className="float-tag flex items-center gap-2.5 bg-white border border-neutral-200 shadow-md rounded-full px-4 py-2.5"
           >
-            Sektörünüzde yüzlerce rakibiniz var. Hepsi aynı şeyi söylüyor, hepsi
-            aynı görünüyor. Sizin markanız şu an bir "Görünmez Adam".
+            <span className="w-2 h-2 rounded-full bg-[#a3e635] flex-shrink-0" />
+            <span className="text-sm font-semibold text-neutral-700 font-plus-jakarta whitespace-nowrap">
+              {tag.label}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      <div className="container mx-auto px-6 max-w-4xl">
+        <div className="act2-content grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+          <p className="text-neutral-900 text-xl md:text-2xl leading-relaxed font-plus-jakarta font-semibold">
+            Veri odaklı pazarlama sanatıyla mühendisliği harmanlayarak büyüme
+            odaklı çözümler sunuyoruz.
           </p>
-          <p
-            ref={rightTextRef}
-            className="text-muted-foreground text-lg leading-relaxed"
-          >
-            Harika bir ürününüz olabilir ama kimse sizi görmüyorsa, aslında
-            yoksunuz demektir.
+          <p className="text-neutral-500 text-base md:text-lg leading-relaxed font-plus-jakarta">
+            Tam da bu yüzden, büyüme bizim için bir motto değil, sürekli
+            yenilenen bir yol haritasıdır. İşletmenizin potansiyelini maksimuma
+            çıkarmak için her adımda yanınızdayız.
           </p>
         </div>
       </div>

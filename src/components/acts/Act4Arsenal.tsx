@@ -1,176 +1,230 @@
-import { useEffect, useRef } from "react"
-import { gsap, ScrollTrigger } from "@/lib/gsap"
-import { ACT_LABELS, SERVICES } from "@/lib/constants"
+import { useEffect, useRef, useState } from "react"
+import { gsap } from "@/lib/gsap"
+
+const SERVICES = [
+  {
+    id: "performance",
+    label: "Performans Pazarlama",
+    description:
+      "Meta, Google ve TikTok reklamlarını veri odaklı stratejilerle yöneterek maksimum ROAS elde ediyoruz.",
+    preview: {
+      title: "Performans Pazarlama",
+      metrics: [
+        { label: "ROAS", value: "+312%" },
+        { label: "CPA", value: "-45%" },
+        { label: "CTR", value: "+28%" },
+      ],
+    },
+  },
+  {
+    id: "market",
+    label: "Pazar Yönetimi",
+    description:
+      "Rakip analizi, pazar araştırması ve büyüme stratejileriyle markanızı doğru konumlandırıyoruz.",
+    preview: {
+      title: "Pazar Yönetimi",
+      metrics: [
+        { label: "Pazar Payı", value: "+18%" },
+        { label: "Yeni Müşteri", value: "+240" },
+        { label: "Retention", value: "87%" },
+      ],
+    },
+  },
+  {
+    id: "content",
+    label: "İçerik Stratejisi & Üretim",
+    description:
+      "Hedef kitlenizi dönüştüren içerikler üretiyoruz: video, görsel, metin ve interaktif formatlar.",
+    preview: {
+      title: "İçerik Üretimi",
+      metrics: [
+        { label: "Engagement", value: "+189%" },
+        { label: "Reach", value: "2.4M+" },
+        { label: "Dönüşüm", value: "+67%" },
+      ],
+    },
+  },
+  {
+    id: "conversion",
+    label: "Dönüşüm Optimizasyonu",
+    description:
+      "A/B testleri, landing page optimizasyonu ve kullanıcı deneyimi iyileştirmeleriyle satışları artırıyoruz.",
+    preview: {
+      title: "CRO",
+      metrics: [
+        { label: "Dönüşüm", value: "+94%" },
+        { label: "Bounce Rate", value: "-32%" },
+        { label: "Sepet", value: "+53%" },
+      ],
+    },
+  },
+]
 
 export const Act4Arsenal = () => {
   const sectionRef = useRef<HTMLElement>(null)
+  const [active, setActive] = useState(0)
 
   useEffect(() => {
-    if (!sectionRef.current) return
-
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 75%",
-          end: "top 30%",
-          toggleActions: "play none none reverse",
-        },
-      })
-
-      tl.fromTo(
-        ".act4-title",
-        { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }
-      )
-        .fromTo(
-          ".act4-subtitle",
-          { opacity: 0, y: 20 },
-          { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" },
-          "-=0.3"
-        )
-        .fromTo(
-          ".service-card",
-          { opacity: 0, y: 40, scale: 0.95 },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.4,
-            stagger: 0.1,
-            ease: "power3.out",
+      gsap.fromTo(
+        ".act4-left",
+        { opacity: 0, x: -40 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 75%",
+            toggleActions: "play none none reverse",
           },
-          "-=0.2"
-        )
+        }
+      )
+      gsap.fromTo(
+        ".act4-right",
+        { opacity: 0, x: 40 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 75%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      )
     }, sectionRef)
-
     return () => ctx.revert()
   }, [])
 
-  const getCardStyles = (index: number) => {
-    const styles = [
-      "bg-gradient-to-br from-zinc-900 to-black", // Web Development
-      "bg-gradient-to-br from-zinc-800 to-zinc-900", // Branding
-      "bg-gradient-to-br from-zinc-900 to-black", // Production
-      "bg-gradient-to-br from-zinc-800 to-zinc-900", // Strateji
-    ]
-    return styles[index]
-  }
+  const current = SERVICES[active]
 
   return (
     <section
       ref={sectionRef}
-      className="act-section bg-black py-24 relative"
+      className="bg-[#f8f8f8] py-20 md:py-28"
       id="act4"
     >
-      {/* Particle background */}
-      <div className="absolute inset-0 opacity-30">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 20% 50%, rgba(250, 204, 21, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(250, 204, 21, 0.1) 0%, transparent 50%)",
-          }}
-        ></div>
-        {[...Array(50)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-1 h-1 bg-yellow-500/30 rounded-full animate-pulse"
-            style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${2 + Math.random() * 3}s`,
-            }}
-          />
-        ))}
-      </div>
+      <div className="container mx-auto px-6 max-w-6xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Left */}
+          <div className="act4-left">
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="act4-title text-6xl md:text-7xl font-bold text-white mb-4 tracking-wider">
-            ARAÇLAR
-          </h2>
-          <p className="act4-subtitle text-yellow-500 text-sm tracking-widest">
-            SEÇİMİNİZİ YAPIN
-          </p>
-        </div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 font-plus-jakarta tracking-tight leading-[1.1] mb-5">
+              Yolculuğun her anında yanınızda
+            </h2>
+            <p className="text-neutral-500 text-base md:text-lg leading-relaxed font-plus-jakarta mb-10">
+              Büyümek için doğru strateji, yaratıcı içerik ve veri analitiğini
+              bir araya getiriyoruz.
+            </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {SERVICES.map((service, index) => (
-            <div
-              key={service.id}
-              className={`service-card group relative overflow-hidden rounded-lg ${getCardStyles(
-                index
-              )} p-12 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/20 border border-yellow-500/20 hover:border-yellow-500/40`}
-            >
-              {/* Animated circle icon */}
-              <div className="absolute top-8 right-8 w-16 h-16 border-2 border-yellow-500/30 rounded-full flex items-center justify-center group-hover:border-yellow-500 transition-all duration-500">
-                <div className="w-2 h-2 bg-yellow-500 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
-              </div>
+            {/* Service tabs */}
+            <div className="space-y-2">
+              {SERVICES.map((service, i) => (
+                <button
+                  key={service.id}
+                  onClick={() => setActive(i)}
+                  className={`w-full text-left px-5 py-4 rounded-xl transition-all duration-200 flex items-center gap-3 group ${active === i
+                      ? "bg-white shadow-md border border-neutral-200"
+                      : "hover:bg-white/60"
+                    }`}
+                >
+                  <span
+                    className={`w-2 h-2 rounded-full flex-shrink-0 transition-colors ${active === i ? "bg-[#a3e635]" : "bg-neutral-300 group-hover:bg-[#a3e635]/60"
+                      }`}
+                  />
+                  <div>
+                    <span
+                      className={`font-plus-jakarta font-semibold text-sm block transition-colors ${active === i ? "text-neutral-900" : "text-neutral-500"
+                        }`}
+                    >
+                      {service.label}
+                    </span>
+                    {active === i && (
+                      <p className="text-neutral-500 text-xs mt-1 font-plus-jakarta leading-relaxed">
+                        {service.description}
+                      </p>
+                    )}
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
 
-              {/* Decorative lines */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-yellow-500/50 to-transparent"></div>
-
-              {/* Content */}
-              <div className="relative z-10 h-full flex flex-col justify-end min-h-[280px]">
-                {/* Icon/Visual placeholder - you can add custom icons here */}
-                <div className="mb-8 opacity-20 group-hover:opacity-40 transition-opacity duration-500">
-                  {index === 0 && (
-                    <svg
-                      className="w-24 h-24 text-yellow-500"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 3H4c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zM4 19V7h16l.002 12H4z" />
-                      <path d="M9.293 9.293 5.586 13l3.707 3.707 1.414-1.414L8.414 13l2.293-2.293zm5.414 0-1.414 1.414L15.586 13l-2.293 2.293 1.414 1.414L18.414 13z" />
-                    </svg>
-                  )}
-                  {index === 1 && (
-                    <svg
-                      className="w-24 h-24 text-yellow-500"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z" />
-                      <path d="M13 7h-2v6h6v-2h-4z" />
-                    </svg>
-                  )}
-                  {index === 2 && (
-                    <svg
-                      className="w-24 h-24 text-yellow-500"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M18 7c0-1.103-.897-2-2-2H4c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-3.333L22 17V7l-4 3.333V7z" />
-                    </svg>
-                  )}
-                  {index === 3 && (
-                    <svg
-                      className="w-24 h-24 text-yellow-500"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M3 3h18v2H3zm0 16h18v2H3zm2.707-7.707L7.414 13 5.707 14.707 4.293 13.293zm9.586 0 1.707 1.707-1.707 1.707-1.414-1.414zM12 10l-4 4h8z" />
-                    </svg>
-                  )}
+          {/* Right - Preview card */}
+          <div className="act4-right">
+            <div className="relative">
+              {/* Main preview card */}
+              <div className="bg-white rounded-2xl shadow-xl border border-neutral-100 p-8">
+                <div className="flex items-center gap-2 mb-6">
+                  <div className="w-2 h-2 rounded-full bg-[#a3e635]" />
+                  <span className="text-xs font-bold text-neutral-400 tracking-[0.2em] uppercase font-plus-jakarta">
+                    {current.preview.title}
+                  </span>
                 </div>
 
-                <h3 className="text-3xl md:text-4xl font-bold mb-4 text-white tracking-wide">
-                  {service.title}
-                </h3>
-                <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors duration-500">
-                  {service.description}
-                </p>
+                <div className="grid grid-cols-3 gap-4 mb-6">
+                  {current.preview.metrics.map((metric, i) => (
+                    <div
+                      key={i}
+                      className="bg-[#f8f8f8] rounded-xl p-4 text-center"
+                    >
+                      <div className="text-2xl font-bold text-neutral-900 font-plus-jakarta">
+                        {metric.value}
+                      </div>
+                      <div className="text-xs text-neutral-500 font-plus-jakarta mt-1">
+                        {metric.label}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Progress bars */}
+                <div className="space-y-3">
+                  {["Strateji", "Uygulama", "Optimizasyon"].map((item, i) => (
+                    <div key={item}>
+                      <div className="flex justify-between mb-1">
+                        <span className="text-xs font-medium text-neutral-600 font-plus-jakarta">
+                          {item}
+                        </span>
+                        <span className="text-xs font-bold text-neutral-900 font-plus-jakarta">
+                          {[92, 88, 96][i]}%
+                        </span>
+                      </div>
+                      <div className="h-1.5 bg-neutral-100 rounded-full overflow-hidden">
+                        <div
+                          className="h-full bg-[#a3e635] rounded-full transition-all duration-700"
+                          style={{ width: `${[92, 88, 96][i]}%` }}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              {/* Hover glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/0 via-yellow-500/0 to-yellow-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-              {/* Corner accent */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-yellow-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              {/* Floating accent card */}
+              <div className="absolute -bottom-5 -right-5 bg-[#111111] rounded-xl p-4 shadow-lg">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-[#a3e635] flex items-center justify-center">
+                    <svg viewBox="0 0 24 24" className="w-4 h-4 fill-black">
+                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-white text-xs font-bold font-plus-jakarta">
+                      Sonuç Garantisi
+                    </p>
+                    <p className="text-white/50 text-xs font-plus-jakarta">
+                      Şeffaf raporlama
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>

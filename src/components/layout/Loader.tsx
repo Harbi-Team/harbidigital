@@ -25,7 +25,7 @@ export const Loader = () => {
       <div className="animate-pulse">
         <img
           src="/harbi/harbi_logo.png"
-          alt="HARBİ"
+          alt="HARB!"
           className="w-48 h-48 md:w-64 md:h-64 object-contain"
         />
       </div>
@@ -33,7 +33,7 @@ export const Loader = () => {
       {/* Text */}
       <div className="mt-8 text-center">
         <h2 className="text-2xl md:text-4xl font-bold text-white tracking-wider">
-          HARBİ SUNAR...
+          HARB! SUNAR...
         </h2>
       </div>
 

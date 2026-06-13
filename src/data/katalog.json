@@ -1,0 +1,554 @@
+{
+  "categories": [
+    {
+      "id": "yazilim",
+      "label": "Yazılım Hizmetleri",
+      "services": [
+        {
+          "name": "Kurumsal Web Sitesi",
+          "priority": "oncelikli",
+          "desc": "Kurumsal kimliğinize uygun, güven veren ve dönüşüm odaklı web sitesi. Profesyonel tasarım, hızlı yüklenme, güvenlik ve CMS entegrasyonu sunulur.",
+          "target": "KOBİ'ler, kurumsal firmalar, start-uplar",
+          "result": "Dönüşüm oranlarını %200–400 artırabilir; $1 yatırım $100 geri dönüş.",
+          "delivery": "3–5 hafta",
+          "roi": "6–12 ay",
+          "story": "İnşaat sektöründe bir müşteri, kurumsal web sitesini yeniledikten sonra dönüşüm oranını %300 artırdı ve reklam maliyetini düşürdü.",
+          "crossSell": ["UX Tasarım", "SEO", "Meta/Google Ads", "CMS Entegrasyonu"]
+        },
+        {
+          "name": "Landing Page Tasarımı",
+          "priority": "oncelikli",
+          "desc": "Reklam kampanyaları ve ürün lansmanları için tek sayfalık, yüksek dönüşüm oranına sahip landing page'ler. Hızlı yüklenme, net mesaj ve formlar.",
+          "target": "Dijital reklam harcaması yapan ajans müşterileri, start-uplar, etkinlik veya webinar düzenleyen firmalar",
+          "result": "Dönüşüm oranı %200'e kadar artabilir; reklam bütçesinin geri dönüşünü yükseltir.",
+          "delivery": "1–2 hafta",
+          "roi": "3–6 ay",
+          "story": "Teknoloji start-upu için hazırlanan landing page, meta reklamları ile eşleştirildiğinde lead başına maliyeti %40 düşürdü.",
+          "crossSell": ["Meta/Google Ads", "A/B Testleri", "CRM Entegrasyonu", "E-posta Otomasyonu"]
+        },
+        {
+          "name": "Responsive Mobil Uyum",
+          "priority": "oncelikli",
+          "desc": "Web sitelerini tüm cihazlara (mobil, tablet, masaüstü) sorunsuz çalışacak şekilde responsive hâle getiriyoruz.",
+          "target": "Mevcut sitesi mobil uyumlu olmayan tüm işletmeler; e-ticaret siteleri ve SaaS platformları",
+          "result": "Mobil uyumlu tasarım kullanıcıların %53'ünün terk etmesini önler; dönüşümlerde %15–30 artış.",
+          "delivery": "1–3 hafta",
+          "roi": "3–6 ay",
+          "story": "Bir perakende sitesi, responsive tasarım sonrası mobil trafik gelirini %50 artırdı ve mobil satışlar iki katına çıktı.",
+          "crossSell": ["Hız Optimizasyonu", "UX Tasarım", "Mobil Uygulama", "SEO"]
+        },
+        {
+          "name": "UX Odaklı Tasarım",
+          "priority": "oncelikli",
+          "desc": "Kullanıcı araştırması ve testlerine dayalı olarak web veya mobil deneyimleri yeniden tasarlıyoruz.",
+          "target": "Dönüşümleri düşük olan ya da kullanıcı şikâyeti yaşayan web/mobil ürün sahipleri; SaaS şirketleri, e-ticaret siteleri",
+          "result": "İyi bir UX tasarımı dönüşüm oranını %200–400 artırabilir; 1$ yatırım 100$ getiri sağlıyor.",
+          "delivery": "4–6 hafta",
+          "roi": "6–12 ay",
+          "story": "SaaS müşterisinin kullanıcı panelinde yapılan UX revizyonu, müşteri memnuniyetini %30 artırdı ve abonelik iptallerini %20 azalttı.",
+          "crossSell": ["Kullanıcı Araştırması", "Heatmap Analizi", "A/B Testleri", "Mobil App Tasarımı"]
+        },
+        {
+          "name": "CMS Entegrasyonu",
+          "priority": "oncelikli",
+          "desc": "WordPress gibi içerik yönetim sistemlerinin kurulumu ve özelleştirilmesi. Kolay içerik girişi, SEO dostu altyapı, çok dilli destek.",
+          "target": "İçerik yayınlayan markalar, blog sahipleri, landing page'lerini sürekli güncellemek isteyen işletmeler",
+          "result": "Teknik bilgi olmadan içerik üretimi; düzenli içerik SEO ve organik trafiği güçlendirir.",
+          "delivery": "1–2 hafta",
+          "roi": "6–12 ay",
+          "story": "Bir B2B blog sitesi, CMS entegrasyonu sonrası içerik sayısını 3 kat artırdı; 8 ayda organik trafiği 4 katına çıkardı.",
+          "crossSell": ["Teknik SEO", "Blog İçerik Stratejisi", "E-posta Pazarlama", "Performans Hosting"]
+        },
+        {
+          "name": "Hız Optimizasyonu",
+          "priority": "oncelikli",
+          "desc": "Web sitelerinin kod ve sunucu optimizasyonu ile yüklenme süresini kısaltıyoruz. CDN entegrasyonu, resim sıkıştırma, cache yönetimi.",
+          "target": "Yüklenme süresi 3 saniyenin üzerinde olan web siteleri; e-ticaret ve medya siteleri",
+          "result": "1 saniyelik gecikme dönüşümlerde %7 azalmaya neden olur. Hız optimizasyonu ile terk etme oranları düşer.",
+          "delivery": "1–2 hafta",
+          "roi": "3–6 ay",
+          "story": "E-ticaret sitesinde hız optimizasyonu sayesinde sepet terk oranı %15 azaldı ve ortalama sipariş değeri %10 arttı.",
+          "crossSell": ["Sunucu Bakım", "SEO", "UX Tasarımı", "CDN"]
+        },
+        {
+          "name": "SaaS Website Tasarımı",
+          "priority": "ek",
+          "desc": "Yazılım ve SaaS şirketlerine modern, ürün odaklı web sitesi tasarımı; özelleştirilmiş onboarding akışları ve pricing sayfaları.",
+          "target": "SaaS start-upları, teknoloji firmaları, subscription modeli ile çalışan şirketler",
+          "result": "Ürün demo videolarıyla kullanıcıların %85'inin satın alma kararını olumlu etkiler.",
+          "delivery": "4–6 hafta",
+          "roi": "6–9 ay",
+          "story": "Bir SaaS firması, yeni web sitesi ve ürün demosu videosu ile freemium kullanıcılarının %30'unu ücretli pakete dönüştürdü.",
+          "crossSell": ["SaaS Platform Geliştirme", "CRM Sistemleri", "UI/UX Danışmanlığı", "Video Prodüksiyon"]
+        },
+        {
+          "name": "Çok Dilli Website",
+          "priority": "ek",
+          "desc": "Tek sitede birden fazla dil seçeneği sunan global web altyapısı; çeviri yönetim paneli ve SEO dostu dil yapısı.",
+          "target": "İhracat yapan firmalar, turizm şirketleri, global pazara açılan markalar",
+          "result": "Uluslararası erişim artar; farklı ülke Google sonuçlarında görünürlük sağlanır.",
+          "delivery": "2–4 hafta",
+          "roi": "6–12 ay",
+          "story": "İki dilde siteye sahip olan bir lojistik firması, Almanya'dan aldığı siparişleri %70 artırdı.",
+          "crossSell": ["Uluslararası SEO", "Yerel Reklam Kampanyaları", "CRM Entegrasyonu"]
+        },
+        {
+          "name": "Scroll Animasyonları",
+          "priority": "ek",
+          "desc": "Kullanıcı sayfayı kaydırdıkça dinamik animasyon ve mikro etkileşimlerle premium web deneyimi.",
+          "target": "Kreatif markalar, lüks segment şirketler, portfolyo ve ürün tanıtım sitesi hazırlayan ajanslar",
+          "result": "Animasyon kullanılan sitelerde ziyaretçilerin %82'si daha uzun süre kalıyor; bounce rate düşer.",
+          "delivery": "3–5 hafta",
+          "roi": "6–12 ay",
+          "story": "Moda markası için hazırlanan scroll animasyonlu site, bounce rate'i %25 azalttı ve satışa dönüşleri %20 artırdı.",
+          "crossSell": ["Motion Graphics", "UX Tasarım", "Sosyal Medya Videoları"]
+        }
+      ]
+    },
+    {
+      "id": "uiux",
+      "label": "UI & UX Tasarım",
+      "services": [
+        {
+          "name": "Kullanıcı Deneyimi Araştırması",
+          "priority": "oncelikli",
+          "desc": "Hedef kitle analizi, persona çalışması, kullanıcı yolculuğu haritaları, anket ve kullanıcı testleri.",
+          "target": "Yeni bir ürün çıkaracak firmalar, mevcut platformunda kullanıcı şikâyetleri veya düşük dönüşüm oranı olan markalar",
+          "result": "UX için harcanan 1$, 100$ getiri sağlayabiliyor; dönüşüm ve kullanıcı memnuniyeti yükselir.",
+          "delivery": "2–4 hafta",
+          "roi": "6–12 ay",
+          "story": "Sağlık sektöründe bir uygulamada yapılan kullanıcı araştırması sonucunda hasta randevu süreci %50 hızlandı.",
+          "crossSell": ["Wireframe", "UX Audit", "Heatmap Analizi", "Mikro Etkileşimler"]
+        },
+        {
+          "name": "Wireframe Oluşturma",
+          "priority": "oncelikli",
+          "desc": "Web veya mobil projelerin temel iskeletini çizen wireframe'ler; kullanıcı akışlarını netleştirme.",
+          "target": "Yazılım geliştiriciler, ürün yöneticileri, yatırım arayan start-uplar",
+          "result": "Geliştirme sürecinde %20–30 daha az revizyon ve maliyet tasarrufu sağlar.",
+          "delivery": "1–2 hafta",
+          "roi": "Hemen (geliştirme maliyeti tasarrufu)",
+          "story": "Mobil uygulama wireframe'leri ile müşterinin geliştirme süresi 2 hafta azaldı; kodlama maliyeti %15 düştü.",
+          "crossSell": ["Mobil App Tasarımı", "Kullanıcı Testleri", "MVP Geliştirme"]
+        },
+        {
+          "name": "Mobil App Arayüzü",
+          "priority": "oncelikli",
+          "desc": "iOS/Android uygulamaları için kullanıcı dostu ve marka tutarlılığı yüksek ekran tasarımları.",
+          "target": "Mobil uygulama geliştirecek start-uplar, e-ticaret uygulamaları, fintech ve SaaS firmaları",
+          "result": "Mobil uygulamalarda web'e göre 7 kat fazla vakit geçiriliyor; iyi tasarım bağlılığı artırır.",
+          "delivery": "3–5 hafta",
+          "roi": "6–12 ay",
+          "story": "Online eğitim uygulamasının arayüzünde yapılan tasarım, günlük aktif kullanıcı sayısını %30 artırdı.",
+          "crossSell": ["Mobil Uygulama Geliştirme", "Push Notification", "App Store Optimizasyonu"]
+        },
+        {
+          "name": "Dashboard Tasarımı",
+          "priority": "oncelikli",
+          "desc": "İşletmelerin verilerini takip edebileceği, bilgi akışını görselleştiren yönetim panelleri. Veri görselleştirme, filtreleme, kullanıcı yetkilendirme.",
+          "target": "CRM sistemleri, ERP yazılımları, SaaS yönetici panelleri, satış ve finans ekipleri",
+          "result": "Karar verme hızını artırır; operasyonel verimlilik %20–30 artar.",
+          "delivery": "4–6 hafta",
+          "roi": "6–9 ay",
+          "story": "Bir CRM paneli tasarımı sayesinde satış ekibi pipeline durumunu anlık izleyerek kapanma oranını %15 artırdı.",
+          "crossSell": ["Özel Yazılım Geliştirme", "Veri Görselleştirme", "İş Akışı Otomasyonu"]
+        },
+        {
+          "name": "Design System",
+          "priority": "oncelikli",
+          "desc": "Bir markanın tüm tasarım bileşenlerini (renk paleti, tipografi, ikon seti, bileşen kütüphanesi) kapsayan kurumsal tasarım sistemi.",
+          "target": "Orta ve büyük ölçekli şirketler, uzun vadede tutarlı tasarım üreten markalar, yazılım ekipleri",
+          "result": "Tasarım ve geliştirme süreçlerinde %30–40 zaman tasarrufu; tutarlı marka algısı.",
+          "delivery": "4–8 hafta",
+          "roi": "12+ ay (uzun vadeli tasarruf)",
+          "story": "Uluslararası bir SaaS firmasına hazırlanan design system, 6 ayda arayüz üretim süresini %35 kısalttı ve UX hatalarını %40 azalttı.",
+          "crossSell": ["UX Audit", "Bileşen Kütüphane Eğitimi", "Yazılım Entegrasyonu"]
+        },
+        {
+          "name": "UX Audit",
+          "priority": "oncelikli",
+          "desc": "Mevcut web veya mobil ürünün kullanıcı deneyimi açısından değerlendirilmesi. Heuristik inceleme, kullanılabilirlik testleri, raporlama ve yol haritası.",
+          "target": "Düşük dönüşüm oranına sahip siteler, kullanıcı şikâyeti alan uygulamalar",
+          "result": "İyi UX'nin satışları %200–400 artırabileceği verilerle desteklenir; destek talepleri azalır.",
+          "delivery": "2–3 hafta",
+          "roi": "3–6 ay",
+          "story": "Bir bankanın mobil uygulamasına yapılan UX audit sonucu 1 ayda müşteri şikâyetleri %30 azaldı ve uygulama puanı 4,1'den 4,6'ya yükseldi.",
+          "crossSell": ["Kullanıcı Araştırması", "Mobil App Arayüz Tasarımı", "A/B Testleri", "Hız Optimizasyonu"]
+        },
+        {
+          "name": "Mikro Etkileşimler",
+          "priority": "ek",
+          "desc": "Kullanıcı deneyimini zenginleştiren küçük animasyonlar, hover efektleri, yükleme durumları.",
+          "target": "Web ve mobil uygulamalarda kullanıcı etkileşimini artırmak isteyen tüm işletmeler",
+          "result": "Kullanıcılara süreçte geri bildirim sağlar; marka algısı ve dönüşüm artar.",
+          "delivery": "1–2 hafta",
+          "roi": "1–3 ay",
+          "story": "E-ticaret sitesine eklenen 'sepete ekle' animasyonu ve ilerleme çubuğu, sepet terk oranını %8 düşürdü.",
+          "crossSell": ["Scroll Animasyonları", "Motion Graphics", "UX Audit", "A/B Testleri"]
+        },
+        {
+          "name": "Accessibility",
+          "priority": "ek",
+          "desc": "Engelli kullanıcılar için erişilebilir tasarım standartlarına uyum (WCAG), renk körü modları, klavye navigasyonu, ekran okuyucu uyumluluğu.",
+          "target": "Kamu kurumları, eğitim kurumları, geniş kullanıcı kitlesi olan markalar",
+          "result": "Yasal riskleri azaltır; satış potansiyelini %10–20 artırır; sosyal sorumluluk imajı sağlar.",
+          "delivery": "2–4 hafta",
+          "roi": "6–12 ay",
+          "story": "Üniversite web sitesinde erişilebilirlik çalışması, engelli öğrencilerin memnuniyetini artırdı ve kurum ceza almaktan kurtuldu.",
+          "crossSell": ["Teknik SEO", "Kullanıcı Araştırması", "Web Geliştirme", "Heatmap Analizi"]
+        },
+        {
+          "name": "Heatmap Analizleri",
+          "priority": "ek",
+          "desc": "Kullanıcıların web sitesi üzerinde nereye tıkladığını, ne kadar süre kaldığını gösteren analizler; UX iyileştirme önerileri.",
+          "target": "Çevrimiçi satış yapan siteler, dönüşümü artırmak isteyen pazarlama departmanları",
+          "result": "Kullanıcı davranışlarını görselleştirmek, A/B testleri için temel oluşturur; dönüşümlerde %5–15 artış.",
+          "delivery": "1–2 hafta (veri toplama + raporlama)",
+          "roi": "1–3 ay",
+          "story": "Online kurs sitesinde heatmap analizi, kullanıcıların ödeme adımında zorlandığını ortaya çıkardı; form düzenlemesi sonrası satışlar %12 arttı.",
+          "crossSell": ["UX Audit", "Mikro Etkileşimler", "A/B Testleri", "CRO Danışmanlığı"]
+        }
+      ]
+    },
+    {
+      "id": "eticaret",
+      "label": "E-Ticaret Sistemleri",
+      "services": [
+        {
+          "name": "Shopify Kurulumu",
+          "priority": "oncelikli",
+          "desc": "Shopify altyapısıyla profesyonel e-ticaret mağazası kurulumu, tema özelleştirmesi, ürün ve koleksiyon yönetimi, ödeme/kargo entegrasyonu.",
+          "target": "Yeni e-ticaret girişimleri, hızlıca satışa başlamak isteyen KOBİ'ler, yurtdışına satış yapan markalar",
+          "result": "Barındırma, güvenlik, ürün yönetimi, ödeme ve SEO araçlarını tek pakette sunar.",
+          "delivery": "2–4 hafta",
+          "roi": "3–6 ay",
+          "story": "Moda markası Shopify ile online mağaza açarak ilk 6 ayda 10.000 sipariş barajını aştı ve pazar yeri komisyonlarından tasarruf etti.",
+          "crossSell": ["Shopify SEO", "Meta/Google Ads", "Sosyal Medya", "Stok Yönetimi"]
+        },
+        {
+          "name": "WooCommerce Kurulumu",
+          "priority": "oncelikli",
+          "desc": "WordPress tabanlı WooCommerce e-ticaret sistemi kurulumu; tema ve eklenti uyarlaması, ödeme/kargo entegrasyonu.",
+          "target": "WordPress altyapısına aşina müşteriler, içerik sitesi olan işletmeler",
+          "result": "Özelleştirme esnekliği sunar; ürün, stok ve kampanya yönetiminde tam kontrol.",
+          "delivery": "3–5 hafta",
+          "roi": "6–9 ay",
+          "story": "Yerel üreticinin blog'u üzerine WooCommerce ekleyerek organik trafiği mağazaya yönlendirdik; 1 yılda satış gelirleri %150 arttı.",
+          "crossSell": ["SEO", "İçerik Stratejisi", "Teknik Destek", "Pazaryeri Entegrasyonu"]
+        },
+        {
+          "name": "Pazaryeri Entegrasyonu",
+          "priority": "oncelikli",
+          "desc": "Trendyol, Hepsiburada, Amazon vb. pazaryerlerine ürün entegrasyonu; stok ve sipariş senkronizasyonu, fiyat ve kampanya yönetimi.",
+          "target": "Online satış hacmini artırmak ve farklı kanallarda yer almak isteyen e-ticaret şirketleri",
+          "result": "Tek panelden tüm platformları yönetme; pazar yeri satışları toplam gelirin %30–60'ını oluşturabilir.",
+          "delivery": "2–3 hafta",
+          "roi": "3–6 ay",
+          "story": "Elektronik markası pazaryerine entegrasyon sayesinde 3 ayda günlük sipariş sayısını 10'dan 100'e çıkardı.",
+          "crossSell": ["Stok Yönetimi", "Kargo Entegrasyonu", "CRM Entegrasyonu", "Sosyal Medya Reklamları"]
+        },
+        {
+          "name": "Ödeme Sistemi Entegrasyonu",
+          "priority": "oncelikli",
+          "desc": "iyzico, Stripe, PayTR gibi ödeme altyapılarının kurulumu; PCI DSS uyumlu güvenlik; taksit ve abonelik yapılandırması.",
+          "target": "Online satış yapan işletmeler, hizmet ya da abonelik satan platformlar",
+          "result": "Birden fazla ödeme yöntemi sunmak dönüşüm oranını artırır; ortalama satışları %10–20 artırır.",
+          "delivery": "1–2 hafta",
+          "roi": "1–3 ay",
+          "story": "Stripe entegrasyonu ile abonelik sistemine geçen uygulama, 2 ayda müşteri sayısını %25 artırdı ve churn %10 düştü.",
+          "crossSell": ["Sadakat Programları", "Abonelik Yönetimi", "ERP/CRM", "Mobil Ödeme"]
+        },
+        {
+          "name": "Kargo Entegrasyonları",
+          "priority": "oncelikli",
+          "desc": "Sürat, Yurtiçi, Aras vb. kargo şirketleriyle otomatik entegrasyon; sipariş yönetimi, takip kodu oluşturma ve e-fatura.",
+          "target": "E-ticaret siteleri, pazaryeri satıcıları, lojistik operasyonu olan firmalar",
+          "result": "Sipariş süreçlerini otomatikleştirerek hata oranını ve zaman kaybını azaltır; müşteri memnuniyeti artar.",
+          "delivery": "1–2 hafta",
+          "roi": "2–4 ay",
+          "story": "Mağaza entegrasyonuyla sipariş başı işlem süresi 5 dakikadan 1 dakikaya düştü; geri dönüşümlü kargolar %50 azaldı.",
+          "crossSell": ["Stok Yönetimi", "ERP/CRM", "Otomatik E-posta/SMS Bildirimleri"]
+        },
+        {
+          "name": "Stok Yönetimi",
+          "priority": "oncelikli",
+          "desc": "Ürün stoklarının otomatik takip sistemi; minimum stok seviyesi, alım siparişi oluşturma, raporlama.",
+          "target": "Çok ürünlü e-ticaret mağazaları, depo operasyonu yapan markalar",
+          "result": "Stok dışı kalma riskini azaltır; stok maliyetleri %20 düşer.",
+          "delivery": "2–3 hafta",
+          "roi": "3–6 ay",
+          "story": "Elektronik mağazası, stok yönetim sistemi ile stok dışı kalma oranını %80 azalttı ve ciroyu %25 artırdı.",
+          "crossSell": ["ERP Entegrasyonu", "Pazaryeri Entegrasyonu", "Kampanya Sistemleri"]
+        },
+        {
+          "name": "Sadakat Programları",
+          "priority": "oncelikli",
+          "desc": "Müşteri puan programı, üyelik seviyesi, tekrar satın alımlara özel kupon ve ödül sistemleri.",
+          "target": "E-ticaret siteleri, restoran ve kafeler, abonelik tabanlı uygulamalar",
+          "result": "Müşteri bağlılığını artırır; müşteri başı harcamada %15–30 artış sağlar.",
+          "delivery": "3–5 hafta",
+          "roi": "3–6 ay",
+          "story": "Online market, sadakat programı ile 6 ayda tekrar satın alma oranını %35 artırdı; ortalama sepet tutarı %20 yükseldi.",
+          "crossSell": ["CRM Entegrasyonu", "Mobil Uygulama", "Remarketing Kampanyaları"]
+        },
+        {
+          "name": "Kampanya Sistemleri",
+          "priority": "oncelikli",
+          "desc": "İndirim, kupon ve promosyon altyapısı; otomatik kampanya başlatma, zamanlama ve kişiselleştirme.",
+          "target": "Sezonluk ve özel gün kampanyaları yapacak e-ticaret firmaları",
+          "result": "Doğru kurgulanmış kampanyalar satışları kısa sürede artırır; A/B testleriyle en verimli kampanya bulunur.",
+          "delivery": "2–3 hafta",
+          "roi": "1–2 ay",
+          "story": "E-ticaret firması, Black Friday kampanyalarını kişiselleştirerek önceki yıla göre satışları %80 artırdı.",
+          "crossSell": ["Email Marketing", "Sadakat Programı", "Remarketing", "Stok Yönetimi"]
+        },
+        {
+          "name": "Dropshipping Sistemleri",
+          "priority": "ek",
+          "desc": "Tedarikçiden doğrudan müşteriye satış modeli için dropshipping altyapısı; tedarikçi entegrasyonu, fiyat ve stok senkronizasyonu.",
+          "target": "Ürün stoksuz satmak isteyen girişimciler; katalog genişletmek isteyen e-ticaret firmaları",
+          "result": "Stok maliyeti olmadığı için risk düşer; hızlı ürün ekleme ile satış hacmi artar.",
+          "delivery": "2–4 hafta",
+          "roi": "3–6 ay",
+          "story": "Bir girişimci, dropshipping sistemi ile 100'den fazla ürün satarak stoksuz modelde ilk ayında 20.000 TL ciro yaptı.",
+          "crossSell": ["Pazaryeri Entegrasyonu", "Ödeme Sistemi", "SEO", "Reklam Hizmetleri"]
+        },
+        {
+          "name": "Marketplace Altyapısı",
+          "priority": "ek",
+          "desc": "Çok satıcılı pazaryeri altyapısı; satıcı yönetimi, komisyon sistemleri, ödeme dağılımları, kargo yönetimi.",
+          "target": "Girişimci pazar yeri kurmak isteyen şirketler, niş sektör platformları",
+          "result": "Komisyon gelirleri sayesinde sürdürülebilir gelir modeli; marka algısı güçlenir.",
+          "delivery": "8–12 hafta",
+          "roi": "6–12 ay",
+          "story": "Bir niche marketplace, 1 yıl içinde 500'den fazla satıcıyı platforma çekerek 3 milyon TL satış hacmine ulaştı.",
+          "crossSell": ["CRM Entegrasyonu", "Ödeme Sistemi", "Sadakat Programı", "Dijital Pazarlama"]
+        },
+        {
+          "name": "ERP/CRM Entegrasyonu",
+          "priority": "ek",
+          "desc": "Muhasebe, envanter veya müşteri yönetim sistemleri (SAP, Logo, Netsis, Zoho CRM) ile e-ticaret platformunun senkronizasyonu.",
+          "target": "Orta ve büyük ölçekli e-ticaret operasyonları, çok kanallı satış yapan firmalar",
+          "result": "CRM kullanan firmalar %29 daha yüksek gelir elde ediyor ve %34 daha yüksek satış verimliliğine sahip.",
+          "delivery": "4–8 hafta",
+          "roi": "6–12 ay",
+          "story": "E-ticaret firması, CRM entegrasyonu sonrası müşteri başı sipariş sayısını %25 artırdı ve stok hatalarını %90 azalttı.",
+          "crossSell": ["Sadakat Programları", "Kampanya Sistemleri", "ERP Danışmanlığı", "Müşteri Analiz Raporları"]
+        }
+      ]
+    },
+    {
+      "id": "ozel-yazilim",
+      "label": "Özel Yazılım Geliştirme",
+      "services": [
+        {
+          "name": "CRM Sistemleri",
+          "priority": "oncelikli",
+          "desc": "İşletmelere özel müşteri ilişkileri yönetim yazılımı; satış pipeline'ı, lead yönetimi, görev ve otomasyon modülleri.",
+          "target": "Satış ekipleri olan orta ve büyük ölçekli şirketler, B2B firmaları, müşteri takibi yapmak isteyen ajans ve danışmanlık şirketleri",
+          "result": "CRM'den her 1$ için ortalama 8.71$ geri dönüş; gelir %29 artıyor, satış verimliliği %34 yükseliyor.",
+          "delivery": "6–12 hafta",
+          "roi": "6–12 ay",
+          "story": "30 kişilik satış ekibi olan şirket, CRM kullanmaya başladıktan sonra 1 yılda gelirini %35 artırdı ve satış döngüsünü %20 kısalttı.",
+          "crossSell": ["ERP Entegrasyonu", "Sadakat Programı", "Lead Nurturing", "Raporlama Dashboard"]
+        },
+        {
+          "name": "Yönetim Panelleri",
+          "priority": "oncelikli",
+          "desc": "Şirket içi operasyonları takip etmek için kullanıcı ve yetkilendirme tabanlı paneller; veritabanı bağlantıları, raporlar ve bildirimler.",
+          "target": "Depo yönetimi, lojistik, eğitim, insan kaynakları ve finans departmanları olan şirketler",
+          "result": "Merkezi panel iş süreçlerini hızlandırır; personel verimliliği %20 artar.",
+          "delivery": "6–10 hafta",
+          "roi": "6–12 ay",
+          "story": "Lojistik firması için geliştirilen panel, sevkiyat süreçlerini 2 gün kısalttı ve hatalı teslimat oranını %25 düşürdü.",
+          "crossSell": ["CRM Entegrasyonu", "İş Akışı Otomasyonu", "Mobil App Geliştirme"]
+        },
+        {
+          "name": "SaaS Platform Geliştirme",
+          "priority": "oncelikli",
+          "desc": "Abonelik tabanlı SaaS ürünleri için backend, API, kullanıcı yönetimi, ödeme sistemleri, raporlama modülleri.",
+          "target": "Yeni ürün çıkarmak isteyen start-uplar, yazılım firmaları, yatırımcılar",
+          "result": "Ölçeklenebilir gelir modeli; aboneliklerden sürdürülebilir gelir.",
+          "delivery": "3–6 ay",
+          "roi": "1–2 yıl",
+          "story": "Geliştirilen SaaS platformu, ilk 12 ayda 5.000 aktif aboneye ulaşarak aylık 500.000 TL MRR elde etti.",
+          "crossSell": ["Mobil Uygulama Geliştirme", "AI Chatbot", "CRM Entegrasyonu", "Marketing Otomasyonları"]
+        },
+        {
+          "name": "API Geliştirme",
+          "priority": "oncelikli",
+          "desc": "Sistemler arası veri alışverişi için REST/GraphQL API'ler; güvenlik, dokümantasyon ve performans.",
+          "target": "Uygulama ve sistem entegrasyonuna ihtiyaç duyan şirketler; mobil ve web uygulamaları için arka uç servisleri",
+          "result": "API'ler veri entegrasyonunu kolaylaştırır; farklı platformların birbiriyle konuşmasını sağlar ve yeni gelir kanalları açar.",
+          "delivery": "4–8 hafta",
+          "roi": "6–12 ay",
+          "story": "Bir fintech şirketi, ödeme API'si oluşturarak başka uygulamaların kendi altyapısını kullanmasına izin verdi ve yıllık gelirini %40 artırdı.",
+          "crossSell": ["Mobil App Entegrasyonu", "Üçüncü Parti Servis Bağlantıları", "Güvenlik Denetimi"]
+        },
+        {
+          "name": "Üyelik Sistemleri",
+          "priority": "oncelikli",
+          "desc": "Kullanıcı kayıt ve giriş modülü, farklı üyelik paketleri, abonelik yönetimi, rol ve yetki kontrolü.",
+          "target": "E-öğrenme platformları, içerik siteleri, SaaS ürünleri, sadakat programları olan firmalar",
+          "result": "Güçlü üyelik sistemi abonelik gelirleri ve müşteri analizleri için temel oluşturur.",
+          "delivery": "3–6 hafta",
+          "roi": "3–9 ay",
+          "story": "Eğitim platformu için geliştirilen üyelik sistemi, kullanıcı kayıtlarını %50 artırdı; premium gelir 4 ayda %70 yükseldi.",
+          "crossSell": ["CRM Entegrasyonu", "Sadakat Programı", "Ödeme Sistemi", "Mobil Uygulama"]
+        },
+        {
+          "name": "İş Akışı Otomasyonları",
+          "priority": "oncelikli",
+          "desc": "Tekrarlayan süreçleri otomatikleştiren yazılımlar; onay mekanizması, bildirimler, entegrasyonlar.",
+          "target": "İnsan kaynakları, satın alma, muhasebe departmanları, küçük ve orta ölçekli işletmeler",
+          "result": "Operasyonel maliyetlerde %20–40 tasarruf; iş gücü verimliliği artar, insan hatası azalır.",
+          "delivery": "4–8 hafta",
+          "roi": "6–12 ay",
+          "story": "Satın alma süreci otomasyonu ile onay süresi 3 günden 1 güne düştü ve tedarik süreçlerinde %30 hızlanma sağlandı.",
+          "crossSell": ["ERP Entegrasyonu", "Raporlama Panelleri", "CRM Sistemi", "AI Chatbot"]
+        },
+        {
+          "name": "AI Chatbot Sistemleri",
+          "priority": "ek",
+          "desc": "Doğal dil işleme ile çalışan müşteri destek botları; sık soruları yanıtlar, randevu alır, sipariş takibi yapar.",
+          "target": "E-ticaret siteleri, hizmet sektörü, sağlık ve eğitim firmaları",
+          "result": "7/24 müşteri desteği; destek taleplerini %57 oranında azaltabilir.",
+          "delivery": "4–6 hafta",
+          "roi": "3–6 ay",
+          "story": "Online perakendeciye kurulan chatbot, müşterilerin ürün teslimat sorularının %70'ini çözdü ve çağrı merkezinin yükünü %40 azalttı.",
+          "crossSell": ["CRM Entegrasyonu", "Mobil App", "E-ticaret", "Sosyal Medya Chatbot"]
+        },
+        {
+          "name": "Veri Scraping Sistemleri",
+          "priority": "ek",
+          "desc": "İnternetten veri çekme ve otomatik analiz sistemleri; rakip fiyat takibi, ürün listesi oluşturma, pazar araştırması.",
+          "target": "E-ticaret firmaları, araştırma şirketleri, rekabet analizi yapmak isteyen markalar",
+          "result": "Pazardaki fiyat ve trendleri hızlıca analiz ederek stratejik karar verme imkânı sunar.",
+          "delivery": "3–6 hafta",
+          "roi": "3–9 ay",
+          "story": "Otomatik veri çekim sistemi sayesinde müşteri, rakiplerinin fiyat değişikliklerine anında müdahale ederek satış hacmini %25 artırdı.",
+          "crossSell": ["Raporlama Panelleri", "AI Analiz", "SEO", "İçerik Stratejisi"]
+        },
+        {
+          "name": "Rezervasyon Sistemleri",
+          "priority": "ek",
+          "desc": "Online randevu ve rezervasyon yönetim platformu; takvim senkronizasyonu, ödeme ve iptal işlemleri.",
+          "target": "Oteller, restoranlar, spor salonları, güzellik merkezleri",
+          "result": "Müşteri deneyimini kolaylaştırır; kapasiteyi verimli kullanmayı sağlar. Rezervasyon hacmi %20–30 artar.",
+          "delivery": "3–6 hafta",
+          "roi": "3–6 ay",
+          "story": "Güzellik salonu rezervasyon platformu ile randevu yoğunluğunu %40 artırdı ve no-show oranını %15 azalttı.",
+          "crossSell": ["CRM Entegrasyonu", "SMS/E-posta Hatırlatıcılar", "Mobil Uygulama"]
+        }
+      ]
+    },
+    {
+      "id": "mobil",
+      "label": "Mobil Uygulama Geliştirme",
+      "services": [
+        {
+          "name": "iOS Uygulama Geliştirme",
+          "priority": "oncelikli",
+          "desc": "Swift/SwiftUI kullanarak Apple cihazlarına yönelik native uygulama geliştirme; App Store yayını, UX tasarım entegrasyonu.",
+          "target": "iPhone ve iPad kullanıcılarına ulaşmak isteyen firmalar; premium uygulama deneyimi isteyen markalar",
+          "result": "Mobil uygulamalarda web'e göre 7 kat fazla vakit geçiriliyor; push bildirimleri ile müşteri etkileşimi artar.",
+          "delivery": "8–12 hafta",
+          "roi": "6–12 ay",
+          "story": "Lüks giyim markasının iOS uygulaması, uygulamadan yapılan satışların toplam gelirdeki payını 4 ayda %35'e çıkardı.",
+          "crossSell": ["App Store Optimizasyonu", "Push Notification", "Loyalty Programı", "Analitik Entegrasyonu"]
+        },
+        {
+          "name": "Android Uygulama Geliştirme",
+          "priority": "oncelikli",
+          "desc": "Java/Kotlin ile Android cihazlara özel native uygulama geliştirme; Google Play yayını, test ve bakım.",
+          "target": "Geniş kullanıcı kitlesine ulaşmak isteyen markalar, hizmetlerini Android'e taşımak isteyen şirketler",
+          "result": "Android kullanıcı sayısı yüksektir; uygulamalar markanın erişimini milyonlara çıkarır.",
+          "delivery": "8–12 hafta",
+          "roi": "6–12 ay",
+          "story": "Bir yiyecek sipariş platformu, Android uygulaması sayesinde haftalık sipariş sayısını %60 artırdı.",
+          "crossSell": ["Play Store Optimizasyonu", "Push Notification", "Konum Servisleri", "Kampanya Kurguları"]
+        },
+        {
+          "name": "Flutter Uygulamaları",
+          "priority": "oncelikli",
+          "desc": "Tek kod tabanı ile iOS ve Android'de çalışan uygulamalar; hızlı geliştirme, kostümüze UI bileşenleri.",
+          "target": "Start-uplar, düşük bütçeyle hızlı ürün çıkarmak isteyenler, MVP geliştiren firmalar",
+          "result": "Geliştirme maliyetlerini düşürür; iki platformu aynı anda yayına alma imkânı sağlar.",
+          "delivery": "6–10 hafta",
+          "roi": "3–9 ay",
+          "story": "Mobil pazaryeri uygulaması Flutter ile geliştirilerek ilk 6 ayda 150.000 kullanıcıya ulaştı.",
+          "crossSell": ["UI/UX Tasarım", "Push Notification", "App Marketing", "Backend API"]
+        },
+        {
+          "name": "React Native",
+          "priority": "oncelikli",
+          "desc": "JavaScript tabanlı React Native ile cross-platform mobil uygulamalar; native'e yakın performans, üçüncü parti entegrasyonlar.",
+          "target": "Bütçesini optimize etmek isteyen şirketler, hızlı geliştirme ve yayını amaçlayan markalar",
+          "result": "Çapraz platform sayesinde geliştirme süresi ve maliyeti azalır; kullanıcı etkileşimi artar.",
+          "delivery": "6–10 hafta",
+          "roi": "6–12 ay",
+          "story": "Perakende uygulaması React Native ile geliştirildi ve 4 ayda iOS ve Android'de 500.000 indirme elde etti.",
+          "crossSell": ["UI/UX Tasarım", "Push Notification", "Analytics", "Performans Optimizasyonu"]
+        },
+        {
+          "name": "Push Notification",
+          "priority": "oncelikli",
+          "desc": "Mobil uygulamalar için push bildirim altyapısı; segmentasyon, tetikleyici bildirimler, kampanya yönetimi.",
+          "target": "Mobil uygulaması olan tüm firmalar; e-ticaret, bankacılık, medya ve SaaS platformları",
+          "result": "Bildirimler kullanıcıları uygulamaya geri getirir; uygulama içi etkileşim %20–40 artar.",
+          "delivery": "2–4 hafta",
+          "roi": "2–4 ay",
+          "story": "Yemek sipariş uygulamasında zamanlı push bildirimleri kullanılarak akşam saatlerinde siparişler %35 arttı.",
+          "crossSell": ["Mobil Uygulama Geliştirme", "CRM Entegrasyonu", "Personalizasyon", "App Store/Play Store Optimizasyonu"]
+        },
+        {
+          "name": "App Store Optimizasyonu",
+          "priority": "oncelikli",
+          "desc": "Uygulamaların mağaza sıralamasını iyileştirmek için anahtar kelime araştırması, açıklama ve görsel optimizasyonu, kullanıcı yorumu yönetimi.",
+          "target": "Uygulama sahipleri, start-uplar, oyun şirketleri",
+          "result": "Organik indirme sayısı artar; uygulama indirmelerinde %20–50 artış.",
+          "delivery": "2–3 hafta",
+          "roi": "1–3 ay",
+          "story": "Mobil oyun, App Store optimizasyonu ile listelerde ilk 10'a girdi ve indirme sayısı 3 katına çıktı.",
+          "crossSell": ["Mobil Reklam Kampanyaları", "Kullanıcı Analizleri", "Push Notification", "Re-engagement"]
+        },
+        {
+          "name": "Mobil Ödeme Sistemleri",
+          "priority": "ek",
+          "desc": "Uygulama içi ödeme altyapıları, abonelik ve mikro ödeme sistemleri.",
+          "target": "Dijital içerik platformları, oyun firmaları, e-ticaret uygulamaları",
+          "result": "Uygulama içi satışlar %15–25 artar; kullanıcılar kolayca satın alım yapabilir.",
+          "delivery": "2–4 hafta",
+          "roi": "2–4 ay",
+          "story": "Oyun uygulamasında mobil ödeme sistemi eklenince, uygulama içi satışlar 3 ayda %40 yükseldi.",
+          "crossSell": ["Mobil Uygulama Geliştirme", "Abonelik Yönetimi", "CRM Entegrasyonu"]
+        }
+      ]
+    },
+    {
+      "id": "dijital-pazarlama",
+      "label": "Dijital Pazarlama",
+      "services": []
+    },
+    {
+      "id": "seo",
+      "label": "SEO Hizmetleri",
+      "services": []
+    },
+    {
+      "id": "sosyal-medya",
+      "label": "Sosyal Medya Yönetimi",
+      "services": []
+    },
+    {
+      "id": "video",
+      "label": "Video Prodüksiyon & Kreatif",
+      "services": []
+    },
+    {
+      "id": "teknik",
+      "label": "Teknik Destek & Sunucu",
+      "services": []
+    }
+  ]
+}

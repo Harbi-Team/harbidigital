@@ -1,102 +1,59 @@
 import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
 import { FloatingContactButton } from "@/components/layout/FloatingContactButton"
-import { Scene } from "@/components/three/Scene"
-import { Link } from "react-router-dom"
-
-const TEAM = [
-  {
-    name: "Hüseyin Aydın",
-    role: "CEO",
-    image: "/team/huseyin-aydin.png",
-    description: "CEO & Kurucu Ortak",
-  },
-  {
-    name: "Muhammed Ali Aslan",
-    role: "CTO",
-    image: "/team/muhammed-ali-aslan.png",
-    description: "CTO & Kurucu Ortak",
-  },
-  {
-    name: "Yusuf Alemdar",
-    role: "Art Director",
-    image: "/team/yusufcan-alemdar.png",
-    description: "Art Director & Kurucu Ortak",
-  },
-  {
-    name: "Baransel Inal",
-    role: "CIO",
-    image: "/team/baransel-inal.png",
-    description: "CIO & Kurucu Ortak",
-  },
-]
+import { useContactModal } from "@/contexts/ContactModalContext"
+import data from "@/data/ekip.json"
 
 const Team = () => {
+  const { openModal } = useContactModal()
+
   return (
-    <div className="relative min-h-screen">
-      <Scene />
+    <div className="bg-[#0d0d0d] min-h-screen text-white">
       <Header />
       <FloatingContactButton />
-
-      <main className="relative z-10 pt-32 pb-24">
-        <div className="container mx-auto px-6">
-          <span className="text-section-label block mb-8">EKİP</span>
-          <h1 className="text-display-hero text-foreground mb-8">
-            ARKAMIZDA <span className="text-harbi-red">KİM VAR?</span>
+      <div className="fixed inset-0 pointer-events-none z-0"
+        style={{ background: "radial-gradient(ellipse 80% 70% at 0% 40%, rgba(100,180,0,0.18) 0%, transparent 55%)" }} />
+      <main className="relative z-10">
+        <section className="pt-32 pb-24 px-6 max-w-5xl mx-auto">
+          <div className="inline-flex items-center gap-2 border border-white/10 rounded-full px-4 py-1.5 mb-8 w-fit">
+            <span className="w-2 h-2 rounded-full bg-[#a3e635]" />
+            <span className="text-xs text-white/50 font-plus-jakarta tracking-widest uppercase">{data.hero.badge}</span>
+          </div>
+          <h1 className="font-extrabold font-plus-jakarta leading-[1.05] tracking-tight text-5xl sm:text-6xl md:text-7xl mb-4">
+            <span className="text-white">{data.hero.heading1}</span><br />
+            <span style={{ color: "#a3e635" }}>{data.hero.heading2}</span>
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mb-20">
-            Dijital savaşın en deneyimli askerleri. "Hayır" diyebilen, veri
-            odaklı, sonuç arayan profesyoneller.
+          <p className="text-white/50 font-plus-jakarta text-lg max-w-lg leading-relaxed mb-16">
+            {data.hero.subtitle}
           </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
-            {TEAM.map((member, index) => (
-              <div
-                key={member.name}
-                className="group relative overflow-hidden border border-border transition-all duration-500 hover:border-primary"
-              >
-                {/* Image Container */}
-                <div className="relative aspect-[3/4] overflow-hidden bg-muted">
-                  <img
-                    src={member.image}
-                    alt={`${member.name} - ${member.description}`}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
-                  />
-                  {/* Overlay on hover */}
-                  <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-all duration-500" />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {data.members.map((member) => (
+              <div key={member.name} className="group">
+                <div className="rounded-2xl overflow-hidden mb-3 aspect-[3/4] relative" style={{ background: "#161616" }}>
+                  {member.img ? (
+                    <img src={member.img} alt={member.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center">
+                      <span className="text-4xl font-extrabold font-plus-jakarta" style={{ color: "#a3e635" }}>{member.name[0]}</span>
+                    </div>
+                  )}
                 </div>
-
-                {/* Info Section */}
-                <div className="p-6 bg-card">
-                  <div className="flex items-start justify-between mb-2">
-                    <span className="text-3xl font-display text-muted-foreground/40">
-                      0{index + 1}
-                    </span>
-                    <span className="text-xs uppercase tracking-wider text-primary px-2 py-1 border border-primary">
-                      {member.role}
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-display uppercase text-foreground mb-1 group-hover:text-primary transition-colors">
-                    {member.name}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    {member.description}
-                  </p>
-                </div>
-
-                {/* Accent line */}
-                <div className="h-1 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                <h3 className="font-bold text-white font-plus-jakarta text-sm">{member.name}</h3>
+                <p className="text-white/40 text-xs font-plus-jakarta mt-0.5">{member.role}</p>
               </div>
             ))}
           </div>
-          <div className="text-center mt-16">
-            <Link to="/contact" className="btn-harbi inline-block">
-              EKİBE KATIL
-            </Link>
+          <div className="mt-16 border border-white/8 rounded-2xl p-8 text-center" style={{ background: "rgba(163,230,53,0.04)" }}>
+            <h3 className="text-2xl font-extrabold text-white font-plus-jakarta mb-3">{data.join.heading}</h3>
+            <p className="text-white/40 font-plus-jakarta text-sm mb-6 max-w-sm mx-auto">{data.join.desc}</p>
+            <button onClick={openModal}
+              className="font-plus-jakarta font-bold text-sm text-neutral-950 px-6 py-3 rounded-full transition-all hover:scale-105"
+              style={{ background: "#a3e635" }}>
+              {data.join.cta}
+            </button>
           </div>
-        </div>
+        </section>
       </main>
-
       <Footer />
     </div>
   )

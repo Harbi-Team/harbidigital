@@ -10,7 +10,7 @@
 html,
 body {
   width: 100%;
-  background-color: #000; /* Prevent white overscroll at bottom */
+  background-color: #fff; /* Prevent white overscroll at bottom */
   overflow-x: hidden;
 }
 

@@ -70,7 +70,7 @@ export const InteractiveBackground = () => {
       draw(ctx: CanvasRenderingContext2D) {
         ctx.beginPath()
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`
+        ctx.fillStyle = `rgba(163, 230, 53, ${this.opacity * 0.25})`
         ctx.fill()
       }
     }
@@ -112,7 +112,7 @@ export const InteractiveBackground = () => {
       })
 
       // Draw connections
-      ctx.strokeStyle = "rgba(255, 255, 255, 0.1)"
+      ctx.strokeStyle = "rgba(163, 230, 53, 0.08)"
       ctx.lineWidth = 0.5
 
       for (let i = 0; i < particles.length; i++) {
@@ -142,23 +142,10 @@ export const InteractiveBackground = () => {
   }, [])
 
   return (
-    <>
-      {/* Particle Canvas */}
-      <canvas
-        ref={canvasRef}
-        className="fixed inset-0 z-0 pointer-events-none"
-        style={{ background: "#000000" }}
-      />
-
-      {/* Geometric Lion Image */}
-      <div className="fixed inset-0 z-[1] flex items-center justify-center pointer-events-none">
-        <img
-          src="/lion_bg1.png"
-          alt="Geometrik aslan başı illüstrasyonu, liderlik ve cesareti temsil eder"
-          className="w-[50%] max-w-[700px] h-auto opacity-20"
-          style={{ filter: "drop-shadow(0 0 15px rgba(255, 255, 255, 0.15))" }}
-        />
-      </div>
-    </>
+    <canvas
+      ref={canvasRef}
+      className="fixed inset-0 z-0 pointer-events-none"
+      style={{ background: "transparent" }}
+    />
   )
 }

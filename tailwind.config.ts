@@ -15,7 +15,8 @@ export default {
     extend: {
       fontFamily: {
         display: ["Bebas Neue", "sans-serif"],
-        body: ["Inter", "sans-serif"],
+        body: ["Plus Jakarta Sans", "Inter", "sans-serif"],
+        "plus-jakarta": ["Plus Jakarta Sans", "Inter", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

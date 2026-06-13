@@ -1,0 +1,46 @@
+{
+  "hero": {
+    "badge": "Hizmetler",
+    "heading1": "Sosyal medyada",
+    "heading2": "stratejik reklam",
+    "heading3": "oluşturun.",
+    "subtitle": "Sosyal medya reklamlarınızı etkili hedefleme ile potansiyel müşterilerinize ulaştırıyoruz."
+  },
+  "platforms": ["Instagram", "Facebook", "LinkedIn", "TikTok", "Google", "YouTube"],
+  "floating": {
+    "roas": "8.7 ROAS",
+    "cost": "13 TL'ye düştü",
+    "testimonial": {
+      "text": "Satışlarımız bu ay 2 katına çıktı, teşekkürler! 🚀",
+      "highlight": "2 katına çıktı",
+      "author": "Ahmet Yılmaz, CEO"
+    },
+    "ad": {
+      "title": "Yaz İndirimi #24",
+      "status": "Aktif · Yayında",
+      "badge": "Sponsorlu"
+    }
+  },
+  "services": [
+    {
+      "title": "Performans Reklamcılığı",
+      "desc": "Meta, Google, TikTok ve LinkedIn reklamlarını veriye dayalı stratejilerle yönetiyoruz. Ortalama 4-9x ROAS hedefliyoruz.",
+      "metrics": ["Ortalama 6.2x ROAS", "CPL %60 düşüş", "A/B test garantisi"]
+    },
+    {
+      "title": "İçerik Stratejisi & Üretim",
+      "desc": "Hedef kitlenize özel video, görsel ve metin içerikleri hazırlıyor, platforma göre optimize ediyoruz.",
+      "metrics": ["Haftalık içerik takvimi", "Profesyonel çekim", "Platform optimizasyonu"]
+    },
+    {
+      "title": "Pazar Yeri Yönetimi",
+      "desc": "Trendyol, Hepsiburada, Amazon ve Shopify mağazalarınızı büyütmek için komple çözüm.",
+      "metrics": ["Mağaza optimizasyonu", "Reklam yönetimi", "Stok & fiyat stratejisi"]
+    },
+    {
+      "title": "SEO & Dönüşüm Optimizasyonu",
+      "desc": "Google'da üst sıralara çıkarken sitenizin dönüşüm oranını da artırıyoruz.",
+      "metrics": ["İlk sayfa garantisi", "CRO analizi", "Teknik SEO"]
+    }
+  ]
+}

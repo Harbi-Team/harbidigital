@@ -1,0 +1,31 @@
+{
+  "name": "harbi. digital",
+  "logo": {
+    "light": "/harbi/harbi-logo.png",
+    "dark": "/harbi/logo-beyaz.png"
+  },
+  "contact": {
+    "email": "harbidigital34@gmail.com",
+    "phone": "+90 555 000 00 00",
+    "phoneDisplay": "+90 555 000 00 00"
+  },
+  "social": {
+    "instagram": "https://instagram.com/harbidigital",
+    "tiktok": "https://tiktok.com/@harbidigital",
+    "linkedin": "https://linkedin.com/company/harbidigital",
+    "youtube": ""
+  },
+  "nav": [
+    { "label": "Hakkımızda", "to": "/hakkimizda" },
+    { "label": "İşler", "to": "/isler" },
+    { "label": "Ürünler", "to": "/urunler" },
+    { "label": "Hizmetler", "to": "/hizmetler" },
+    { "label": "Ekip", "to": "/ekip" },
+    { "label": "İletişim", "to": "/iletisim" }
+  ],
+  "cta": {
+    "primary": "Görüşme Planla",
+    "call": "Sizi Arayalım"
+  },
+  "copyright": "Designed by HARB! DIGITAL"
+}

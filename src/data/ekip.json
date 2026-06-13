@@ -1,0 +1,40 @@
+{
+  "hero": {
+    "badge": "Ekip",
+    "heading1": "Arkanzda güçlü",
+    "heading2": "bir ekip var.",
+    "subtitle": "Dijital pazarlamanın her alanında uzmanlaşmış, sonuç odaklı bir ekip."
+  },
+  "members": [
+    {
+      "name": "Hüseyin Aydın",
+      "role": "Kurucu & CEO",
+      "img": "/team/huseyin-aydin.png"
+    },
+    {
+      "name": "Muhammed Ali Aslan",
+      "role": "Kurucu & CTO",
+      "img": "/team/muhammed-ali-aslan.png"
+    },
+    {
+      "name": "Rabia Töngel",
+      "role": "Marka Elçisi",
+      "img": "/team/rabia-tongel.png"
+    },
+    {
+      "name": "Yusufcan Alemdar",
+      "role": "Kurucu & CSO",
+      "img": "/team/yusufcan-alemdar.png"
+    },
+    {
+      "name": "Baransel İnal",
+      "role": "Kurucu & CIO",
+      "img": "/team/baransel-inal.png"
+    }
+  ],
+  "join": {
+    "heading": "Ekibimize Katılın",
+    "desc": "Dijital pazarlama tutkunu yetenekli insanları arıyoruz.",
+    "cta": "Başvurun"
+  }
+}

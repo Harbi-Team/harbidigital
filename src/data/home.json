@@ -1,0 +1,126 @@
+{
+  "hero": {
+    "badge": "Dijital Büyüme Ajansı",
+    "heading1": "Dijitalleşmeye",
+    "heading2": "Hazır Mısınız?",
+    "subtitle": "Harbi Digital ile şimdi harekete geçin, dijitalde büyümeye başlayın!",
+    "cta_primary": "Görüşme Planla",
+    "cta_secondary": "Sizi Arayalım"
+  },
+  "why": {
+    "badge": "Neden Harbi?",
+    "heading": "Çünkü sonuçlar konuşur.",
+    "description": "Rakiplerinizin gerisinde kalmak yerine, veriye dayalı stratejilerle öne çıkın. Harbi Digital ile her TL yatırımınızın karşılığını alırsınız.",
+    "tags_left": ["İçerik Üretimi", "İş Analizi", "SEO Yönetimi"],
+    "tags_right": ["Reklam Yönetimi", "Veri Analizi", "E-Posta Pazarlama"]
+  },
+  "casestudies": {
+    "badge": "Vaka Çalışmaları",
+    "heading": "Kanıtlanmış Sonuçlar",
+    "cta": "Tüm Performans Sonuçları",
+    "items": [
+      {
+        "name": "Nevdijital",
+        "tag": "E-Ticaret",
+        "metric": "+340% ROAS",
+        "metric_label": "12 ayda",
+        "quote": "Harbi Digital ile satışlarımız üçe katlandı.",
+        "image": "/medias/projects/nevdijital/image1.jpg",
+        "bg": "#111111"
+      },
+      {
+        "name": "Neonav",
+        "tag": "SaaS",
+        "metric": "3.2x",
+        "metric_label": "Dönüşüm artışı",
+        "quote": "Tam beklediğimiz dijital dönüşüm.",
+        "image": "/medias/neonav.jpg",
+        "bg": "#0d0d1a"
+      }
+    ]
+  },
+  "services": {
+    "badge": "Hizmetlerimiz",
+    "heading": "Yolculuğun her anında yanınızda",
+    "tabs": [
+      {
+        "id": "performance",
+        "label": "Performans Pazarlama",
+        "heading": "Performans Pazarlama",
+        "metrics": [
+          { "label": "Ortalama ROAS", "value": "6.2x", "progress": 85 },
+          { "label": "CPL Düşüşü", "value": "%60", "progress": 70 },
+          { "label": "Dönüşüm Artışı", "value": "%94", "progress": 90 }
+        ]
+      },
+      {
+        "id": "marketplace",
+        "label": "Pazar Yönetimi",
+        "heading": "Pazar Yönetimi",
+        "metrics": [
+          { "label": "Satış Artışı", "value": "+180%", "progress": 80 },
+          { "label": "Görünürlük", "value": "%95", "progress": 95 },
+          { "label": "Mağaza Puanı", "value": "4.9★", "progress": 98 }
+        ]
+      },
+      {
+        "id": "content",
+        "label": "İçerik Stratejisi & Üretim",
+        "heading": "İçerik Stratejisi",
+        "metrics": [
+          { "label": "Etkileşim Artışı", "value": "+220%", "progress": 75 },
+          { "label": "Haftalık İçerik", "value": "12 adet", "progress": 60 },
+          { "label": "Erişim Artışı", "value": "+310%", "progress": 88 }
+        ]
+      },
+      {
+        "id": "cro",
+        "label": "Dönüşüm Optimizasyonu",
+        "heading": "Dönüşüm Optimizasyonu",
+        "metrics": [
+          { "label": "Dönüşüm Oranı", "value": "+87%", "progress": 87 },
+          { "label": "Sepet Terk Oranı", "value": "-%42", "progress": 72 },
+          { "label": "Ortalama Sipariş", "value": "+35%", "progress": 65 }
+        ]
+      }
+    ]
+  },
+  "process": {
+    "badge": "Doğru Süreç",
+    "heading": "Doğru Süreç, Gerçek Sonuçlar",
+    "video_label": "harbi. digital - Kimdir? Ne yapar?",
+    "tags_left": ["Analiz & Strateji", "İçerik Üretimi", "Reklam Yönetimi"],
+    "tags_right": ["A/B Testleri", "Optimizasyon", "Raporlama"]
+  },
+  "comparison": {
+    "heading": "Diğerleri ile kıyaslanamaz.",
+    "others": {
+      "title": "Geleneksel Ajanslar",
+      "items": ["Belirsiz fiyatlandırma", "Haftalık raporlama yok", "Tek kanal odaklı", "Uzun dönem sözleşme", "Sınırlı iletişim"]
+    },
+    "harbi": {
+      "title": "harbi. digital",
+      "items": ["Şeffaf fiyatlandırma", "Anlık dashboard erişimi", "Çok kanal stratejisi", "Esnek sözleşme", "7/24 destek"]
+    }
+  },
+  "steps": {
+    "heading": "Büyümeye Başlıyoruz",
+    "items": [
+      { "number": "01", "title": "Ücretsiz Analiz", "desc": "İşletmenizi, rakiplerinizi ve hedef kitlenizi derinlemesine analiz ediyoruz." },
+      { "number": "02", "title": "Strateji & Planlama", "desc": "Veriye dayalı, size özel bir büyüme yol haritası oluşturuyoruz." },
+      { "number": "03", "title": "Uygula & Büyü", "desc": "Stratejiyi hayata geçiriyor, sürekli optimize ederek sonuçları katlarız." }
+    ]
+  },
+  "faq": [
+    { "q": "Hangi kanalları kullanıyorsunuz?", "a": "Meta (Facebook & Instagram), Google Ads, TikTok, YouTube ve e-posta pazarlama kanallarını aktif olarak yönetiyoruz. Her müşteri için en verimli kanal karmasını belirliyor ve bütçeyi buna göre dağıtıyoruz." },
+    { "q": "İçerik üretiyorum ama takipçi sayım neden artmıyor?", "a": "İçerik üretmek tek başına yeterli değil; doğru hedef kitleye, doğru formatta ve doğru zamanda ulaşmak gerekiyor. Biz algoritmayı ve hedef kitlenizi anlayarak bu boşluğu kapatıyoruz." },
+    { "q": "Müşteri dönüşümünü nasıl geliştiriyorsunuz?", "a": "A/B testleri, ısı haritası analizleri, kullanıcı davranış takibi ve landing page optimizasyonlarıyla dönüşüm hunisindeki sızıntıları tespit edip gideriyoruz. Ortalama %40-90 dönüşüm artışı sağlıyoruz." },
+    { "q": "Minimum bütçe kaç TL / ay olmalıdır?", "a": "Reklam harcaması için aylık minimum 10.000 TL öneriyoruz. Hizmet bedelimiz ise proje kapsamına göre değişiyor. Ücretsiz ön görüşmede ihtiyaçlarınızı analiz ederek size özel teklif sunuyoruz." },
+    { "q": "Ne kadar sürede sonuç görmeye başlarım?", "a": "İlk optimizasyon sonuçları genellikle 2-4 hafta içinde görülür. Kalıcı ve ölçeklenebilir büyüme için ise 3 aylık bir süreç gerekiyor. İlk aydan itibaren haftalık raporlarla süreci şeffaf paylaşıyoruz." }
+  ],
+  "stats": [
+    { "value": "250+", "label": "Başarılı Proje" },
+    { "value": "%94", "label": "Müşteri Memnuniyeti" },
+    { "value": "4x", "label": "Ortalama ROAS" }
+  ]
+}

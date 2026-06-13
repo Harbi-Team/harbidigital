@@ -2,11 +2,16 @@ import { useEffect, useRef } from "react"
 import { gsap } from "@/lib/gsap"
 import { useContactModal } from "@/contexts/ContactModalContext"
 
-const Placeholder = ({ className }: { className?: string }) => (
-  <div className={`bg-neutral-100 flex items-center justify-center ${className}`}>
-    <svg className="w-8 h-8 text-neutral-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-    </svg>
+const VideoCard = ({ src, className }: { src: string; className?: string }) => (
+  <div className={`overflow-hidden rounded-2xl min-h-0 bg-neutral-100 ${className}`}>
+    <video
+      src={src}
+      autoPlay
+      muted
+      loop
+      playsInline
+      className="w-full h-full object-cover"
+    />
   </div>
 )
 
@@ -32,7 +37,6 @@ export const Act1Intro = () => {
 
         {/* LEFT: Text content */}
         <div className="hero-text opacity-0 flex flex-col items-start flex-none w-full md:w-[38%]">
-
           <h1 className="font-extrabold font-plus-jakarta text-neutral-950 leading-[1.1] tracking-tight text-4xl sm:text-5xl mb-5">
             Dijitalleşmeye
             <br />
@@ -49,7 +53,6 @@ export const Act1Intro = () => {
           </p>
 
           <div className="flex flex-wrap gap-3">
-            {/* Primary CTA */}
             <button
               onClick={openModal}
               className="font-plus-jakarta font-bold text-sm text-neutral-950 flex items-center gap-2 px-5 py-3 rounded-full transition-all duration-200 hover:scale-105 active:scale-95"
@@ -64,7 +67,6 @@ export const Act1Intro = () => {
               Görüşme Planla
             </button>
 
-            {/* Secondary CTA */}
             <button
               onClick={openModal}
               className="font-plus-jakarta font-bold text-sm text-neutral-700 bg-white border border-neutral-200 flex items-center gap-2 px-5 py-3 rounded-full transition-all duration-200 hover:border-neutral-400 hover:scale-105 active:scale-95"
@@ -77,51 +79,33 @@ export const Act1Intro = () => {
           </div>
         </div>
 
-        {/* RIGHT: Image mosaic */}
+        {/* RIGHT: Video mosaic */}
         <div className="hero-mosaic opacity-0 flex-1 flex gap-3 h-[420px] md:h-[520px] overflow-hidden">
 
           {/* Column 1 — starts lower */}
           <div className="flex flex-col gap-3 flex-1 pt-10">
-            <Placeholder className="flex-1 rounded-2xl min-h-0" />
-            <Placeholder className="flex-1 rounded-2xl min-h-0" />
+            <VideoCard src="/medias/hero-1.mp4" className="flex-1" />
+            <VideoCard src="/medias/hero-2.mp4" className="flex-1" />
           </div>
 
-          {/* Column 2 — tallest, starts at top */}
+          {/* Column 2 — tallest */}
           <div className="flex flex-col gap-3 flex-1">
-            <Placeholder className="flex-[1.6] rounded-2xl min-h-0" />
-            <Placeholder className="flex-1 rounded-2xl min-h-0" />
+            <VideoCard src="/medias/hero-3.mp4" className="flex-[1.6]" />
+            <VideoCard src="/medias/hero-4.mp4" className="flex-1" />
           </div>
 
-          {/* Column 3 — mixed: small icon cards + photo */}
+          {/* Column 3 — 3 videos */}
           <div className="flex flex-col gap-3 flex-none w-[110px] pt-6">
-            {/* Icon card: star */}
-            <div className="rounded-2xl bg-[#f5fde7] border border-[#a3e635]/30 flex items-center justify-center h-[90px] flex-shrink-0">
-              <svg viewBox="0 0 24 24" className="w-8 h-8" fill="#a3e635">
-                <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" />
-              </svg>
-            </div>
-            <Placeholder className="flex-1 rounded-2xl min-h-0" />
-            {/* Icon card: bag */}
-            <div className="rounded-2xl bg-[#f5fde7] border border-[#a3e635]/30 flex items-center justify-center h-[90px] flex-shrink-0">
-              <svg viewBox="0 0 24 24" className="w-8 h-8 fill-none stroke-[#a3e635] stroke-[1.5]">
-                <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
-                <line x1="3" y1="6" x2="21" y2="6" />
-                <path d="M16 10a4 4 0 01-8 0" />
-              </svg>
-            </div>
+            <VideoCard src="/medias/hero-5.mp4" className="flex-1" />
+            <VideoCard src="/medias/hero-6.mp4" className="flex-1" />
+            <VideoCard src="/medias/hero-7.mp4" className="flex-1" />
           </div>
 
-          {/* Column 4 — starts from top */}
+          {/* Column 4 — 3 videos */}
           <div className="flex flex-col gap-3 flex-1 hidden sm:flex">
-            <Placeholder className="flex-1 rounded-2xl min-h-0" />
-            {/* Icon card: headphones */}
-            <div className="rounded-2xl bg-[#f0f4ff] border border-blue-100 flex items-center justify-center h-[100px] flex-shrink-0">
-              <svg viewBox="0 0 24 24" className="w-8 h-8 fill-none stroke-blue-400 stroke-[1.5]">
-                <path d="M3 18v-6a9 9 0 0118 0v6" />
-                <path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z" />
-              </svg>
-            </div>
-            <Placeholder className="flex-1 rounded-2xl min-h-0" />
+            <VideoCard src="/medias/hero-8.mp4" className="flex-1" />
+            <VideoCard src="/medias/hero-9.mp4" className="flex-1" />
+            <VideoCard src="/medias/hero-10.mp4" className="flex-1" />
           </div>
 
         </div>

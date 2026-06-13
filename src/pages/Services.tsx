@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
 import { FloatingContactButton } from "@/components/layout/FloatingContactButton"
@@ -7,6 +7,89 @@ import data from "@/data/hizmetler.json"
 import katalog from "@/data/katalog.json"
 
 type Service = typeof katalog.categories[0]["services"][0]
+
+const VIDEOS = Array.from({ length: 10 }, (_, i) => `/medias/hero-${i + 1}.mp4`)
+
+const VideoReel = () => {
+  const [current, setCurrent] = useState(0)
+  const [prev, setPrev] = useState<number | null>(null)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  const goTo = (index: number) => {
+    setPrev(current)
+    setCurrent(index)
+  }
+
+  useEffect(() => {
+    const v = videoRef.current
+    if (!v) return
+    v.src = VIDEOS[current]
+    v.play().catch(() => {})
+  }, [current])
+
+  const handleEnded = () => {
+    goTo((current + 1) % VIDEOS.length)
+  }
+
+  return (
+    <div className="flex flex-col gap-3 w-full">
+      {/* Main video */}
+      <div className="relative rounded-2xl overflow-hidden aspect-video w-full"
+        style={{ background: "#111" }}>
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          playsInline
+          onEnded={handleEnded}
+          className="w-full h-full object-cover"
+        />
+        {/* Progress dots */}
+        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+          {VIDEOS.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => goTo(i)}
+              className="rounded-full transition-all duration-300"
+              style={{
+                width: i === current ? 20 : 6,
+                height: 6,
+                background: i === current ? "#a3e635" : "rgba(255,255,255,0.35)",
+              }}
+            />
+          ))}
+        </div>
+        {/* Video counter */}
+        <div className="absolute top-3 right-3 text-[10px] font-bold font-plus-jakarta px-2 py-1 rounded-full"
+          style={{ background: "rgba(0,0,0,0.6)", color: "rgba(255,255,255,0.7)" }}>
+          {current + 1} / {VIDEOS.length}
+        </div>
+      </div>
+
+      {/* Thumbnail strip — next 3 videos */}
+      <div className="grid grid-cols-3 gap-2">
+        {[1, 2, 3].map(offset => {
+          const idx = (current + offset) % VIDEOS.length
+          return (
+            <button
+              key={idx}
+              onClick={() => goTo(idx)}
+              className="relative rounded-xl overflow-hidden aspect-video transition-all hover:opacity-80"
+              style={{ background: "#111" }}
+            >
+              <video
+                src={VIDEOS[idx]}
+                muted
+                playsInline
+                className="w-full h-full object-cover opacity-60"
+              />
+            </button>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
 
 const ServiceRow = ({
   service,
@@ -145,79 +228,43 @@ const Services = () => {
 
       <main>
         {/* ── Hero ── */}
-        <section className="min-h-screen flex flex-col justify-center pt-32 pb-20 px-6 max-w-5xl mx-auto relative">
-          {/* Floating ROAS */}
-          <div className="absolute top-32 right-0 hidden lg:flex flex-col items-center gap-2">
-            <div className="px-3 py-1.5 rounded-full text-xs font-bold font-plus-jakarta"
-              style={{ background: "#a3e635", color: "#0d0d0d" }}>{data.floating.roas}</div>
-            <div className="bg-[#161616] border border-white/10 rounded-2xl p-4 flex items-end gap-1 h-20 w-20">
-              {[40, 60, 35, 80, 55, 100].map((h, i) => (
-                <div key={i} className="flex-1 rounded-sm"
-                  style={{ height: `${h}%`, background: "#a3e635", opacity: 0.35 + i * 0.12 }} />
+        <section className="min-h-screen pt-32 pb-20 px-6 max-w-5xl mx-auto flex flex-col lg:flex-row lg:items-center gap-12 lg:gap-16">
+          {/* Left: text */}
+          <div className="flex-1 flex flex-col justify-center">
+            {/* Platform tabs */}
+            <div className="flex items-center gap-1 bg-white/5 border border-white/10 rounded-full p-1 w-fit mb-10 flex-wrap">
+              {data.platforms.map(p => (
+                <button key={p} onClick={() => setActivePlatform(p)}
+                  className="px-4 py-2 rounded-full text-sm font-medium font-plus-jakarta transition-all duration-200"
+                  style={{
+                    background: activePlatform === p ? "white" : "transparent",
+                    color: activePlatform === p ? "#0d0d0d" : "rgba(255,255,255,0.5)",
+                  }}>
+                  {p}
+                </button>
               ))}
             </div>
+
+            <h1 className="font-extrabold font-plus-jakarta leading-[1.05] tracking-tight text-5xl sm:text-6xl md:text-7xl mb-6">
+              <span style={{ color: "#a3e635" }}>{data.hero.heading1}</span><br />
+              <span className="text-white">{data.hero.heading2}</span><br />
+              <span className="text-white">{data.hero.heading3}</span>
+            </h1>
+
+            <p className="text-white/50 font-plus-jakarta text-lg max-w-md leading-relaxed mb-8">
+              {data.hero.subtitle}
+            </p>
+
+            <button onClick={openModal}
+              className="font-plus-jakarta font-bold text-sm px-7 py-3.5 rounded-full w-fit transition-all hover:scale-105 active:scale-95"
+              style={{ background: "#a3e635", color: "#0d0d0d" }}>
+              Ücretsiz Görüşme
+            </button>
           </div>
 
-          {/* Floating cost */}
-          <div className="absolute bottom-40 right-4 hidden lg:flex items-center gap-2 bg-[#161616] border border-white/10 rounded-full px-4 py-2.5">
-            <svg viewBox="0 0 24 24" className="w-4 h-4 fill-none stroke-[#a3e635] stroke-[2]">
-              <polyline points="23 18 13.5 8.5 8.5 13.5 1 6" /><polyline points="17 18 23 18 23 12" />
-            </svg>
-            <span className="text-sm font-bold font-plus-jakarta">{data.floating.cost}</span>
-          </div>
-
-          {/* Platform tabs */}
-          <div className="flex items-center gap-1 bg-white/5 border border-white/10 rounded-full p-1 w-fit mb-10 flex-wrap">
-            {data.platforms.map(p => (
-              <button key={p} onClick={() => setActivePlatform(p)}
-                className="px-4 py-2 rounded-full text-sm font-medium font-plus-jakarta transition-all duration-200"
-                style={{
-                  background: activePlatform === p ? "white" : "transparent",
-                  color: activePlatform === p ? "#0d0d0d" : "rgba(255,255,255,0.5)",
-                }}>
-                {p}
-              </button>
-            ))}
-          </div>
-
-          <h1 className="font-extrabold font-plus-jakarta leading-[1.05] tracking-tight text-5xl sm:text-6xl md:text-7xl lg:text-[5rem] mb-6 max-w-3xl">
-            <span style={{ color: "#a3e635" }}>{data.hero.heading1}</span><br />
-            <span className="text-white">{data.hero.heading2}</span><br />
-            <span className="text-white">{data.hero.heading3}</span>
-          </h1>
-
-          <p className="text-white/50 font-plus-jakarta text-lg md:text-xl max-w-xl leading-relaxed mb-10">
-            {data.hero.subtitle}
-          </p>
-
-          {/* Social proof cards */}
-          <div className="flex flex-wrap gap-3">
-            <div className="bg-[#161616] border border-white/8 rounded-2xl p-4 max-w-xs">
-              <div className="flex items-start gap-3">
-                <div className="w-9 h-9 rounded-full bg-[#a3e635]/20 flex items-center justify-center flex-shrink-0">
-                  <span className="text-xs font-black" style={{ color: "#a3e635" }}>A</span>
-                </div>
-                <div>
-                  <p className="text-sm text-white/80 font-plus-jakarta mb-1">
-                    "Satışlarımız bu ay <span className="font-bold" style={{ color: "#a3e635" }}>2 katına çıktı</span>, teşekkürler!"
-                  </p>
-                  <p className="text-xs text-white/30 font-plus-jakarta">Ahmet Yılmaz, CEO</p>
-                </div>
-              </div>
-            </div>
-            <div className="bg-[#161616] border border-white/8 rounded-2xl p-4 flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl bg-neutral-800 flex items-center justify-center flex-shrink-0">
-                <span className="text-lg">👗</span>
-              </div>
-              <div>
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="text-sm font-bold text-white font-plus-jakarta">Yaz İndirimi #24</span>
-                  <span className="text-[10px] px-1.5 py-0.5 rounded font-plus-jakarta"
-                    style={{ background: "rgba(163,230,53,0.2)", color: "#a3e635" }}>Sponsorlu</span>
-                </div>
-                <p className="text-xs text-white/30 font-plus-jakarta">Aktif · Yayında</p>
-              </div>
-            </div>
+          {/* Right: video reel */}
+          <div className="w-full lg:w-[420px] flex-shrink-0">
+            <VideoReel />
           </div>
         </section>
 

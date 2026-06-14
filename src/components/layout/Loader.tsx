@@ -1,12 +1,14 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { gsap } from "@/lib/gsap"
 
 const SLOGANS = ["ANALİZ", "STRATEJİ", "CREATIVE", "DOMİNASYON", "HARB!"]
 
 export const Loader = () => {
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [isVisible, setIsVisible] = useState(true)
+  
   const containerRef = useRef<HTMLDivElement>(null)
   const pathRef = useRef<SVGPathElement>(null)
-  const slogansWrapperRef = useRef<HTMLDivElement>(null)
   const counterRef = useRef<HTMLSpanElement>(null)
   const progressRef = useRef<HTMLDivElement>(null)
   
@@ -21,11 +23,10 @@ export const Loader = () => {
       }
     })
 
-    // 1. Butter-smooth, continuous counter animation using sine.inOut
-    // This provides a gentle, wave-like velocity curve: starts smooth, counts steadily in the middle, and slows down gracefully at 100%
+    // 1. Butter-smooth, continuous counter animation (direct DOM updates for high FPS)
     tl.to(obj, {
       val: 100,
-      duration: 3.2,
+      duration: 3.5, 
       ease: "sine.inOut",
       onUpdate: () => {
         const currentVal = Math.floor(obj.val)
@@ -36,18 +37,12 @@ export const Loader = () => {
           progressRef.current.style.width = `${currentVal}%`
         }
 
-        // 2. Sync slogans with the percentage thresholds. 
-        // sine.inOut ensures the middle numbers don't rush, giving ample reading time (0.5s - 0.6s) to middle words
+        // Sync slogans with the percentage thresholds.
+        // Triggers React state updates only 5 times during the whole animation
         const newIndex = Math.min(Math.floor(currentVal / 20), SLOGANS.length - 1)
-        
         if (newIndex !== currentSloganIndex.current) {
           currentSloganIndex.current = newIndex
-          gsap.to(slogansWrapperRef.current, {
-            yPercent: -newIndex * (100 / SLOGANS.length),
-            duration: 0.4,
-            ease: "power3.out",
-            overwrite: "auto"
-          })
+          setActiveIndex(newIndex)
         }
       }
     }, 0)
@@ -56,9 +51,7 @@ export const Loader = () => {
     const exitAnimation = () => {
       const exitTimeline = gsap.timeline({
         onComplete: () => {
-          if (containerRef.current) {
-            containerRef.current.style.display = "none"
-          }
+          setIsVisible(false)
         }
       })
 
@@ -85,6 +78,8 @@ export const Loader = () => {
     }
   }, [])
 
+  if (!isVisible) return null
+
   return (
     <div
       ref={containerRef}
@@ -110,21 +105,30 @@ export const Loader = () => {
 
         {/* Center slogans ticker window */}
         <div className="flex justify-center items-center h-full">
-          {/* Sizing classes applied to parent window container to scale em heights properly */}
-          <div className="text-5xl sm:text-7xl md:text-8xl font-extrabold font-plus-jakarta tracking-tighter h-[1.3em] overflow-hidden flex items-center justify-center">
+          {/* Changed items-center to items-start so the first slogan is aligned to the window correctly, and translation calculates center perfectly */}
+          <div className="text-5xl sm:text-7xl md:text-8xl font-extrabold font-plus-jakarta tracking-tighter h-[1.3em] overflow-hidden flex items-start justify-center text-white">
             <div 
-              ref={slogansWrapperRef} 
-              className="flex flex-col select-none will-change-transform"
+              className="flex flex-col select-none transition-transform duration-700 ease-out will-change-transform"
+              style={{ transform: `translateY(${-activeIndex * (100 / SLOGANS.length)}%)` }}
             >
-              {SLOGANS.map((slogan, index) => (
-                <div 
-                  key={index} 
-                  className="flex items-center justify-center"
-                  style={{ height: "1.3em", lineHeight: "1.3em" }}
-                >
-                  {slogan}
-                </div>
-              ))}
+              {SLOGANS.map((slogan, index) => {
+                const isActive = index === activeIndex
+                return (
+                  <div 
+                    key={index} 
+                    className="flex items-center justify-center text-white transition-all duration-700 ease-out"
+                    style={{ 
+                      height: "1.3em", 
+                      lineHeight: "1.3em",
+                      opacity: isActive ? 1 : 0.08,
+                      transform: isActive ? "scale(1)" : "scale(0.8)",
+                      willChange: "transform, opacity"
+                    }}
+                  >
+                    {slogan}
+                  </div>
+                )
+              })}
             </div>
           </div>
         </div>

@@ -166,16 +166,16 @@ export const Act4Arsenal = () => {
                   </span>
                 </div>
 
-                <div className="grid grid-cols-3 gap-4 mb-6">
+                <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-6">
                   {current.preview.metrics.map((metric, i) => (
                     <div
                       key={i}
-                      className="bg-[#f8f8f8] rounded-xl p-4 text-center"
+                      className="bg-[#f8f8f8] rounded-xl p-2 sm:p-4 text-center min-w-0"
                     >
-                      <div className="text-2xl font-bold text-neutral-900 font-plus-jakarta">
+                      <div className="text-lg sm:text-xl md:text-2xl font-bold text-neutral-900 font-plus-jakarta truncate">
                         {metric.value}
                       </div>
-                      <div className="text-xs text-neutral-500 font-plus-jakarta mt-1">
+                      <div className="text-[10px] sm:text-xs text-neutral-500 font-plus-jakarta mt-0.5 sm:mt-1 truncate">
                         {metric.label}
                       </div>
                     </div>

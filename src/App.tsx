@@ -28,7 +28,7 @@ const AppContent = () => {
 
   return (
     <>
-      {/* <Loader /> */}
+      <Loader />
       <Toaster />
       <Sonner />
       {!isContactPage && <ContactModal isOpen={isOpen} onClose={closeModal} />}

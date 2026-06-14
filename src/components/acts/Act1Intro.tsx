@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react"
 import { gsap } from "@/lib/gsap"
 import { useContactModal } from "@/contexts/ContactModalContext"
+import TrueFocus from "@/components/ui/TrueFocus"
 
 const VideoCard = ({ src, className }: { src: string; className?: string }) => (
   <div className={`overflow-hidden rounded-2xl min-h-0 bg-neutral-100 ${className}`}>
@@ -41,10 +42,19 @@ export const Act1Intro = () => {
             Dijitalleşmeye
             <br />
             <span
-              className="px-2 py-0.5 rounded-lg"
-              style={{ background: "#a3e635", display: "inline-block", marginTop: "4px" }}
+              className="px-2 py-0.5 rounded-lg inline-block mt-2"
+              style={{ background: "#a3e635" }}
             >
-              Hazır Mısınız?
+              <TrueFocus 
+                sentence="Hazır Mısınız?"
+                manualMode={false}
+                blurAmount={3}
+                borderColor="#0d0d0d"
+                glowColor="rgba(0, 0, 0, 0.15)"
+                animationDuration={0.6}
+                pauseBetweenAnimations={1.2}
+                wordClassName="text-neutral-950 text-4xl sm:text-5xl font-extrabold font-plus-jakarta"
+              />
             </span>
           </h1>
 

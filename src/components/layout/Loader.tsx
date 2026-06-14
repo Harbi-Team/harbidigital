@@ -1,47 +1,158 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef } from "react"
+import { gsap } from "@/lib/gsap"
+
+const SLOGANS = ["ANALİZ", "STRATEJİ", "CREATIVE", "DOMİNASYON", "HARB!"]
 
 export const Loader = () => {
-  const [isVisible, setIsVisible] = useState(true)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const pathRef = useRef<SVGPathElement>(null)
+  const slogansWrapperRef = useRef<HTMLDivElement>(null)
+  const counterRef = useRef<HTMLSpanElement>(null)
+  const progressRef = useRef<HTMLDivElement>(null)
+  
+  const currentSloganIndex = useRef(0)
 
   useEffect(() => {
-    // 3 saniye sonra loader'ı gizle
-    const timer = setTimeout(() => {
-      setIsVisible(false)
-    }, 3000)
+    const obj = { val: 0 }
+    
+    const tl = gsap.timeline({
+      onComplete: () => {
+        exitAnimation()
+      }
+    })
 
-    return () => clearTimeout(timer)
+    // 1. Butter-smooth, continuous counter animation using sine.inOut
+    // This provides a gentle, wave-like velocity curve: starts smooth, counts steadily in the middle, and slows down gracefully at 100%
+    tl.to(obj, {
+      val: 100,
+      duration: 3.2,
+      ease: "sine.inOut",
+      onUpdate: () => {
+        const currentVal = Math.floor(obj.val)
+        if (counterRef.current) {
+          counterRef.current.innerText = `${currentVal}%`
+        }
+        if (progressRef.current) {
+          progressRef.current.style.width = `${currentVal}%`
+        }
+
+        // 2. Sync slogans with the percentage thresholds. 
+        // sine.inOut ensures the middle numbers don't rush, giving ample reading time (0.5s - 0.6s) to middle words
+        const newIndex = Math.min(Math.floor(currentVal / 20), SLOGANS.length - 1)
+        
+        if (newIndex !== currentSloganIndex.current) {
+          currentSloganIndex.current = newIndex
+          gsap.to(slogansWrapperRef.current, {
+            yPercent: -newIndex * (100 / SLOGANS.length),
+            duration: 0.4,
+            ease: "power3.out",
+            overwrite: "auto"
+          })
+        }
+      }
+    }, 0)
+
+    // GPU-accelerated Elastic Exit Animation
+    const exitAnimation = () => {
+      const exitTimeline = gsap.timeline({
+        onComplete: () => {
+          if (containerRef.current) {
+            containerRef.current.style.display = "none"
+          }
+        }
+      })
+
+      exitTimeline.to(pathRef.current, {
+        attr: { d: "M 0 0 L 100 0 L 100 100 Q 50 65 0 100 Z" },
+        duration: 0.35,
+        ease: "power2.in"
+      })
+      .to(pathRef.current, {
+        attr: { d: "M 0 0 L 100 0 L 100 0 Q 50 0 0 0 Z" },
+        duration: 0.55,
+        ease: "power4.out"
+      })
+      
+      exitTimeline.to(containerRef.current, {
+        y: "-100%",
+        duration: 0.9,
+        ease: "power4.inOut"
+      }, 0)
+    }
+
+    return () => {
+      tl.kill()
+    }
   }, [])
-
-  if (!isVisible) return null
 
   return (
     <div
-      className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-black transition-opacity duration-500"
-      style={{
-        opacity: isVisible ? 1 : 0,
-      }}
+      ref={containerRef}
+      className="fixed inset-0 z-[9999] pointer-events-none select-none overflow-hidden"
+      style={{ willChange: "transform" }}
     >
-      {/* Logo */}
-      <div className="animate-pulse">
-        <img
-          src="/harbi/harbi_logo.png"
-          alt="HARB!"
-          className="w-48 h-48 md:w-64 md:h-64 object-contain"
+      {/* Elastic SVG background overlay */}
+      <svg
+        className="absolute inset-0 w-full h-full fill-neutral-950"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+      >
+        <path
+          ref={pathRef}
+          d="M 0 0 L 100 0 L 100 100 Q 50 100 0 100 Z"
         />
-      </div>
+      </svg>
 
-      {/* Text */}
-      <div className="mt-8 text-center">
-        <h2 className="text-2xl md:text-4xl font-bold text-white tracking-wider">
-          HARB! SUNAR...
-        </h2>
-      </div>
+      {/* Loader Content */}
+      <div className="absolute inset-0 z-10 flex flex-col justify-between p-8 md:p-16 text-white pointer-events-auto">
+        {/* Empty top spacing */}
+        <div />
 
-      {/* Loading Animation */}
-      <div className="mt-12 flex gap-2">
-        <div className="w-3 h-3 bg-white rounded-full animate-bounce [animation-delay:-0.3s]"></div>
-        <div className="w-3 h-3 bg-white rounded-full animate-bounce [animation-delay:-0.15s]"></div>
-        <div className="w-3 h-3 bg-white rounded-full animate-bounce"></div>
+        {/* Center slogans ticker window */}
+        <div className="flex justify-center items-center h-full">
+          {/* Sizing classes applied to parent window container to scale em heights properly */}
+          <div className="text-5xl sm:text-7xl md:text-8xl font-extrabold font-plus-jakarta tracking-tighter h-[1.3em] overflow-hidden flex items-center justify-center">
+            <div 
+              ref={slogansWrapperRef} 
+              className="flex flex-col select-none will-change-transform"
+            >
+              {SLOGANS.map((slogan, index) => (
+                <div 
+                  key={index} 
+                  className="flex items-center justify-center"
+                  style={{ height: "1.3em", lineHeight: "1.3em" }}
+                >
+                  {slogan}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom stats and progress */}
+        <div className="flex items-end justify-between relative">
+          {/* Progress bar */}
+          <div className="absolute top-0 left-0 right-0 h-[1px] bg-white/10 rounded-full overflow-hidden">
+            <div 
+              ref={progressRef}
+              className="h-full bg-[#a3e635]" 
+              style={{ width: "0%" }}
+            />
+          </div>
+          
+          <div className="w-full flex items-center justify-between pt-6">
+            <span className="font-plus-jakarta text-xs text-white/40 uppercase tracking-wider font-semibold">
+              Kreatif Strateji Ajansı
+            </span>
+            {/* Big counter */}
+            <span 
+              ref={counterRef}
+              className="font-plus-jakarta font-black text-6xl md:text-8xl tracking-tight leading-none text-[#a3e635]/80"
+            >
+              0%
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   )

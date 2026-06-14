@@ -1,13 +1,10 @@
 import { useEffect, useRef } from "react"
 import { gsap } from "@/lib/gsap"
 
-const LEFT_TAGS = [
+const ALL_TAGS = [
   { label: "İçerik Üretimi" },
   { label: "İş Analizi" },
   { label: "SEO Yönetimi" },
-]
-
-const RIGHT_TAGS = [
   { label: "Reklam Yönetimi" },
   { label: "Veri Analizi" },
   { label: "E-Posta Pazarlama" },
@@ -18,15 +15,16 @@ export const Act2Problem = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      // Fade-in entry animation
       gsap.fromTo(
         ".float-tag",
-        { opacity: 0, y: 20 },
+        { opacity: 0, scale: 0.8 },
         {
           opacity: 1,
-          y: 0,
-          duration: 0.6,
-          stagger: 0.1,
-          ease: "power3.out",
+          scale: 1,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: "back.out(1.7)",
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top 80%",
@@ -34,6 +32,7 @@ export const Act2Problem = () => {
           },
         }
       )
+
       gsap.fromTo(
         ".act2-content",
         { opacity: 0, y: 40 },
@@ -49,7 +48,49 @@ export const Act2Problem = () => {
           },
         }
       )
+
+      // Orbit animation logic
+      const tags = document.querySelectorAll(".float-tag")
+      const orbit = { angle: 0 }
+      
+      const updatePositions = () => {
+        const width = window.innerWidth
+        // Calculate responsive radii
+        const radiusX = Math.min(Math.max(width * 0.35, 360), 520)
+        const radiusY = 160
+        
+        tags.forEach((tag, i) => {
+          const startAngle = (i * 2 * Math.PI) / 6
+          const currentAngle = startAngle + orbit.angle
+          const x = Math.cos(currentAngle) * radiusX
+          const y = Math.sin(currentAngle) * radiusY
+          
+          gsap.set(tag, {
+            x: x,
+            y: y,
+            xPercent: -50,
+            yPercent: -50,
+          })
+        })
+      }
+      
+      const anim = gsap.to(orbit, {
+        angle: 2 * Math.PI,
+        duration: 35, // Slow rotation for a smooth effect
+        ease: "none",
+        repeat: -1,
+        onUpdate: updatePositions,
+      })
+
+      window.addEventListener("resize", updatePositions)
+      updatePositions()
+
+      return () => {
+        window.removeEventListener("resize", updatePositions)
+        anim.kill()
+      }
     }, sectionRef)
+
     return () => ctx.revert()
   }, [])
 
@@ -59,27 +100,12 @@ export const Act2Problem = () => {
       className="relative bg-white py-28 md:py-36 overflow-hidden"
       id="act2"
     >
-      {/* Left floating tags */}
-      <div className="absolute left-[3%] xl:left-[6%] top-0 bottom-0 hidden lg:flex flex-col justify-around py-20 pointer-events-none">
-        {LEFT_TAGS.map((tag, i) => (
+      {/* Rotating orbit tags */}
+      <div className="absolute inset-0 pointer-events-none hidden lg:block overflow-hidden">
+        {ALL_TAGS.map((tag, i) => (
           <div
             key={i}
-            className="float-tag flex items-center gap-2.5 bg-white border border-neutral-200 shadow-md rounded-full px-4 py-2.5"
-          >
-            <span className="w-2 h-2 rounded-full bg-[#a3e635] flex-shrink-0" />
-            <span className="text-sm font-semibold text-neutral-700 font-plus-jakarta whitespace-nowrap">
-              {tag.label}
-            </span>
-          </div>
-        ))}
-      </div>
-
-      {/* Right floating tags */}
-      <div className="absolute right-[3%] xl:right-[6%] top-0 bottom-0 hidden lg:flex flex-col justify-around py-20 pointer-events-none">
-        {RIGHT_TAGS.map((tag, i) => (
-          <div
-            key={i}
-            className="float-tag flex items-center gap-2.5 bg-white border border-neutral-200 shadow-md rounded-full px-4 py-2.5"
+            className="float-tag absolute left-1/2 top-1/2 flex items-center gap-2.5 bg-white border border-neutral-200 shadow-md rounded-full px-4 py-2.5 z-20"
           >
             <span className="w-2 h-2 rounded-full bg-[#a3e635] flex-shrink-0" />
             <span className="text-sm font-semibold text-neutral-700 font-plus-jakarta whitespace-nowrap">

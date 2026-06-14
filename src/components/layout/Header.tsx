@@ -3,7 +3,6 @@ import { Link, useLocation } from "react-router-dom"
 import { Menu } from "./Menu"
 import { useContactModal } from "@/contexts/ContactModalContext"
 import siteData from "@/data/site.json"
-import { GlassSurface } from "@/components/ui/glass-surface"
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -60,27 +59,12 @@ export const Header = () => {
   return (
     <>
       <header className="fixed top-6 left-0 right-0 z-50 px-4 md:px-6">
-        <GlassSurface
-          as="div"
-          width="100%"
-          height="auto"
-          borderRadius={9999}
-          blur={12}
-          borderWidth={0.05}
-          displace={2}
-          distortionScale={-80}
-          xChannel="R"
-          yChannel="B"
-          redOffset={0}
-          greenOffset={8}
-          blueOffset={16}
-          brightness={50}
-          opacity={1}
-          backgroundOpacity={0}
-          mixBlendMode="screen"
-          saturation={1.6}
-          className="max-w-5xl mx-auto transition-all duration-300"
-          contentClassName="w-full flex items-center justify-between px-5 md:px-7 py-3"
+        <div
+          className={`max-w-5xl mx-auto w-full rounded-full flex items-center justify-between px-5 md:px-7 py-3 transition-all duration-300 backdrop-blur-md ${
+            isDarkNavbar
+              ? "bg-[#0d0d0d]/70 border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)]"
+              : "bg-white/70 border border-black/10 shadow-[0_8px_32px_rgba(0,0,0,0.08)]"
+          }`}
         >
           {/* Logo */}
           <Link
@@ -145,7 +129,7 @@ export const Header = () => {
               }`} />
             </button>
           </div>
-        </GlassSurface>
+        </div>
       </header>
 
       <Menu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />

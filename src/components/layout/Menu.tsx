@@ -65,7 +65,7 @@ export const Menu = ({ isOpen, onClose }: MenuProps) => {
   return (
     <div
       ref={menuRef}
-      className="fixed inset-0 z-[100] bg-background translate-x-full"
+      className="fixed inset-y-0 right-0 z-[100] w-full md:max-w-md bg-white/60 dark:bg-neutral-950/65 backdrop-blur-2xl border-l border-neutral-200/20 shadow-2xl translate-x-full"
       style={{ transform: "translateX(100%)" }}
     >
       <div className="h-full flex flex-col px-6 md:px-12 py-10">

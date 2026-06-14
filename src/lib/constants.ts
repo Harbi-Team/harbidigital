@@ -32,7 +32,7 @@ export const NAV_LINKS = [
   { href: "/isler", label: "İşler" },
   { href: "/urunler", label: "Ürünler" },
   { href: "/hizmetler", label: "Hizmetler" },
-  { href: "/ekip", label: "Ekip" },
+  // { href: "/ekip", label: "Ekip" },
   { href: "/iletisim", label: "İletişim" },
 ] as const
 

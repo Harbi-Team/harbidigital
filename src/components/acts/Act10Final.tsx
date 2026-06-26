@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react"
+import { Link } from "react-router-dom"
 import { gsap } from "@/lib/gsap"
-import { useContactModal } from "@/contexts/ContactModalContext"
 
 const PLATFORM_ICONS = [
   { bg: "#1877F2", char: "f" },
@@ -15,7 +15,6 @@ const PLATFORM_ICONS = [
 
 export const Act10Final = () => {
   const sectionRef = useRef<HTMLElement>(null)
-  const { openModal } = useContactModal()
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -96,18 +95,18 @@ export const Act10Final = () => {
 
         {/* Buttons */}
         <div className="act10-btns flex flex-col sm:flex-row gap-4 items-center justify-center">
-          <button
-            onClick={openModal}
+          <Link
+            to="/iletisim"
             className="font-plus-jakarta font-extrabold text-sm tracking-wider bg-white text-neutral-900 hover:bg-neutral-100 rounded-full px-8 py-4 flex items-center gap-3 transition-all duration-300 hover:scale-105 active:scale-95"
           >
             <svg viewBox="0 0 24 24" className="w-4 h-4 fill-neutral-900">
               <path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .3l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.3-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z" />
             </svg>
             Bizi Arayalım
-          </button>
+          </Link>
 
-          <button
-            onClick={openModal}
+          <Link
+            to="/iletisim"
             className="font-plus-jakarta font-extrabold text-sm tracking-wider bg-transparent text-white border-2 border-[#a3e635] shadow-[0_0_20px_rgba(163,230,53,0.2)] hover:shadow-[0_0_35px_rgba(163,230,53,0.45)] rounded-full px-8 py-4 flex items-center gap-3 transition-all duration-300 hover:scale-105 active:scale-95"
           >
             <svg
@@ -120,7 +119,7 @@ export const Act10Final = () => {
               <line x1="3" y1="10" x2="21" y2="10" />
             </svg>
             Görüşme Planla
-          </button>
+          </Link>
         </div>
       </div>
     </section>

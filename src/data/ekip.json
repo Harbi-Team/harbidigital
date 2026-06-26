@@ -1,7 +1,7 @@
 {
   "hero": {
     "badge": "Ekip",
-    "heading1": "Arkanzda güçlü",
+    "heading1": "Arkanızda güçlü",
     "heading2": "bir ekip var.",
     "subtitle": "Dijital pazarlamanın her alanında uzmanlaşmış, sonuç odaklı bir ekip."
   },
@@ -9,32 +9,53 @@
     {
       "name": "Hüseyin Aydın",
       "role": "Kurucu & CEO",
-      "img": "/team/huseyin-aydin.png"
+      "expertise": "Strateji & Büyüme",
+      "bio": "Şirketin rotasını çizer. Her kararın arkasında bir veri, her stratejinin arkasında bir hedef vardır.",
+      "img": "/team/huseyin-aydin.png",
+      "link": "https://www.linkedin.com/in/h%C3%BCseyin-aydin-26b7273a0/"
     },
     {
       "name": "Muhammed Ali Aslan",
       "role": "Kurucu & CTO",
-      "img": "/team/muhammed-ali-aslan.png"
+      "expertise": "Yazılım & Teknoloji",
+      "bio": "Fikirleri çalışan ürünlere dönüştürür. Kod yazmaz sadece, sistem kurar.",
+      "img": "/team/muhammed-ali-aslan.png",
+      "link": "https://muhammedaslan.net/"
     },
     {
       "name": "Rabia Töngel",
       "role": "Marka Elçisi",
-      "img": "/team/rabia-tongel.png"
+      "expertise": "Marka & İçerik",
+      "bio": "Harbi'nin sesini ve yüzünü temsil eder. Markaları sayılardan önce hikayeyle büyütür.",
+      "img": "/team/rabia-tongel.png",
+      "link": "https://www.linkedin.com/in/rabia-t%C3%B6ngel-873b2b31b"
     },
     {
-      "name": "Yusufcan Alemdar",
-      "role": "Kurucu & CSO",
-      "img": "/team/yusufcan-alemdar.png"
+      "name": "Yusuf Can Alemdar",
+      "role": "Kurucu & Art Director",
+      "expertise": "Satış & Operasyon",
+      "bio": "Markaların dijital dünyadaki görünen yüzünü tasarlar.",
+      "img": "/team/yusufcan-alemdar.png",
+      "link": "https://www.linkedin.com/in/yusuf-alemdar-32831533b"
     },
     {
       "name": "Baransel İnal",
       "role": "Kurucu & CIO",
-      "img": "/team/baransel-inal.png"
+      "expertise": "Altyapı & Sistemler",
+      "bio": "Perde arkasındaki düzeni kurar. Her sistemin sorunsuz çalışması onun sorumluluğundadır.",
+      "img": "/team/baransel-inal.png",
+      "link": "https://www.baransel.site/"
     }
   ],
-  "join": {
-    "heading": "Ekibimize Katılın",
-    "desc": "Dijital pazarlama tutkunu yetenekli insanları arıyoruz.",
-    "cta": "Başvurun"
+  "together": {
+    "heading": "Birlikte Çalışıyoruz",
+    "intro": "Harbi;",
+    "roles": [
+      "Tasarımcılar",
+      "Yazılımcılar",
+      "Growth Uzmanları",
+      "Operasyon Danışmanları"
+    ],
+    "outro": "tarafından oluşturulmuş multidisipliner bir ekiptir."
   }
 }

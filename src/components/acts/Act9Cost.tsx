@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react"
+import { Link } from "react-router-dom"
 import { gsap } from "@/lib/gsap"
 import {
   Accordion,
@@ -6,7 +7,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { useContactModal } from "@/contexts/ContactModalContext"
 
 const FAQS = [
   {
@@ -33,7 +33,6 @@ const FAQS = [
 
 export const Act9Cost = () => {
   const sectionRef = useRef<HTMLElement>(null)
-  const { openModal } = useContactModal()
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -88,8 +87,8 @@ export const Act9Cost = () => {
 
         {/* CTA */}
         <div className="act9-content text-center mt-12">
-          <button
-            onClick={openModal}
+          <Link
+            to="/iletisim"
             className="font-plus-jakarta font-extrabold text-sm tracking-wider bg-black text-white hover:bg-neutral-900 border-[2px] border-[#a3e635] shadow-[0_0_20px_rgba(163,230,53,0.2)] hover:shadow-[0_0_30px_rgba(163,230,53,0.45)] rounded-full px-8 py-4 inline-flex items-center gap-3 transition-all duration-300 hover:scale-105 active:scale-95"
           >
             Görüşme Planla
@@ -102,7 +101,7 @@ export const Act9Cost = () => {
               <line x1="8" y1="2" x2="8" y2="6" />
               <line x1="3" y1="10" x2="21" y2="10" />
             </svg>
-          </button>
+          </Link>
         </div>
       </div>
     </section>

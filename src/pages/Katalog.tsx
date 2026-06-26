@@ -1,8 +1,8 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
 import { FloatingContactButton } from "@/components/layout/FloatingContactButton"
-import { useContactModal } from "@/contexts/ContactModalContext"
 import katalog from "@/data/katalog.json"
 
 const ServiceCard = ({ service, onCta }: { service: typeof katalog.categories[0]["services"][0]; onCta: () => void }) => {
@@ -85,7 +85,8 @@ const ServiceCard = ({ service, onCta }: { service: typeof katalog.categories[0]
 }
 
 const Katalog = () => {
-  const { openModal } = useContactModal()
+  const navigate = useNavigate()
+  const openModal = () => navigate("/iletisim")
   const [activeCategory, setActiveCategory] = useState(katalog.categories[0].id)
 
   const currentCategory = katalog.categories.find(c => c.id === activeCategory)!

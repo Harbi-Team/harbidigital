@@ -1,11 +1,18 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { gsap } from "@/lib/gsap"
 
-const TAGS_LEFT = ["Strateji Danışmanlığı", "Meta Reklam", "Google Ads"]
-const TAGS_RIGHT = ["A/B Testi", "Dönüşüm Optimizasyonu", "Analitik Raporlama"]
+const TAGS = [
+  "Strateji Danışmanlığı",
+  "Meta Reklam",
+  "Google Ads",
+  "A/B Testi",
+  "Dönüşüm Optimizasyonu",
+  "Analitik Raporlama",
+]
 
 export const Act5Proof = () => {
   const sectionRef = useRef<HTMLElement>(null)
+  const [isPlaying, setIsPlaying] = useState(false)
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -77,76 +84,62 @@ export const Act5Proof = () => {
           </p>
         </div>
 
-        {/* Main content: tags left + video + tags right */}
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-          {/* Left tags */}
-          <div className="flex flex-row lg:flex-col gap-3 flex-wrap justify-center lg:justify-start">
-            {TAGS_LEFT.map((tag, i) => (
-              <div
-                key={i}
-                className="act5-tag flex items-center gap-2 bg-[#f8f8f8] border border-neutral-200 rounded-full px-4 py-2.5 shadow-sm whitespace-nowrap"
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-[#a3e635] flex-shrink-0" />
-                <span className="text-sm font-semibold text-neutral-700 font-plus-jakarta">
-                  {tag}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          {/* Video Thumbnail */}
-          <div className="act5-video flex-1 w-full max-w-2xl mx-auto">
-            <div className="relative bg-[#111111] rounded-2xl overflow-hidden aspect-video shadow-2xl group cursor-pointer">
-              {/* Background image */}
-              <img
-                src="/medias/image2.jpg"
-                alt="Harbi Digital - Kimdir Ne Yapar?"
-                className="w-full h-full object-cover opacity-60 group-hover:opacity-70 transition-opacity duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-br from-black/50 to-black/20" />
-
-              {/* Play button */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#a3e635] flex items-center justify-center shadow-lg shadow-[#a3e635]/30 group-hover:scale-110 transition-transform duration-300">
-                  <svg
-                    viewBox="0 0 24 24"
-                    className="w-7 h-7 md:w-8 md:h-8 fill-black ml-1"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              </div>
-
-              {/* Label */}
-              <div className="absolute bottom-6 left-6">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="font-bold text-white text-xl md:text-2xl font-plus-jakarta">
-                    HARB!.
-                  </span>
-                  <span className="text-[#a3e635] font-bold text-xl md:text-2xl font-plus-jakarta">
-                    DIGITAL
-                  </span>
-                </div>
-                <p className="text-white/70 text-sm font-plus-jakarta">
-                  Kimdir? Ne yapar?
-                </p>
-              </div>
+        {/* Tags row under heading */}
+        <div className="flex flex-row flex-wrap justify-center gap-3 mb-10">
+          {TAGS.map((tag, i) => (
+            <div
+              key={i}
+              className="act5-tag flex items-center bg-[#f8f8f8] border border-neutral-200 rounded-full px-4 py-2.5 shadow-sm whitespace-nowrap"
+            >
+              <span className="text-sm font-semibold text-neutral-700 font-plus-jakarta">
+                {tag}
+              </span>
             </div>
-          </div>
+          ))}
+        </div>
 
-          {/* Right tags */}
-          <div className="flex flex-row lg:flex-col gap-3 flex-wrap justify-center lg:justify-start">
-            {TAGS_RIGHT.map((tag, i) => (
-              <div
-                key={i}
-                className="act5-tag flex items-center gap-2 bg-[#f8f8f8] border border-neutral-200 rounded-full px-4 py-2.5 shadow-sm whitespace-nowrap"
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-[#a3e635] flex-shrink-0" />
-                <span className="text-sm font-semibold text-neutral-700 font-plus-jakarta">
-                  {tag}
-                </span>
-              </div>
-            ))}
+        {/* Main content: video */}
+        <div className="flex items-center justify-center">
+          {/* Video Thumbnail */}
+          <div className="act5-video w-full max-w-6xl mx-auto">
+            <div className="relative bg-[#111111] rounded-2xl overflow-hidden aspect-video shadow-2xl group">
+              {isPlaying ? (
+                <video
+                  src="/medias/harbi-video.mp4"
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  playsInline
+                  muted
+                />
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => setIsPlaying(true)}
+                  className="absolute inset-0 w-full h-full cursor-pointer"
+                  aria-label="Videoyu oynat"
+                >
+                  {/* Background image */}
+                  <img
+                    src="/medias/footer-bg.png"
+                    alt="Harbi Digital - Kimdir Ne Yapar?"
+                    className="w-full h-full object-cover opacity-60 group-hover:opacity-70 transition-opacity duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-black/50 to-black/20" />
+
+                  {/* Play button */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#a3e635] flex items-center justify-center shadow-lg shadow-[#a3e635]/30 group-hover:scale-110 transition-transform duration-300">
+                      <svg
+                        viewBox="0 0 24 24"
+                        className="w-7 h-7 md:w-8 md:h-8 fill-black ml-1"
+                      >
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>

@@ -102,6 +102,17 @@ export const Menu = ({ isOpen, onClose }: MenuProps) => {
               {link.label}
             </Link>
           ))}
+
+          <a
+            href="https://www.gitbi.network/"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={onClose}
+            className="mt-4 flex items-center gap-2 font-plus-jakarta font-bold text-sm tracking-wider rounded-full px-5 py-2.5 bg-white text-neutral-900 hover:bg-neutral-100 transition-all duration-200"
+          >
+            <img src="/medias/gitbi.png" alt="" className="h-6 w-6 object-contain" />
+            Topluluğumuza Katıl
+          </a>
         </div>
 
         {/* Footer */}

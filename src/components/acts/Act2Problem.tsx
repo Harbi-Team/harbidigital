@@ -52,19 +52,19 @@ export const Act2Problem = () => {
       // Orbit animation logic
       const tags = document.querySelectorAll(".float-tag")
       const orbit = { angle: 0 }
-      
+
       const updatePositions = () => {
         const width = window.innerWidth
         // Calculate responsive radii
         const radiusX = Math.min(Math.max(width * 0.35, 360), 520)
         const radiusY = 160
-        
+
         tags.forEach((tag, i) => {
           const startAngle = (i * 2 * Math.PI) / 6
           const currentAngle = startAngle + orbit.angle
           const x = Math.cos(currentAngle) * radiusX
           const y = Math.sin(currentAngle) * radiusY
-          
+
           gsap.set(tag, {
             x: x,
             y: y,
@@ -73,7 +73,7 @@ export const Act2Problem = () => {
           })
         })
       }
-      
+
       const anim = gsap.to(orbit, {
         angle: 2 * Math.PI,
         duration: 35, // Slow rotation for a smooth effect
@@ -107,7 +107,6 @@ export const Act2Problem = () => {
             key={i}
             className="float-tag absolute left-1/2 top-1/2 flex items-center gap-2.5 bg-white border border-neutral-200 shadow-md rounded-full px-4 py-2.5 z-20"
           >
-            <span className="w-2 h-2 rounded-full bg-[#a3e635] flex-shrink-0" />
             <span className="text-sm font-semibold text-neutral-700 font-plus-jakarta whitespace-nowrap">
               {tag.label}
             </span>

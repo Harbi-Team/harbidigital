@@ -1,8 +1,6 @@
-import { useContactModal } from "@/contexts/ContactModalContext"
+import { Link } from "react-router-dom"
 
 export const FloatingContactButton = () => {
-  const { openModal } = useContactModal()
-
   return (
     <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50">
       {/* Outer wrapper with glow and border mask */}
@@ -21,8 +19,8 @@ export const FloatingContactButton = () => {
         />
 
         {/* Button body */}
-        <button
-          onClick={openModal}
+        <Link
+          to="/iletisim"
           className="relative z-10 font-plus-jakarta font-bold text-sm text-white flex items-center gap-2.5 px-6 py-3 transition-all duration-200 hover:scale-[1.02] active:scale-95 whitespace-nowrap bg-[#111111] hover:bg-[#161616] rounded-full"
         >
           Görüşme Planla
@@ -33,7 +31,7 @@ export const FloatingContactButton = () => {
             <line x1="3" y1="10" x2="21" y2="10" />
             <polyline points="9 16 11 18 15 14" />
           </svg>
-        </button>
+        </Link>
       </div>
     </div>
   )

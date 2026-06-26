@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react"
+import { Link } from "react-router-dom"
 import { gsap } from "@/lib/gsap"
-import { useContactModal } from "@/contexts/ContactModalContext"
 import TrueFocus from "@/components/ui/TrueFocus"
 
 const VideoCard = ({ src, className }: { src: string; className?: string }) => (
@@ -17,7 +17,6 @@ const VideoCard = ({ src, className }: { src: string; className?: string }) => (
 )
 
 export const Act1Intro = () => {
-  const { openModal } = useContactModal()
   const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -63,8 +62,8 @@ export const Act1Intro = () => {
           </p>
 
           <div className="flex flex-wrap gap-3">
-            <button
-              onClick={openModal}
+            <Link
+              to="/iletisim"
               className="font-plus-jakarta font-bold text-sm text-neutral-950 flex items-center gap-2 px-5 py-3 rounded-full transition-all duration-200 hover:scale-105 active:scale-95"
               style={{ background: "#a3e635" }}
             >
@@ -75,17 +74,17 @@ export const Act1Intro = () => {
                 <line x1="3" y1="10" x2="21" y2="10" />
               </svg>
               Görüşme Planla
-            </button>
+            </Link>
 
-            <button
-              onClick={openModal}
+            <Link
+              to="/iletisim"
               className="font-plus-jakarta font-bold text-sm text-neutral-700 bg-white border border-neutral-200 flex items-center gap-2 px-5 py-3 rounded-full transition-all duration-200 hover:border-neutral-400 hover:scale-105 active:scale-95"
             >
               <svg viewBox="0 0 24 24" className="w-4 h-4 fill-none stroke-neutral-600 stroke-[2]">
                 <path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .3l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.3-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z" />
               </svg>
               Sizi Arayalım
-            </button>
+            </Link>
           </div>
         </div>
 

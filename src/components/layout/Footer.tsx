@@ -1,8 +1,6 @@
-import { useContactModal } from "@/contexts/ContactModalContext"
+import { Link } from "react-router-dom"
 
 export const Footer = () => {
-  const { openModal } = useContactModal()
-
   return (
     <footer className="bg-white px-1">
       {/* Card with white 8px border */}
@@ -78,8 +76,8 @@ export const Footer = () => {
             className="p-[5px]"
             style={{ background: "rgb(194,247,0)", borderRadius: "90px" }}
           >
-            <button
-              onClick={openModal}
+            <Link
+              to="/iletisim"
               className="font-plus-jakarta font-bold text-sm text-white flex items-center gap-2.5 px-6 py-3"
               style={{
                 background: "black",
@@ -91,7 +89,7 @@ export const Footer = () => {
               <svg viewBox="0 0 256 256" className="w-4 h-4 fill-white opacity-50 flex-shrink-0">
                 <path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-38.34-85.66a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L116,164.69l42.34-42.35A8,8,0,0,1,169.66,122.34Z" />
               </svg>
-            </button>
+            </Link>
           </div>
           {/* Bottom bar: copyright + social icons */}
           <div

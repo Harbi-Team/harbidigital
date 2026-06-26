@@ -1,18 +1,16 @@
 import { useState, useEffect } from "react"
 import { Link, useLocation } from "react-router-dom"
 import { Menu } from "./Menu"
-import { useContactModal } from "@/contexts/ContactModalContext"
 import siteData from "@/data/site.json"
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isDarkNavbar, setIsDarkNavbar] = useState(false)
-  const { openModal } = useContactModal()
   const location = useLocation()
 
   useEffect(() => {
     const handleScroll = () => {
-      const darkPages = ["/hakkimizda", "/isler", "/urunler", "/hizmetler", "/ekip", "/katalog"]
+      const darkPages = ["/hakkimizda", "/hizmetler", "/ekip", "/katalog"]
       if (darkPages.includes(location.pathname)) {
         setIsDarkNavbar(true)
         return
@@ -24,15 +22,15 @@ export const Header = () => {
 
       const navbarHeight = 60
       const checkY = window.scrollY + navbarHeight
-      
+
       const sections = document.querySelectorAll("section, main > div, main > section")
       let foundDark = false
-      
+
       sections.forEach((section) => {
         const rect = section.getBoundingClientRect()
         const top = rect.top + window.scrollY
         const bottom = top + rect.height
-        
+
         if (checkY >= top && checkY <= bottom) {
           const classes = section.className
           const id = section.id
@@ -46,13 +44,13 @@ export const Header = () => {
           }
         }
       })
-      
+
       setIsDarkNavbar(foundDark)
     }
 
     window.addEventListener("scroll", handleScroll, { passive: true })
     setTimeout(handleScroll, 100)
-    
+
     return () => window.removeEventListener("scroll", handleScroll)
   }, [location.pathname])
 
@@ -60,11 +58,10 @@ export const Header = () => {
     <>
       <header className="fixed top-6 left-0 right-0 z-50 px-4 md:px-6">
         <div
-          className={`max-w-5xl mx-auto w-full rounded-full flex items-center justify-between px-5 md:px-7 py-3 transition-all duration-300 backdrop-blur-md ${
-            isDarkNavbar
-              ? "bg-[#0d0d0d]/70 border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)]"
-              : "bg-white/70 border border-black/10 shadow-[0_8px_32px_rgba(0,0,0,0.08)]"
-          }`}
+          className={`max-w-5xl mx-auto w-full rounded-full flex items-center justify-between px-5 md:px-7 py-3 transition-all duration-300 backdrop-blur-md ${isDarkNavbar
+            ? "bg-[#0d0d0d]/70 border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)]"
+            : "bg-white/70 border border-black/10 shadow-[0_8px_32px_rgba(0,0,0,0.08)]"
+            }`}
         >
           {/* Logo */}
           <Link
@@ -81,15 +78,14 @@ export const Header = () => {
 
           {/* Navigation Links (Desktop) */}
           <div className="hidden md:flex items-center gap-5 font-plus-jakarta">
-            {siteData.nav.filter(item => item.to !== "/ekip").map(({ to, label }) => (
+            {siteData.nav.map(({ to, label }) => (
               <Link
                 key={to}
                 to={to}
-                className={`text-sm font-semibold transition-colors duration-200 ${
-                  isDarkNavbar
-                    ? "text-neutral-200 hover:text-white"
-                    : "text-neutral-700 hover:text-neutral-950"
-                }`}
+                className={`text-sm font-semibold transition-colors duration-200 ${isDarkNavbar
+                  ? "text-neutral-200 hover:text-white"
+                  : "text-neutral-700 hover:text-neutral-950"
+                  }`}
               >
                 {label}
               </Link>
@@ -99,17 +95,15 @@ export const Header = () => {
           {/* Right side */}
           <div className="flex items-center gap-3">
             {/* CTA Button (Desktop) */}
-            <button
-              onClick={openModal}
-              className={`hidden md:flex font-plus-jakarta font-bold text-xs tracking-wider rounded-full px-5 py-2.5 items-center gap-2 transition-all duration-200 hover:scale-105 active:scale-95 ${
-                isDarkNavbar
-                  ? "bg-white text-neutral-900 hover:bg-neutral-100"
-                  : "bg-neutral-900 text-white hover:bg-black"
-              }`}
+            <a
+              href="https://www.gitbi.network/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden md:flex font-plus-jakarta font-bold text-xs tracking-wider rounded-full px-5 py-2.5 items-center gap-2 transition-all duration-200 hover:scale-105 active:scale-95 bg-white text-neutral-900 hover:bg-neutral-100"
             >
-              Görüşme Planla
-              <span className="w-1.5 h-1.5 rounded-full bg-[#a3e635]" />
-            </button>
+              <img src="/medias/gitbi.png" alt="" className="h-6 w-6 object-contain" />
+              Topluluğumuza Katıl
+            </a>
 
             {/* Menu Button (Mobile) */}
             <button
@@ -118,15 +112,12 @@ export const Header = () => {
               aria-label="Menüyü Aç"
               aria-expanded={isMenuOpen}
             >
-              <span className={`w-6 h-0.5 transition-all duration-300 group-hover:bg-[#a3e635] ${
-                isDarkNavbar ? "bg-white" : "bg-neutral-800"
-              }`} />
-              <span className={`w-6 h-0.5 transition-all duration-300 group-hover:bg-[#a3e635] ${
-                isDarkNavbar ? "bg-white" : "bg-neutral-800"
-              }`} />
-              <span className={`w-4 h-0.5 transition-all duration-300 group-hover:w-6 group-hover:bg-[#a3e635] ${
-                isDarkNavbar ? "bg-white" : "bg-neutral-800"
-              }`} />
+              <span className={`w-6 h-0.5 transition-all duration-300 group-hover:bg-[#a3e635] ${isDarkNavbar ? "bg-white" : "bg-neutral-800"
+                }`} />
+              <span className={`w-6 h-0.5 transition-all duration-300 group-hover:bg-[#a3e635] ${isDarkNavbar ? "bg-white" : "bg-neutral-800"
+                }`} />
+              <span className={`w-4 h-0.5 transition-all duration-300 group-hover:w-6 group-hover:bg-[#a3e635] ${isDarkNavbar ? "bg-white" : "bg-neutral-800"
+                }`} />
             </button>
           </div>
         </div>

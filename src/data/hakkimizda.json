@@ -3,25 +3,50 @@
     "badge": "Hakkımızda",
     "heading1": "Dijitalde",
     "heading2": "iz bırakıyoruz.",
-    "subtitle": "Harbi Digital, veri odaklı stratejiler ve yaratıcı içeriklerle markaların dijital dünyada büyümesine öncülük eden bir performans ajansıdır."
+    "subtitle": "HARB! , şirketlerin dijital kaostan sistematik büyümeye geçmesini sağlayan büyüme ve dönüşüm partneridir."
   },
-  "stats": [
-    { "value": "250+", "label": "Başarılı Proje" },
-    { "value": "5+", "label": "Yıl Deneyim" },
-    { "value": "%94", "label": "Müşteri Memnuniyeti" }
-  ],
-  "values": [
-    {
-      "title": "Şeffaflık",
-      "desc": "Her kampanyada anlık raporlama ile sizi sürecin tam ortasında tutuyoruz."
-    },
-    {
-      "title": "Sonuç Odaklılık",
-      "desc": "Beğeni değil, satış. Her stratejiyi ölçülebilir hedeflerle kuruyoruz."
-    },
-    {
-      "title": "Yenilikçilik",
-      "desc": "Algoritmalar değişir, biz de değişiriz. En güncel yaklaşımları her zaman uygularız."
-    }
-  ]
+  "nedenKuruldu": {
+    "badge": "Neden Kuruldu?",
+    "title": "Kurucu hikayesi değil,",
+    "titleHighlight": "problem hikayesi.",
+    "intro": "Harbi bir ilham anında doğmadı. Türkiye'deki dijital ajans düzenindeki dört kırık parçayı gördüğümüz için doğdu.",
+    "problems": [
+      {
+        "number": "01",
+        "title": "Kaos Yönetim Stratejisidir",
+        "desc": "Markalar her ay yeni bir trend, yeni bir platform, yeni bir \"uzman\" tavsiyesi arasında savruluyor. Strateji yok, refleks var. Bütçe yanıyor, yön değişmiyor."
+      },
+      {
+        "number": "02",
+        "title": "Sunum Var, Teslimat Yok",
+        "desc": "Toplantıda her şey mükemmel. İmza atılınca süreç sessizliğe gömülüyor. Vaat edilen ekip kaybolur, işi junior bir stajyer devralır."
+      },
+      {
+        "number": "03",
+        "title": "Şeffaflık Bir Slogan, Gerçek Değil",
+        "desc": "Raporlar renkli, grafikler güzel — ama hangi liranın nereye gittiği, hangi kararın neden alındığı hiçbir zaman netleşmiyor. Müşteri karanlıkta bırakılıyor."
+      },
+      {
+        "number": "04",
+        "title": "Sistem Yok, Kahramanlık Var",
+        "desc": "Her şey tek bir kişiye bağlı. O kişi izne çıktığında ya da ayrıldığında süreç çöküyor. Ölçeklenebilir hiçbir şey kurulmamış."
+      }
+    ],
+    "closing": "Bu yüzden Harbi'yi kurduk: kaosu sisteme, vaadi teslimata, kahramanlığı sürece çeviren bir büyüme ve dönüşüm partneri."
+  },
+  "manifesto": {
+    "badge": "Manifesto",
+    "headline1": "Bizim İçin Büyüme,",
+    "headline2": "Takipçi Sayısından Daha Fazlasıdır.",
+    "intro": "Büyük markaları incelediğinizde onların başarısını yalnızca gördüklerinizle ölçersiniz. Sayılar konuşur, sayılar ikna eder. Ama sayılar yalnızca yüzeyi gösterir.",
+    "seenLabel": "Sonuçlar Bloğu",
+    "seenItems": ["Daha Fazla Beğeni.", "Daha Fazla Görüntülenme.", "Daha Fazla Mağaza.", "Daha Fazla İşbirliği."],
+    "seenCaption": "Bunlar sizin gördükleriniz. Bunlar sizi \"iyi bir marka\" diye ikna edenler.",
+    "bridge": "Ama gerçek başarı, sizin gördüklerinizin çok ötesinde işler.",
+    "unseenLabel": "Sebepler Bloğu",
+    "unseenItems": ["Satış Sistemleri.", "Ölçülebilir Büyüme.", "Operasyonel Verimlilik.", "Sürdürülebilir Süreçler."],
+    "unseenCaption": "Bunlar sizin görmediğiniz süreçler. Bunlar sizin gördüğünüz sonuçları doğuranlar.",
+    "breakpoint": "Sisteminiz yoksa, ne kadar sonuç üretmeye çalışırsanız çalışın — gerçek bir sonuca varamazsınız.",
+    "closing": "HARB! sizin için sonuca giden yolunuzu inşa eder. Görüneni değil, çalışanı kurar."
+  }
 }

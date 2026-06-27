@@ -62,6 +62,29 @@ export const Menu = ({ isOpen, onClose }: MenuProps) => {
     }
   }, [isOpen])
 
+  // Loop animation for mobile "Topluluğumuza Katıl" button scribble highlight
+  useEffect(() => {
+    const anim = gsap.timeline({ repeat: -1 })
+      .to(".menu-scribble-path", {
+        strokeDashoffset: 0,
+        duration: 1.2,
+        ease: "power1.inOut"
+      })
+      .to(".menu-scribble-path", {
+        strokeDashoffset: 550,
+        duration: 1.0,
+        ease: "power1.inOut",
+        delay: 2.0 // Hold highlight
+      })
+      .to(".menu-scribble-path", {
+        delay: 0.5 // Hold empty
+      })
+
+    return () => {
+      anim.kill()
+    }
+  }, [])
+
   return (
     <div
       ref={menuRef}
@@ -103,15 +126,38 @@ export const Menu = ({ isOpen, onClose }: MenuProps) => {
             </Link>
           ))}
 
+          {/* Mobile CTA Button with looping blue scribble */}
           <a
             href="https://www.gitbi.network/"
             target="_blank"
             rel="noopener noreferrer"
             onClick={onClose}
-            className="mt-4 flex items-center gap-2 font-plus-jakarta font-bold text-sm tracking-wider rounded-full px-5 py-2.5 bg-white text-neutral-900 hover:bg-neutral-100 transition-all duration-200"
+            className="relative mt-4 flex items-center bg-transparent text-neutral-900 dark:text-white transition-all duration-200 active:scale-95 group"
           >
-            <img src="/medias/gitbi.png" alt="" className="h-6 w-6 object-contain" />
-            Topluluğumuza Katıl
+            {/* Hand-drawn felt-tip highlight background (Blue) */}
+            <svg className="absolute inset-0 w-full h-full -z-10 scale-y-110 overflow-visible" viewBox="0 0 100 24" preserveAspectRatio="none">
+              <path
+                className="menu-scribble-path"
+                d="M 6 9 L 2 17 L 9 4 L 10 21 L 18 5 L 19 19 L 27 3 L 28 21 L 36 6 L 37 20 L 45 2 L 46 22 L 54 4 L 55 19 L 63 2 L 64 21 L 72 5 L 73 20 L 81 3 L 82 21 L 88 7 L 87 17 L 95 10 L 94 14"
+                stroke="#3268e4" // Vibrant Blue highlighter
+                strokeWidth="6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                fill="none"
+                opacity="0.85"
+                style={{ strokeDasharray: 550, strokeDashoffset: 550 }}
+              />
+            </svg>
+
+            {/* Only the text and image scale on hover */}
+            <div className="flex items-center gap-2 transition-transform duration-200 group-hover:scale-105 relative z-10 w-full justify-center py-2.5 px-5">
+              <img 
+                src="/medias/gitbi.png" 
+                alt="" 
+                className="h-6 w-6 object-contain relative z-10 dark:invert" 
+              />
+              <span>Topluluğumuza Katıl</span>
+            </div>
           </a>
         </div>
 

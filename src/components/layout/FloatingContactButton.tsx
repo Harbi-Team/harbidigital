@@ -1,8 +1,35 @@
+import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 
 export const FloatingContactButton = () => {
+  const [isVisible, setIsVisible] = useState(true)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Hide button when within 350px of the page bottom (when footer CTA is visible)
+      const threshold = 350
+      const currentScroll = window.innerHeight + window.scrollY
+      const totalHeight = document.documentElement.scrollHeight
+      
+      if (currentScroll >= totalHeight - threshold) {
+        setIsVisible(false)
+      } else {
+        setIsVisible(true)
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    handleScroll() // Initial check
+
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   return (
-    <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50">
+    <div className={`fixed bottom-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${
+      isVisible 
+        ? "opacity-100 translate-y-0 scale-100 pointer-events-auto" 
+        : "opacity-0 translate-y-8 scale-95 pointer-events-none"
+    }`}>
       {/* Outer wrapper with glow and border mask */}
       <div 
         className="relative p-[1.5px] rounded-full overflow-hidden flex items-center justify-center"

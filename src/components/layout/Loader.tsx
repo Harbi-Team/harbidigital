@@ -9,7 +9,6 @@ export const Loader = () => {
   const containerRef = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
   const counterRef = useRef<HTMLSpanElement>(null)
-  const progressBarRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     // 1. Initialize GSAP timeline for loader sequence
@@ -21,7 +20,7 @@ export const Loader = () => {
 
     const counter = { value: 0 }
 
-    // 2. Synchronized counter and progress bar animation
+    // 2. Synchronized counter animation
     // Starts fast and slows down near the end (power2.out) for an organic, premium feel
     tl.to(counter, {
       value: 100,
@@ -32,9 +31,6 @@ export const Loader = () => {
         if (counterRef.current) {
           // Always pad with zero for nice monospaced 3-digit alignment (e.g. 005, 042, 100)
           counterRef.current.innerText = val.toString().padStart(3, "0")
-        }
-        if (progressBarRef.current) {
-          progressBarRef.current.style.width = `${val}%`
         }
       }
     }, 0)
@@ -195,7 +191,7 @@ export const Loader = () => {
           ))}
         </div>
 
-        {/* Sayaç ve İnce Timeline Bölümü */}
+        {/* Sayaç Bölümü */}
         <div className="mt-8 flex flex-col items-center gap-3 w-60 sm:w-72 md:w-80">
           {/* Monospace Yüzde Göstergesi */}
           <div className="flex justify-between items-end w-full text-[10px] font-mono tracking-widest text-neutral-400">
@@ -204,15 +200,6 @@ export const Loader = () => {
               <span ref={counterRef} className="text-white font-bold text-xs sm:text-sm tracking-normal">000</span>
               %
             </span>
-          </div>
-
-          {/* 1px Yükleme Çizgisi */}
-          <div className="w-full h-[1px] bg-neutral-800/80 rounded-full overflow-hidden">
-            <div
-              ref={progressBarRef}
-              className="h-full bg-[#a3e635] w-0"
-              style={{ transition: "width 0.1s linear", willChange: "width" }}
-            />
           </div>
         </div>
       </div>

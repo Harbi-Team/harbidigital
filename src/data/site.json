@@ -18,7 +18,6 @@
   "nav": [
     { "label": "Hakkımızda", "to": "/hakkimizda" },
     { "label": "Hizmetler", "to": "/hizmetler" },
-    { "label": "Ekip", "to": "/ekip" },
     { "label": "İletişim", "to": "/iletisim" }
   ],
   "cta": {

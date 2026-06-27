@@ -9,6 +9,8 @@ export const Act2Problem = () => {
   const eRef = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
+    let scrollTimeout: any = null
+
     const ctx = gsap.context(() => {
       // 1. Calculate precise gap coordinates for infinite zoom
       const calculateZoomCoordinates = () => {
@@ -69,8 +71,6 @@ export const Act2Problem = () => {
           ease: "power1.inOut"
         }
       )
-
-      let scrollTimeout: NodeJS.Timeout
 
       // 2. Setup the ScrollTrigger timeline
       const tl = gsap.timeline({

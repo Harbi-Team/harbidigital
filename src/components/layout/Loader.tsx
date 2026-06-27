@@ -4,70 +4,138 @@ import { gsap } from "@/lib/gsap"
 const SLOGANS = ["ANALİZ", "STRATEJİ", "CREATIVE", "DOMİNASYON", "HARB!"]
 
 export const Loader = () => {
-  const [activeIndex, setActiveIndex] = useState(0)
   const [isVisible, setIsVisible] = useState(true)
 
   const containerRef = useRef<HTMLDivElement>(null)
-  const pathRef = useRef<SVGPathElement>(null)
-  const wordRef = useRef<HTMLSpanElement>(null)
-
-  const currentSloganIndex = useRef(0)
+  const contentRef = useRef<HTMLDivElement>(null)
+  const counterRef = useRef<HTMLSpanElement>(null)
+  const progressBarRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const obj = { val: 0 }
-
+    // 1. Initialize GSAP timeline for loader sequence
     const tl = gsap.timeline({
       onComplete: () => {
         exitAnimation()
       }
     })
 
-    // 1. Butter-smooth, continuous counter animation (direct DOM updates for high FPS)
-    tl.to(obj, {
-      val: 100,
-      duration: 5,
-      ease: "sine.inOut",
-      onUpdate: () => {
-        const currentVal = Math.floor(obj.val)
-        if (wordRef.current) {
-          wordRef.current.innerText = `LOADING ${currentVal}%`
-          wordRef.current.style.backgroundSize = `${currentVal}% 100%`
-        }
+    const counter = { value: 0 }
 
-        // Sync slogans with the percentage thresholds.
-        // Triggers React state updates only 5 times during the whole animation
-        const newIndex = Math.min(Math.floor(currentVal / 20), SLOGANS.length - 1)
-        if (newIndex !== currentSloganIndex.current) {
-          currentSloganIndex.current = newIndex
-          setActiveIndex(newIndex)
+    // 2. Synchronized counter and progress bar animation
+    // Starts fast and slows down near the end (power2.out) for an organic, premium feel
+    tl.to(counter, {
+      value: 100,
+      duration: 4.2,
+      ease: "power2.out",
+      onUpdate: () => {
+        const val = Math.floor(counter.value)
+        if (counterRef.current) {
+          // Always pad with zero for nice monospaced 3-digit alignment (e.g. 005, 042, 100)
+          counterRef.current.innerText = val.toString().padStart(3, "0")
+        }
+        if (progressBarRef.current) {
+          progressBarRef.current.style.width = `${val}%`
         }
       }
     }, 0)
 
-    // GPU-accelerated Elastic Exit Animation
+    // 3. Slogan transitions (Staggered Split-Text entry & exit)
+    // Slogan 0: Entry at 0s
+    tl.to(".slogan-text-0 .char-span", {
+      y: "0%",
+      opacity: 1,
+      duration: 0.6,
+      stagger: 0.03,
+      ease: "power3.out"
+    }, 0)
+
+    // Slogan 0 -> Slogan 1 transition at 0.8s
+    tl.to(".slogan-text-0 .char-span", {
+      y: "-120%",
+      opacity: 0,
+      duration: 0.4,
+      stagger: 0.02,
+      ease: "power3.in"
+    }, 0.8)
+    tl.to(".slogan-text-1 .char-span", {
+      y: "0%",
+      opacity: 1,
+      duration: 0.6,
+      stagger: 0.03,
+      ease: "power3.out"
+    }, 1.1)
+
+    // Slogan 1 -> Slogan 2 transition at 1.6s
+    tl.to(".slogan-text-1 .char-span", {
+      y: "-120%",
+      opacity: 0,
+      duration: 0.4,
+      stagger: 0.02,
+      ease: "power3.in"
+    }, 1.6)
+    tl.to(".slogan-text-2 .char-span", {
+      y: "0%",
+      opacity: 1,
+      duration: 0.6,
+      stagger: 0.03,
+      ease: "power3.out"
+    }, 1.9)
+
+    // Slogan 2 -> Slogan 3 transition at 2.4s
+    tl.to(".slogan-text-2 .char-span", {
+      y: "-120%",
+      opacity: 0,
+      duration: 0.4,
+      stagger: 0.02,
+      ease: "power3.in"
+    }, 2.4)
+    tl.to(".slogan-text-3 .char-span", {
+      y: "0%",
+      opacity: 1,
+      duration: 0.6,
+      stagger: 0.03,
+      ease: "power3.out"
+    }, 2.7)
+
+    // Slogan 3 -> Slogan 4 ("HARB!") transition at 3.2s
+    tl.to(".slogan-text-3 .char-span", {
+      y: "-120%",
+      opacity: 0,
+      duration: 0.4,
+      stagger: 0.02,
+      ease: "power3.in"
+    }, 3.2)
+    tl.to(".slogan-text-4 .char-span", {
+      y: "0%",
+      opacity: 1,
+      duration: 0.7,
+      stagger: 0.04,
+      ease: "power4.out"
+    }, 3.5)
+
+    // 4. Curtain exit animation sequence
     const exitAnimation = () => {
-      const exitTimeline = gsap.timeline({
+      const exitTl = gsap.timeline({
         onComplete: () => {
           setIsVisible(false)
         }
       })
 
-      exitTimeline.to(pathRef.current, {
-        attr: { d: "M 0 0 L 100 0 L 100 100 Q 50 65 0 100 Z" },
-        duration: 0.35,
-        ease: "power2.in"
+      // Fade out textual contents and progress timeline
+      exitTl.to(contentRef.current, {
+        opacity: 0,
+        y: -30,
+        duration: 0.4,
+        ease: "power3.inOut"
       })
-        .to(pathRef.current, {
-          attr: { d: "M 0 0 L 100 0 L 100 0 Q 50 0 0 0 Z" },
-          duration: 0.55,
-          ease: "power4.out"
-        })
 
-      exitTimeline.to(containerRef.current, {
+      // Open curtain panels with staggered slide up
+      exitTl.to(".shutter-panel", {
         y: "-100%",
-        duration: 0.9,
+        duration: 0.95,
+        stagger: 0.07,
         ease: "power4.inOut"
-      }, 0)
+      }, "-=0.2")
     }
 
     return () => {
@@ -80,76 +148,73 @@ export const Loader = () => {
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 z-[9999] pointer-events-none select-none overflow-hidden"
-      style={{ willChange: "transform" }}
+      className="fixed inset-0 z-[9999] overflow-hidden select-none"
     >
-      {/* Elastic SVG background overlay */}
-      <svg
-        className="absolute inset-0 w-full h-full fill-neutral-950"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
-      >
-        <path
-          ref={pathRef}
-          d="M 0 0 L 100 0 L 100 100 Q 50 100 0 100 Z"
-        />
-      </svg>
-
-      {/* Loader Content */}
-      <div className="absolute inset-0 z-10 flex flex-col justify-between p-8 md:p-16 text-white pointer-events-auto">
-        {/* Empty top spacing */}
-        <div />
-
-        {/* Center slogans ticker window */}
-        <div className="flex justify-center items-center h-full">
-          {/* Changed items-center to items-start so the first slogan is aligned to the window correctly, and translation calculates center perfectly */}
-          <div className="text-5xl sm:text-7xl md:text-8xl font-extrabold font-plus-jakarta tracking-tighter h-[1.3em] overflow-hidden flex items-start justify-center text-white">
-            <div
-              className="flex flex-col select-none transition-transform duration-700 ease-out will-change-transform"
-              style={{ transform: `translateY(${-activeIndex * (100 / SLOGANS.length)}%)` }}
-            >
-              {SLOGANS.map((slogan, index) => {
-                const isActive = index === activeIndex
-                return (
-                  <div
-                    key={index}
-                    className="flex items-center justify-center text-white transition-all duration-700 ease-out"
-                    style={{
-                      height: "1.3em",
-                      lineHeight: "1.3em",
-                      opacity: isActive ? 1 : 0.08,
-                      transform: isActive ? "scale(1)" : "scale(0.8)",
-                      willChange: "transform, opacity"
-                    }}
-                  >
-                    {slogan}
-                  </div>
-                )
-              })}
-            </div>
-          </div>
-        </div>
+      {/* 4 Dikey Shutter Panel (Arka Plan Wipes) */}
+      <div className="absolute inset-0 grid grid-cols-4 pointer-events-none z-0">
+        <div className="shutter-panel h-full bg-neutral-950 will-change-transform border-r border-neutral-900/10" />
+        <div className="shutter-panel h-full bg-neutral-950 will-change-transform border-r border-neutral-900/10" />
+        <div className="shutter-panel h-full bg-neutral-950 will-change-transform border-r border-neutral-900/10" />
+        <div className="shutter-panel h-full bg-neutral-950 will-change-transform" />
       </div>
 
-      {/* Giant cropped LOADING wordmark — sweeps fill color left-to-right in sync with progress */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden pointer-events-none z-20 pb-4 md:pb-10">
-        <span
-          ref={wordRef}
-          className="block whitespace-nowrap font-black font-plus-jakarta leading-none tracking-tighter pl-4 md:pl-10 uppercase"
-          style={{
-            fontSize: "clamp(4rem, 16vw, 12rem)",
-            color: "transparent",
-            WebkitTextStroke: "1.5px rgba(255,255,255,0.8)",
-            backgroundImage: "conic-gradient(#a3e635 0 0)",
-            backgroundPosition: "0 0",
-            backgroundSize: "0% 100%",
-            backgroundRepeat: "no-repeat",
-            WebkitBackgroundClip: "text",
-            backgroundClip: "text",
-          }}
-        >
-          LOADING 0%
-        </span>
+      {/* İnce Film Noise Overlay - Sinematik Doku */}
+      <div
+        className="absolute inset-0 opacity-[0.035] pointer-events-none z-10"
+        style={{
+          backgroundImage: `url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noise)"/%3E%3C/svg%3E')`,
+        }}
+      />
+
+      {/* Yükleyici İçeriği (Sloganlar, Sayaç ve Timeline) */}
+      <div
+        ref={contentRef}
+        className="absolute inset-0 z-20 flex flex-col items-center justify-center text-white pointer-events-auto px-6"
+      >
+        {/* Sloganlar Bölümü (Kırpılmış Maske Kutusu) */}
+        <div className="relative h-20 sm:h-28 md:h-36 w-full flex items-center justify-center overflow-hidden">
+          {SLOGANS.map((slogan, sloganIdx) => (
+            <div
+              key={sloganIdx}
+              className={`absolute flex items-center justify-center text-center font-black tracking-tighter uppercase font-plus-jakarta text-4xl sm:text-6xl md:text-7xl lg:text-8xl slogan-text-${sloganIdx}`}
+              style={{ lineHeight: "1.1" }}
+            >
+              {slogan.split("").map((char, charIdx) => (
+                <span
+                  key={charIdx}
+                  className="inline-block transform translate-y-[120%] opacity-0 char-span select-none"
+                  style={{
+                    color: slogan === "HARB!" ? "#a3e635" : "#ffffff",
+                    willChange: "transform, opacity"
+                  }}
+                >
+                  {char === " " ? "\u00A0" : char}
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+
+        {/* Sayaç ve İnce Timeline Bölümü */}
+        <div className="mt-8 flex flex-col items-center gap-3 w-60 sm:w-72 md:w-80">
+          {/* Monospace Yüzde Göstergesi */}
+          <div className="flex justify-between items-end w-full text-[10px] font-mono tracking-widest text-neutral-400">
+            <span>HARB! DIGITAL</span>
+            <span>
+              <span ref={counterRef} className="text-white font-bold text-xs sm:text-sm tracking-normal">000</span>
+              %
+            </span>
+          </div>
+
+          {/* 1px Yükleme Çizgisi */}
+          <div className="w-full h-[1px] bg-neutral-800/80 rounded-full overflow-hidden">
+            <div
+              ref={progressBarRef}
+              className="h-full bg-[#a3e635] w-0"
+              style={{ transition: "width 0.1s linear", willChange: "width" }}
+            />
+          </div>
+        </div>
       </div>
     </div>
   )

@@ -23,7 +23,6 @@ const Index = () => {
         <Act1Intro />
         <LogoMarquee />
         <Act2Problem />
-        <Act5Proof />
         <Act7Difference />
         <Act6Plan />
         <Act9Cost />

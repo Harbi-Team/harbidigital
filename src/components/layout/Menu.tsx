@@ -65,13 +65,14 @@ export const Menu = ({ isOpen, onClose }: MenuProps) => {
   // Loop animation for mobile "Topluluğumuza Katıl" button scribble highlight
   useEffect(() => {
     const anim = gsap.timeline({ repeat: -1 })
+      .set(".menu-scribble-path", { strokeDashoffset: 550 })
       .to(".menu-scribble-path", {
         strokeDashoffset: 0,
         duration: 1.2,
         ease: "power1.inOut"
       })
       .to(".menu-scribble-path", {
-        strokeDashoffset: 550,
+        strokeDashoffset: -550,
         duration: 1.0,
         ease: "power1.inOut",
         delay: 2.0 // Hold highlight

@@ -13,7 +13,12 @@
           "delivery": "3–5 hafta",
           "roi": "6–12 ay",
           "story": "İnşaat sektöründe bir müşteri, kurumsal web sitesini yeniledikten sonra dönüşüm oranını %300 artırdı ve reklam maliyetini düşürdü.",
-          "crossSell": ["UX Tasarım", "SEO", "Meta/Google Ads", "CMS Entegrasyonu"]
+          "crossSell": [
+            "UX Tasarım",
+            "SEO",
+            "Meta/Google Ads",
+            "CMS Entegrasyonu"
+          ]
         },
         {
           "name": "Landing Page Tasarımı",
@@ -24,7 +29,12 @@
           "delivery": "1–2 hafta",
           "roi": "3–6 ay",
           "story": "Teknoloji start-upu için hazırlanan landing page, meta reklamları ile eşleştirildiğinde lead başına maliyeti %40 düşürdü.",
-          "crossSell": ["Meta/Google Ads", "A/B Testleri", "CRM Entegrasyonu", "E-posta Otomasyonu"]
+          "crossSell": [
+            "Meta/Google Ads",
+            "A/B Testleri",
+            "CRM Entegrasyonu",
+            "E-posta Otomasyonu"
+          ]
         },
         {
           "name": "Responsive Mobil Uyum",
@@ -35,7 +45,12 @@
           "delivery": "1–3 hafta",
           "roi": "3–6 ay",
           "story": "Bir perakende sitesi, responsive tasarım sonrası mobil trafik gelirini %50 artırdı ve mobil satışlar iki katına çıktı.",
-          "crossSell": ["Hız Optimizasyonu", "UX Tasarım", "Mobil Uygulama", "SEO"]
+          "crossSell": [
+            "Hız Optimizasyonu",
+            "UX Tasarım",
+            "Mobil Uygulama",
+            "SEO"
+          ]
         },
         {
           "name": "UX Odaklı Tasarım",
@@ -46,7 +61,12 @@
           "delivery": "4–6 hafta",
           "roi": "6–12 ay",
           "story": "SaaS müşterisinin kullanıcı panelinde yapılan UX revizyonu, müşteri memnuniyetini %30 artırdı ve abonelik iptallerini %20 azalttı.",
-          "crossSell": ["Kullanıcı Araştırması", "Heatmap Analizi", "A/B Testleri", "Mobil App Tasarımı"]
+          "crossSell": [
+            "Kullanıcı Araştırması",
+            "Heatmap Analizi",
+            "A/B Testleri",
+            "Mobil App Tasarımı"
+          ]
         },
         {
           "name": "CMS Entegrasyonu",
@@ -57,7 +77,12 @@
           "delivery": "1–2 hafta",
           "roi": "6–12 ay",
           "story": "Bir B2B blog sitesi, CMS entegrasyonu sonrası içerik sayısını 3 kat artırdı; 8 ayda organik trafiği 4 katına çıkardı.",
-          "crossSell": ["Teknik SEO", "Blog İçerik Stratejisi", "E-posta Pazarlama", "Performans Hosting"]
+          "crossSell": [
+            "Teknik SEO",
+            "Blog İçerik Stratejisi",
+            "E-posta Pazarlama",
+            "Performans Hosting"
+          ]
         },
         {
           "name": "Hız Optimizasyonu",
@@ -68,7 +93,12 @@
           "delivery": "1–2 hafta",
           "roi": "3–6 ay",
           "story": "E-ticaret sitesinde hız optimizasyonu sayesinde sepet terk oranı %15 azaldı ve ortalama sipariş değeri %10 arttı.",
-          "crossSell": ["Sunucu Bakım", "SEO", "UX Tasarımı", "CDN"]
+          "crossSell": [
+            "Sunucu Bakım",
+            "SEO",
+            "UX Tasarımı",
+            "CDN"
+          ]
         },
         {
           "name": "SaaS Website Tasarımı",
@@ -79,7 +109,12 @@
           "delivery": "4–6 hafta",
           "roi": "6–9 ay",
           "story": "Bir SaaS firması, yeni web sitesi ve ürün demosu videosu ile freemium kullanıcılarının %30'unu ücretli pakete dönüştürdü.",
-          "crossSell": ["SaaS Platform Geliştirme", "CRM Sistemleri", "UI/UX Danışmanlığı", "Video Prodüksiyon"]
+          "crossSell": [
+            "SaaS Platform Geliştirme",
+            "CRM Sistemleri",
+            "UI/UX Danışmanlığı",
+            "Video Prodüksiyon"
+          ]
         },
         {
           "name": "Çok Dilli Website",
@@ -90,7 +125,11 @@
           "delivery": "2–4 hafta",
           "roi": "6–12 ay",
           "story": "İki dilde siteye sahip olan bir lojistik firması, Almanya'dan aldığı siparişleri %70 artırdı.",
-          "crossSell": ["Uluslararası SEO", "Yerel Reklam Kampanyaları", "CRM Entegrasyonu"]
+          "crossSell": [
+            "Uluslararası SEO",
+            "Yerel Reklam Kampanyaları",
+            "CRM Entegrasyonu"
+          ]
         },
         {
           "name": "Scroll Animasyonları",
@@ -101,7 +140,11 @@
           "delivery": "3–5 hafta",
           "roi": "6–12 ay",
           "story": "Moda markası için hazırlanan scroll animasyonlu site, bounce rate'i %25 azalttı ve satışa dönüşleri %20 artırdı.",
-          "crossSell": ["Motion Graphics", "UX Tasarım", "Sosyal Medya Videoları"]
+          "crossSell": [
+            "Motion Graphics",
+            "UX Tasarım",
+            "Sosyal Medya Videoları"
+          ]
         }
       ]
     },
@@ -118,7 +161,12 @@
           "delivery": "2–4 hafta",
           "roi": "6–12 ay",
           "story": "Sağlık sektöründe bir uygulamada yapılan kullanıcı araştırması sonucunda hasta randevu süreci %50 hızlandı.",
-          "crossSell": ["Wireframe", "UX Audit", "Heatmap Analizi", "Mikro Etkileşimler"]
+          "crossSell": [
+            "Wireframe",
+            "UX Audit",
+            "Heatmap Analizi",
+            "Mikro Etkileşimler"
+          ]
         },
         {
           "name": "Wireframe Oluşturma",
@@ -127,9 +175,13 @@
           "target": "Yazılım geliştiriciler, ürün yöneticileri, yatırım arayan start-uplar",
           "result": "Geliştirme sürecinde %20–30 daha az revizyon ve maliyet tasarrufu sağlar.",
           "delivery": "1–2 hafta",
-          "roi": "Hemen (geliştirme maliyeti tasarrufu)",
+          "roi": "Hemen",
           "story": "Mobil uygulama wireframe'leri ile müşterinin geliştirme süresi 2 hafta azaldı; kodlama maliyeti %15 düştü.",
-          "crossSell": ["Mobil App Tasarımı", "Kullanıcı Testleri", "MVP Geliştirme"]
+          "crossSell": [
+            "Mobil App Tasarımı",
+            "Kullanıcı Testleri",
+            "MVP Geliştirme"
+          ]
         },
         {
           "name": "Mobil App Arayüzü",
@@ -140,7 +192,11 @@
           "delivery": "3–5 hafta",
           "roi": "6–12 ay",
           "story": "Online eğitim uygulamasının arayüzünde yapılan tasarım, günlük aktif kullanıcı sayısını %30 artırdı.",
-          "crossSell": ["Mobil Uygulama Geliştirme", "Push Notification", "App Store Optimizasyonu"]
+          "crossSell": [
+            "Mobil Uygulama Geliştirme",
+            "Push Notification",
+            "App Store Optimizasyonu"
+          ]
         },
         {
           "name": "Dashboard Tasarımı",
@@ -151,7 +207,11 @@
           "delivery": "4–6 hafta",
           "roi": "6–9 ay",
           "story": "Bir CRM paneli tasarımı sayesinde satış ekibi pipeline durumunu anlık izleyerek kapanma oranını %15 artırdı.",
-          "crossSell": ["Özel Yazılım Geliştirme", "Veri Görselleştirme", "İş Akışı Otomasyonu"]
+          "crossSell": [
+            "Özel Yazılım Geliştirme",
+            "Veri Görselleştirme",
+            "İş Akışı Otomasyonu"
+          ]
         },
         {
           "name": "Design System",
@@ -160,9 +220,13 @@
           "target": "Orta ve büyük ölçekli şirketler, uzun vadede tutarlı tasarım üreten markalar, yazılım ekipleri",
           "result": "Tasarım ve geliştirme süreçlerinde %30–40 zaman tasarrufu; tutarlı marka algısı.",
           "delivery": "4–8 hafta",
-          "roi": "12+ ay (uzun vadeli tasarruf)",
+          "roi": "12+ ay",
           "story": "Uluslararası bir SaaS firmasına hazırlanan design system, 6 ayda arayüz üretim süresini %35 kısalttı ve UX hatalarını %40 azalttı.",
-          "crossSell": ["UX Audit", "Bileşen Kütüphane Eğitimi", "Yazılım Entegrasyonu"]
+          "crossSell": [
+            "UX Audit",
+            "Bileşen Kütüphane Eğitimi",
+            "Yazılım Entegrasyonu"
+          ]
         },
         {
           "name": "UX Audit",
@@ -173,7 +237,12 @@
           "delivery": "2–3 hafta",
           "roi": "3–6 ay",
           "story": "Bir bankanın mobil uygulamasına yapılan UX audit sonucu 1 ayda müşteri şikâyetleri %30 azaldı ve uygulama puanı 4,1'den 4,6'ya yükseldi.",
-          "crossSell": ["Kullanıcı Araştırması", "Mobil App Arayüz Tasarımı", "A/B Testleri", "Hız Optimizasyonu"]
+          "crossSell": [
+            "Kullanıcı Araştırması",
+            "Mobil App Arayüz Tasarımı",
+            "A/B Testleri",
+            "Hız Optimizasyonu"
+          ]
         },
         {
           "name": "Mikro Etkileşimler",
@@ -184,7 +253,12 @@
           "delivery": "1–2 hafta",
           "roi": "1–3 ay",
           "story": "E-ticaret sitesine eklenen 'sepete ekle' animasyonu ve ilerleme çubuğu, sepet terk oranını %8 düşürdü.",
-          "crossSell": ["Scroll Animasyonları", "Motion Graphics", "UX Audit", "A/B Testleri"]
+          "crossSell": [
+            "Scroll Animasyonları",
+            "Motion Graphics",
+            "UX Audit",
+            "A/B Testleri"
+          ]
         },
         {
           "name": "Accessibility",
@@ -195,7 +269,12 @@
           "delivery": "2–4 hafta",
           "roi": "6–12 ay",
           "story": "Üniversite web sitesinde erişilebilirlik çalışması, engelli öğrencilerin memnuniyetini artırdı ve kurum ceza almaktan kurtuldu.",
-          "crossSell": ["Teknik SEO", "Kullanıcı Araştırması", "Web Geliştirme", "Heatmap Analizi"]
+          "crossSell": [
+            "Teknik SEO",
+            "Kullanıcı Araştırması",
+            "Web Geliştirme",
+            "Heatmap Analizi"
+          ]
         },
         {
           "name": "Heatmap Analizleri",
@@ -203,10 +282,15 @@
           "desc": "Kullanıcıların web sitesi üzerinde nereye tıkladığını, ne kadar süre kaldığını gösteren analizler; UX iyileştirme önerileri.",
           "target": "Çevrimiçi satış yapan siteler, dönüşümü artırmak isteyen pazarlama departmanları",
           "result": "Kullanıcı davranışlarını görselleştirmek, A/B testleri için temel oluşturur; dönüşümlerde %5–15 artış.",
-          "delivery": "1–2 hafta (veri toplama + raporlama)",
+          "delivery": "1–2 hafta",
           "roi": "1–3 ay",
           "story": "Online kurs sitesinde heatmap analizi, kullanıcıların ödeme adımında zorlandığını ortaya çıkardı; form düzenlemesi sonrası satışlar %12 arttı.",
-          "crossSell": ["UX Audit", "Mikro Etkileşimler", "A/B Testleri", "CRO Danışmanlığı"]
+          "crossSell": [
+            "UX Audit",
+            "Mikro Etkileşimler",
+            "A/B Testleri",
+            "CRO Danışmanlığı"
+          ]
         }
       ]
     },
@@ -223,7 +307,12 @@
           "delivery": "2–4 hafta",
           "roi": "3–6 ay",
           "story": "Moda markası Shopify ile online mağaza açarak ilk 6 ayda 10.000 sipariş barajını aştı ve pazar yeri komisyonlarından tasarruf etti.",
-          "crossSell": ["Shopify SEO", "Meta/Google Ads", "Sosyal Medya", "Stok Yönetimi"]
+          "crossSell": [
+            "Shopify SEO",
+            "Meta/Google Ads",
+            "Sosyal Medya",
+            "Stok Yönetimi"
+          ]
         },
         {
           "name": "WooCommerce Kurulumu",
@@ -234,7 +323,12 @@
           "delivery": "3–5 hafta",
           "roi": "6–9 ay",
           "story": "Yerel üreticinin blog'u üzerine WooCommerce ekleyerek organik trafiği mağazaya yönlendirdik; 1 yılda satış gelirleri %150 arttı.",
-          "crossSell": ["SEO", "İçerik Stratejisi", "Teknik Destek", "Pazaryeri Entegrasyonu"]
+          "crossSell": [
+            "SEO",
+            "İçerik Stratejisi",
+            "Teknik Destek",
+            "Pazaryeri Entegrasyonu"
+          ]
         },
         {
           "name": "Pazaryeri Entegrasyonu",
@@ -245,7 +339,12 @@
           "delivery": "2–3 hafta",
           "roi": "3–6 ay",
           "story": "Elektronik markası pazaryerine entegrasyon sayesinde 3 ayda günlük sipariş sayısını 10'dan 100'e çıkardı.",
-          "crossSell": ["Stok Yönetimi", "Kargo Entegrasyonu", "CRM Entegrasyonu", "Sosyal Medya Reklamları"]
+          "crossSell": [
+            "Stok Yönetimi",
+            "Kargo Entegrasyonu",
+            "CRM Entegrasyonu",
+            "Sosyal Medya Reklamları"
+          ]
         },
         {
           "name": "Ödeme Sistemi Entegrasyonu",
@@ -256,7 +355,12 @@
           "delivery": "1–2 hafta",
           "roi": "1–3 ay",
           "story": "Stripe entegrasyonu ile abonelik sistemine geçen uygulama, 2 ayda müşteri sayısını %25 artırdı ve churn %10 düştü.",
-          "crossSell": ["Sadakat Programları", "Abonelik Yönetimi", "ERP/CRM", "Mobil Ödeme"]
+          "crossSell": [
+            "Sadakat Programları",
+            "Abonelik Yönetimi",
+            "ERP/CRM",
+            "Mobil Ödeme"
+          ]
         },
         {
           "name": "Kargo Entegrasyonları",
@@ -267,7 +371,11 @@
           "delivery": "1–2 hafta",
           "roi": "2–4 ay",
           "story": "Mağaza entegrasyonuyla sipariş başı işlem süresi 5 dakikadan 1 dakikaya düştü; geri dönüşümlü kargolar %50 azaldı.",
-          "crossSell": ["Stok Yönetimi", "ERP/CRM", "Otomatik E-posta/SMS Bildirimleri"]
+          "crossSell": [
+            "Stok Yönetimi",
+            "ERP/CRM",
+            "Otomatik E-posta/SMS Bildirimleri"
+          ]
         },
         {
           "name": "Stok Yönetimi",
@@ -278,7 +386,11 @@
           "delivery": "2–3 hafta",
           "roi": "3–6 ay",
           "story": "Elektronik mağazası, stok yönetim sistemi ile stok dışı kalma oranını %80 azalttı ve ciroyu %25 artırdı.",
-          "crossSell": ["ERP Entegrasyonu", "Pazaryeri Entegrasyonu", "Kampanya Sistemleri"]
+          "crossSell": [
+            "ERP Entegrasyonu",
+            "Pazaryeri Entegrasyonu",
+            "Kampanya Sistemleri"
+          ]
         },
         {
           "name": "Sadakat Programları",
@@ -289,7 +401,11 @@
           "delivery": "3–5 hafta",
           "roi": "3–6 ay",
           "story": "Online market, sadakat programı ile 6 ayda tekrar satın alma oranını %35 artırdı; ortalama sepet tutarı %20 yükseldi.",
-          "crossSell": ["CRM Entegrasyonu", "Mobil Uygulama", "Remarketing Kampanyaları"]
+          "crossSell": [
+            "CRM Entegrasyonu",
+            "Mobil Uygulama",
+            "Remarketing Kampanyaları"
+          ]
         },
         {
           "name": "Kampanya Sistemleri",
@@ -300,7 +416,12 @@
           "delivery": "2–3 hafta",
           "roi": "1–2 ay",
           "story": "E-ticaret firması, Black Friday kampanyalarını kişiselleştirerek önceki yıla göre satışları %80 artırdı.",
-          "crossSell": ["Email Marketing", "Sadakat Programı", "Remarketing", "Stok Yönetimi"]
+          "crossSell": [
+            "Email Marketing",
+            "Sadakat Programı",
+            "Remarketing",
+            "Stok Yönetimi"
+          ]
         },
         {
           "name": "Dropshipping Sistemleri",
@@ -311,7 +432,12 @@
           "delivery": "2–4 hafta",
           "roi": "3–6 ay",
           "story": "Bir girişimci, dropshipping sistemi ile 100'den fazla ürün satarak stoksuz modelde ilk ayında 20.000 TL ciro yaptı.",
-          "crossSell": ["Pazaryeri Entegrasyonu", "Ödeme Sistemi", "SEO", "Reklam Hizmetleri"]
+          "crossSell": [
+            "Pazaryeri Entegrasyonu",
+            "Ödeme Sistemi",
+            "SEO",
+            "Reklam Hizmetleri"
+          ]
         },
         {
           "name": "Marketplace Altyapısı",
@@ -322,7 +448,12 @@
           "delivery": "8–12 hafta",
           "roi": "6–12 ay",
           "story": "Bir niche marketplace, 1 yıl içinde 500'den fazla satıcıyı platforma çekerek 3 milyon TL satış hacmine ulaştı.",
-          "crossSell": ["CRM Entegrasyonu", "Ödeme Sistemi", "Sadakat Programı", "Dijital Pazarlama"]
+          "crossSell": [
+            "CRM Entegrasyonu",
+            "Ödeme Sistemi",
+            "Sadakat Programı",
+            "Dijital Pazarlama"
+          ]
         },
         {
           "name": "ERP/CRM Entegrasyonu",
@@ -333,7 +464,12 @@
           "delivery": "4–8 hafta",
           "roi": "6–12 ay",
           "story": "E-ticaret firması, CRM entegrasyonu sonrası müşteri başı sipariş sayısını %25 artırdı ve stok hatalarını %90 azalttı.",
-          "crossSell": ["Sadakat Programları", "Kampanya Sistemleri", "ERP Danışmanlığı", "Müşteri Analiz Raporları"]
+          "crossSell": [
+            "Sadakat Programları",
+            "Kampanya Sistemleri",
+            "ERP Danışmanlığı",
+            "Müşteri Analiz Raporları"
+          ]
         }
       ]
     },
@@ -350,7 +486,12 @@
           "delivery": "6–12 hafta",
           "roi": "6–12 ay",
           "story": "30 kişilik satış ekibi olan şirket, CRM kullanmaya başladıktan sonra 1 yılda gelirini %35 artırdı ve satış döngüsünü %20 kısalttı.",
-          "crossSell": ["ERP Entegrasyonu", "Sadakat Programı", "Lead Nurturing", "Raporlama Dashboard"]
+          "crossSell": [
+            "ERP Entegrasyonu",
+            "Sadakat Programı",
+            "Lead Nurturing",
+            "Raporlama Dashboard"
+          ]
         },
         {
           "name": "Yönetim Panelleri",
@@ -361,7 +502,11 @@
           "delivery": "6–10 hafta",
           "roi": "6–12 ay",
           "story": "Lojistik firması için geliştirilen panel, sevkiyat süreçlerini 2 gün kısalttı ve hatalı teslimat oranını %25 düşürdü.",
-          "crossSell": ["CRM Entegrasyonu", "İş Akışı Otomasyonu", "Mobil App Geliştirme"]
+          "crossSell": [
+            "CRM Entegrasyonu",
+            "İş Akışı Otomasyonu",
+            "Mobil App Geliştirme"
+          ]
         },
         {
           "name": "SaaS Platform Geliştirme",
@@ -372,7 +517,12 @@
           "delivery": "3–6 ay",
           "roi": "1–2 yıl",
           "story": "Geliştirilen SaaS platformu, ilk 12 ayda 5.000 aktif aboneye ulaşarak aylık 500.000 TL MRR elde etti.",
-          "crossSell": ["Mobil Uygulama Geliştirme", "AI Chatbot", "CRM Entegrasyonu", "Marketing Otomasyonları"]
+          "crossSell": [
+            "Mobil Uygulama Geliştirme",
+            "AI Chatbot",
+            "CRM Entegrasyonu",
+            "Marketing Otomasyonları"
+          ]
         },
         {
           "name": "API Geliştirme",
@@ -383,7 +533,11 @@
           "delivery": "4–8 hafta",
           "roi": "6–12 ay",
           "story": "Bir fintech şirketi, ödeme API'si oluşturarak başka uygulamaların kendi altyapısını kullanmasına izin verdi ve yıllık gelirini %40 artırdı.",
-          "crossSell": ["Mobil App Entegrasyonu", "Üçüncü Parti Servis Bağlantıları", "Güvenlik Denetimi"]
+          "crossSell": [
+            "Mobil App Entegrasyonu",
+            "Üçüncü Parti Servis Bağlantıları",
+            "Güvenlik Denetimi"
+          ]
         },
         {
           "name": "Üyelik Sistemleri",
@@ -394,7 +548,12 @@
           "delivery": "3–6 hafta",
           "roi": "3–9 ay",
           "story": "Eğitim platformu için geliştirilen üyelik sistemi, kullanıcı kayıtlarını %50 artırdı; premium gelir 4 ayda %70 yükseldi.",
-          "crossSell": ["CRM Entegrasyonu", "Sadakat Programı", "Ödeme Sistemi", "Mobil Uygulama"]
+          "crossSell": [
+            "CRM Entegrasyonu",
+            "Sadakat Programı",
+            "Ödeme Sistemi",
+            "Mobil Uygulama"
+          ]
         },
         {
           "name": "İş Akışı Otomasyonları",
@@ -405,7 +564,12 @@
           "delivery": "4–8 hafta",
           "roi": "6–12 ay",
           "story": "Satın alma süreci otomasyonu ile onay süresi 3 günden 1 güne düştü ve tedarik süreçlerinde %30 hızlanma sağlandı.",
-          "crossSell": ["ERP Entegrasyonu", "Raporlama Panelleri", "CRM Sistemi", "AI Chatbot"]
+          "crossSell": [
+            "ERP Entegrasyonu",
+            "Raporlama Panelleri",
+            "CRM Sistemi",
+            "AI Chatbot"
+          ]
         },
         {
           "name": "AI Chatbot Sistemleri",
@@ -416,7 +580,12 @@
           "delivery": "4–6 hafta",
           "roi": "3–6 ay",
           "story": "Online perakendeciye kurulan chatbot, müşterilerin ürün teslimat sorularının %70'ini çözdü ve çağrı merkezinin yükünü %40 azalttı.",
-          "crossSell": ["CRM Entegrasyonu", "Mobil App", "E-ticaret", "Sosyal Medya Chatbot"]
+          "crossSell": [
+            "CRM Entegrasyonu",
+            "Mobil App",
+            "E-ticaret",
+            "Sosyal Medya Chatbot"
+          ]
         },
         {
           "name": "Veri Scraping Sistemleri",
@@ -427,7 +596,12 @@
           "delivery": "3–6 hafta",
           "roi": "3–9 ay",
           "story": "Otomatik veri çekim sistemi sayesinde müşteri, rakiplerinin fiyat değişikliklerine anında müdahale ederek satış hacmini %25 artırdı.",
-          "crossSell": ["Raporlama Panelleri", "AI Analiz", "SEO", "İçerik Stratejisi"]
+          "crossSell": [
+            "Raporlama Panelleri",
+            "AI Analiz",
+            "SEO",
+            "İçerik Stratejisi"
+          ]
         },
         {
           "name": "Rezervasyon Sistemleri",
@@ -438,7 +612,11 @@
           "delivery": "3–6 hafta",
           "roi": "3–6 ay",
           "story": "Güzellik salonu rezervasyon platformu ile randevu yoğunluğunu %40 artırdı ve no-show oranını %15 azalttı.",
-          "crossSell": ["CRM Entegrasyonu", "SMS/E-posta Hatırlatıcılar", "Mobil Uygulama"]
+          "crossSell": [
+            "CRM Entegrasyonu",
+            "SMS/E-posta Hatırlatıcılar",
+            "Mobil Uygulama"
+          ]
         }
       ]
     },
@@ -455,7 +633,12 @@
           "delivery": "8–12 hafta",
           "roi": "6–12 ay",
           "story": "Lüks giyim markasının iOS uygulaması, uygulamadan yapılan satışların toplam gelirdeki payını 4 ayda %35'e çıkardı.",
-          "crossSell": ["App Store Optimizasyonu", "Push Notification", "Loyalty Programı", "Analitik Entegrasyonu"]
+          "crossSell": [
+            "App Store Optimizasyonu",
+            "Push Notification",
+            "Loyalty Programı",
+            "Analitik Entegrasyonu"
+          ]
         },
         {
           "name": "Android Uygulama Geliştirme",
@@ -466,7 +649,12 @@
           "delivery": "8–12 hafta",
           "roi": "6–12 ay",
           "story": "Bir yiyecek sipariş platformu, Android uygulaması sayesinde haftalık sipariş sayısını %60 artırdı.",
-          "crossSell": ["Play Store Optimizasyonu", "Push Notification", "Konum Servisleri", "Kampanya Kurguları"]
+          "crossSell": [
+            "Play Store Optimizasyonu",
+            "Push Notification",
+            "Konum Servisleri",
+            "Kampanya Kurguları"
+          ]
         },
         {
           "name": "Flutter Uygulamaları",
@@ -477,7 +665,12 @@
           "delivery": "6–10 hafta",
           "roi": "3–9 ay",
           "story": "Mobil pazaryeri uygulaması Flutter ile geliştirilerek ilk 6 ayda 150.000 kullanıcıya ulaştı.",
-          "crossSell": ["UI/UX Tasarım", "Push Notification", "App Marketing", "Backend API"]
+          "crossSell": [
+            "UI/UX Tasarım",
+            "Push Notification",
+            "App Marketing",
+            "Backend API"
+          ]
         },
         {
           "name": "React Native",
@@ -488,7 +681,12 @@
           "delivery": "6–10 hafta",
           "roi": "6–12 ay",
           "story": "Perakende uygulaması React Native ile geliştirildi ve 4 ayda iOS ve Android'de 500.000 indirme elde etti.",
-          "crossSell": ["UI/UX Tasarım", "Push Notification", "Analytics", "Performans Optimizasyonu"]
+          "crossSell": [
+            "UI/UX Tasarım",
+            "Push Notification",
+            "Analytics",
+            "Performans Optimizasyonu"
+          ]
         },
         {
           "name": "Push Notification",
@@ -499,7 +697,12 @@
           "delivery": "2–4 hafta",
           "roi": "2–4 ay",
           "story": "Yemek sipariş uygulamasında zamanlı push bildirimleri kullanılarak akşam saatlerinde siparişler %35 arttı.",
-          "crossSell": ["Mobil Uygulama Geliştirme", "CRM Entegrasyonu", "Personalizasyon", "App Store/Play Store Optimizasyonu"]
+          "crossSell": [
+            "Mobil Uygulama Geliştirme",
+            "CRM Entegrasyonu",
+            "Personalizasyon",
+            "App Store/Play Store Optimizasyonu"
+          ]
         },
         {
           "name": "App Store Optimizasyonu",
@@ -510,7 +713,12 @@
           "delivery": "2–3 hafta",
           "roi": "1–3 ay",
           "story": "Mobil oyun, App Store optimizasyonu ile listelerde ilk 10'a girdi ve indirme sayısı 3 katına çıktı.",
-          "crossSell": ["Mobil Reklam Kampanyaları", "Kullanıcı Analizleri", "Push Notification", "Re-engagement"]
+          "crossSell": [
+            "Mobil Reklam Kampanyaları",
+            "Kullanıcı Analizleri",
+            "Push Notification",
+            "Re-engagement"
+          ]
         },
         {
           "name": "Mobil Ödeme Sistemleri",
@@ -521,7 +729,11 @@
           "delivery": "2–4 hafta",
           "roi": "2–4 ay",
           "story": "Oyun uygulamasında mobil ödeme sistemi eklenince, uygulama içi satışlar 3 ayda %40 yükseldi.",
-          "crossSell": ["Mobil Uygulama Geliştirme", "Abonelik Yönetimi", "CRM Entegrasyonu"]
+          "crossSell": [
+            "Mobil Uygulama Geliştirme",
+            "Abonelik Yönetimi",
+            "CRM Entegrasyonu"
+          ]
         }
       ]
     },

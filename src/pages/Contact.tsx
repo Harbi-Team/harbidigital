@@ -67,16 +67,6 @@ const Contact = () => {
         <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-6 pt-28 pb-20">
           {/* Main content */}
           <div className="w-full max-w-2xl">
-            {/* Badge */}
-            <div className="flex justify-center mb-5">
-              <span
-                className="inline-block text-xs font-bold font-plus-jakarta uppercase tracking-wider px-3 py-1.5 rounded-full"
-                style={{ background: "rgba(163,230,53,0.12)", color: "#5c8a0f" }}
-              >
-                İletişim
-              </span>
-            </div>
-
             {/* Heading */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-neutral-950 font-plus-jakarta text-center leading-tight tracking-tight mb-4">
               Başaranlar Arasına Katılın

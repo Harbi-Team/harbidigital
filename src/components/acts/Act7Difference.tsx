@@ -13,7 +13,7 @@ const HARBI = [
   "Net hedefler ve ölçülebilir KPI'lar",
   "Kanıtlanmış veri odaklı süreçler",
   "Haftalık şeffaf performans raporu",
-  "Markanıza özel yaratıcı içerik",
+  "Markanıza özel ilgi çekici içerik",
   "Gerçek sonuçlara odaklı yaklaşım",
 ]
 
@@ -113,7 +113,7 @@ export const Act7Difference = () => {
 
         {/* Cards container */}
         <div className="relative flex flex-col md:flex-row gap-8 justify-center items-center md:items-stretch">
-          
+
           {/* Others card (Light Theme) */}
           <div className="card-others w-full md:w-[440px] bg-neutral-50/80 border border-neutral-200/80 rounded-2xl p-8 md:p-10 shadow-[0_8px_30px_rgba(0,0,0,0.015)] flex flex-col justify-between transition-all duration-300 hover:border-neutral-300/80 hover:bg-neutral-50">
             <div>
@@ -148,7 +148,7 @@ export const Act7Difference = () => {
           <div className="card-harbi w-full md:w-[440px] bg-[#0d0d0d] border border-neutral-900 rounded-2xl p-8 md:p-10 shadow-[0_25px_60px_rgba(0,0,0,0.18)] flex flex-col justify-between relative overflow-hidden transition-all duration-300 hover:border-[#a3e635]/25 hover:shadow-[0_25px_60px_rgba(163,230,53,0.03)]">
             {/* Subtle glow layer in background */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-[#a3e635]/3 rounded-full blur-3xl pointer-events-none" />
-            
+
             <div>
               <div className="flex items-center gap-3.5 mb-8">
                 <div className="w-8 h-8 rounded-full bg-[#a3e635] flex items-center justify-center shadow-[0_0_15px_rgba(163,230,53,0.3)]">

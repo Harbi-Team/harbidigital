@@ -9,6 +9,8 @@ import { Act5Proof } from "@/components/acts/Act5Proof"
 import { Act6Plan } from "@/components/acts/Act6Plan"
 import { Act7Difference } from "@/components/acts/Act7Difference"
 import { Act9Cost } from "@/components/acts/Act9Cost"
+import { PostGallery, type PostGalleryItem } from "@/components/acts/PostGallery"
+import socialPosts from "@/data/social-posts.json"
 
 const Index = () => {
   return (
@@ -27,6 +29,7 @@ const Index = () => {
         <Act2Problem />
         <Act7Difference />
         <Act6Plan />
+        <PostGallery items={socialPosts as PostGalleryItem[]} />
         <Act9Cost />
       </main>
 

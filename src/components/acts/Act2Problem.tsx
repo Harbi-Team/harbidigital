@@ -77,7 +77,7 @@ export const Act2Problem = () => {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: "+=500%", // Reduced back to 500% since entry phase is now automatic
+          end: "+=360%", // Shortened from 500% to make the scroll transition faster and more dynamic
           scrub: 1, 
           pin: true,
           onEnter: () => {
@@ -104,44 +104,43 @@ export const Act2Problem = () => {
         }
       })
 
-      // Phase 1: Intro text and indicator fades out, Video/Mask fades in (starts at 1.0, duration 0.7)
-      // This leaves scroll space from 0 to 1.0 for the user to read the text
+      // Phase 1: Intro text and indicator fades out, Video/Mask fades in (starts immediately at 0.15)
+      // We removed the dead scroll space (originally 0 to 1.0) so the transition starts right away
       tl.to(introRef.current, {
         opacity: 0,
         y: -50,
-        duration: 0.7,
+        duration: 0.5,
         ease: "power2.in"
-      }, 1.0)
+      }, 0.15)
       
       tl.to(maskLayerRef.current, {
         opacity: 1,
-        duration: 0.7,
-        ease: "power2.inOut"
-      }, 1.0)
-
-      // Phase 2: Text scrolls ONLY horizontally from right to left (1.7 to 4.7)
-      tl.fromTo(textContainerRef.current, 
-        { x: "100vw", y: 0 }, 
-        { x: targets.x, y: 0, duration: 3, ease: "none" }, 
-        1.7
-      )
-
-      // Phase 3: The Infinite Zoom directly into the gap of 'E' (4.7 to 6.7)
-      // We apply the Y translation here so it shifts perfectly into the center during the zoom
-      tl.to(textContainerRef.current, {
-        scale: 35, // Optimized scale to prevent browser texture crash
-        y: targets.y,
-        duration: 2,
-        ease: "power3.in",
-        force3D: false // Forces browser to repaint correctly on reverse scroll
-      }, 4.7)
-
-      // Phase 4: Fade out the mask completely to reveal the full video (6.2 to 6.7)
-      tl.to(".mask-overlay", {
-        opacity: 0,
         duration: 0.5,
         ease: "power2.inOut"
-      }, 6.2)
+      }, 0.15)
+
+      // Phase 2: Text scrolls ONLY horizontally from right to left (0.65 to 2.85)
+      tl.fromTo(textContainerRef.current, 
+        { x: "100vw", y: 0 }, 
+        { x: targets.x, y: 0, duration: 2.2, ease: "none" }, 
+        0.65
+      )
+
+      // Phase 3: The Infinite Zoom directly into the gap of 'E' (2.85 to 4.35)
+      tl.to(textContainerRef.current, {
+        scale: 35, 
+        y: targets.y,
+        duration: 1.5,
+        ease: "power3.in",
+        force3D: false
+      }, 2.85)
+
+      // Phase 4: Fade out the mask completely to reveal the full video (3.95 to 4.35)
+      tl.to(".mask-overlay", {
+        opacity: 0,
+        duration: 0.4,
+        ease: "power2.inOut"
+      }, 3.95)
 
     }, sectionRef)
 

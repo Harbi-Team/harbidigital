@@ -6,7 +6,6 @@ import { LogoMarquee } from "@/components/acts/LogoMarquee"
 import { Act1Mission } from "@/components/acts/Act1Mission"
 import { Act2Problem } from "@/components/acts/Act2Problem"
 import { Act5Proof } from "@/components/acts/Act5Proof"
-import { Act6Plan } from "@/components/acts/Act6Plan"
 import { Act7Difference } from "@/components/acts/Act7Difference"
 import { Act9Cost } from "@/components/acts/Act9Cost"
 import { PostGallery, type PostGalleryItem } from "@/components/acts/PostGallery"
@@ -28,7 +27,6 @@ const Index = () => {
         <Act1Mission />
         <Act2Problem />
         <Act7Difference />
-        <Act6Plan />
         <PostGallery items={socialPosts as PostGalleryItem[]} />
         <Act9Cost />
       </main>

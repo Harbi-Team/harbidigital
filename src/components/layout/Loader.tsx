@@ -147,11 +147,23 @@ export const Loader = () => {
       className="fixed inset-0 z-[9999] overflow-hidden select-none"
     >
       {/* 4 Dikey Shutter Panel (Arka Plan Wipes) */}
-      <div className="absolute inset-0 grid grid-cols-4 pointer-events-none z-0">
-        <div className="shutter-panel h-full bg-neutral-950 will-change-transform border-r border-neutral-900/10" />
-        <div className="shutter-panel h-full bg-neutral-950 will-change-transform border-r border-neutral-900/10" />
-        <div className="shutter-panel h-full bg-neutral-950 will-change-transform border-r border-neutral-900/10" />
-        <div className="shutter-panel h-full bg-neutral-950 will-change-transform" />
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <div
+          className="shutter-panel absolute top-0 h-full bg-neutral-950 will-change-transform"
+          style={{ left: "0%", width: "calc(25% + 1px)" }}
+        />
+        <div
+          className="shutter-panel absolute top-0 h-full bg-neutral-950 will-change-transform"
+          style={{ left: "25%", width: "calc(25% + 1px)" }}
+        />
+        <div
+          className="shutter-panel absolute top-0 h-full bg-neutral-950 will-change-transform"
+          style={{ left: "50%", width: "calc(25% + 1px)" }}
+        />
+        <div
+          className="shutter-panel absolute top-0 h-full bg-neutral-950 will-change-transform"
+          style={{ left: "75%", width: "calc(25% + 1px)" }}
+        />
       </div>
 
       {/* İnce Film Noise Overlay - Sinematik Doku */}

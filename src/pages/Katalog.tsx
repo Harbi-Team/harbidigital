@@ -36,17 +36,6 @@ const ServiceCard = ({ service, onCta }: { service: typeof katalog.categories[0]
 
       {expanded && (
         <div className="mt-4 space-y-3 border-t border-white/8 pt-4">
-          <div className="grid grid-cols-2 gap-3">
-            <div className="bg-white/3 rounded-xl p-3">
-              <div className="text-[10px] text-white/30 font-plus-jakarta uppercase tracking-wider mb-1">Teslim Süresi</div>
-              <div className="text-sm font-bold text-white font-plus-jakarta">{service.delivery}</div>
-            </div>
-            <div className="bg-white/3 rounded-xl p-3">
-              <div className="text-[10px] text-white/30 font-plus-jakarta uppercase tracking-wider mb-1">ROI Dönüşü</div>
-              <div className="text-sm font-bold font-plus-jakarta" style={{ color: "#a3e635" }}>{service.roi}</div>
-            </div>
-          </div>
-
           <div className="bg-white/3 rounded-xl p-3">
             <div className="text-[10px] text-white/30 font-plus-jakarta uppercase tracking-wider mb-1.5">Sonuç</div>
             <p className="text-sm text-white/60 font-plus-jakarta leading-relaxed">{service.result}</p>

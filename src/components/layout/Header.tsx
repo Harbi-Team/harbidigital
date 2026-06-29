@@ -34,7 +34,7 @@ export const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const darkPages = ["/hakkimizda", "/hizmetler", "/ekip", "/katalog"]
+      const darkPages = ["/hakkimizda", "/ekip", "/katalog"]
       if (darkPages.includes(location.pathname)) {
         setIsDarkNavbar(true)
         return
